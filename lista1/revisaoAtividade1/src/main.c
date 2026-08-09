@@ -32,9 +32,12 @@ int verificaColisao(Alvo alvo, Disparo disparo) {
 }
 
 /**
- * @brief 
+ * @brief Programa que captura os dados de um alvo e um disparo (onde cada um possui coordenada X, coordenada Y e raio),
+ * e verifica se o disparo (area dele) acertou ou alvo (área do mesmo);
  * 
- * @return int Programa principal
+ * OBS: Leve em consideração que tanto alvo quanto disparo possuem área em formato circular;
+ * 
+ * @return int Programa principal;
  */
 int main() {
     float xAlvo, yAlvo, xDisparo, yDisparo, raioAlvo, raioDisparo;
