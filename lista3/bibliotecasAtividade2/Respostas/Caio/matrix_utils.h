@@ -87,7 +87,7 @@ void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  * @param matrix2 Matriz 2;
  * @param result Matriz resultado da multiplicação de duas matrizes;
  */
-void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2,int matrix2[rows2][cols2], int result[rows1][cols1]);
+void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2,int matrix2[rows2][cols2], int result[rows1][cols2]);
 
 /**
  * @brief Transforma uma matriz em sua respectiva matriz transposta;
