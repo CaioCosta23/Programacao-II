@@ -59,8 +59,9 @@ int possible_matrix_multiply(int cols1, int rows2);
  * @param rows2 Quantidade de linhas da matriz 2;
  * @param cols2 Quantidade de colunas da matriz 1;
  * @param matrix2 Matriz 2;
+ * @param result Matriz resultado da soma de duas matrizes;
  */
-void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2]);
+void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]);
 
 /**
  * @brief Subtrai uma matriz de outra;
@@ -71,8 +72,9 @@ void matrix_add(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  * @param rows2 Quantidade de linhas da matriz 2;
  * @param cols2 Quantidade de colunas da matriz 2;
  * @param matrix2 Matriz 2;
+ * @param result Matriz resultado da subtração de duas matrizes;
  */
-void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2]);
+void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2, int matrix2[rows2][cols2], int result[rows1][cols1]);
 
 /**
  * @brief Multiplica uma matriz por outra;
@@ -83,8 +85,9 @@ void matrix_sub(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int 
  * @param rows2 Quantidade de linhas da matriz 2;
  * @param cols2 Quantidade de colunas da matriz 2;
  * @param matrix2 Matriz 2;
+ * @param result Matriz resultado da multiplicação de duas matrizes;
  */
-void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2,int matrix2[rows2][cols2]);
+void matrix_multiply(int rows1, int cols1, int matrix1[rows1][cols1], int rows2, int cols2,int matrix2[rows2][cols2], int result[rows1][cols1]);
 
 /**
  * @brief Transforma uma matriz em sua respectiva matriz transposta;
