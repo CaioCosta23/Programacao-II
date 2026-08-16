@@ -1,5 +1,14 @@
-// Bibliotecas "<stdio.h>" e "<stdlib.h>" já incluidas na biblioteca de utilidades de matrizes;
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "matrix_utils.h"
+
+#define SOMA 1
+#define SUBTRACAO 2
+#define MULTIPLICACAO 3
+#define MULTIPLICACAO_ESCALAR 4
+#define TRANSPOSTA 5
+#define ENCERRAR 6
 
 void imprimeMenu() {
     printf("1 - Somar matrizes\n");
@@ -7,15 +16,24 @@ void imprimeMenu() {
     printf("3 - Multiplicar matrizes\n");
     printf("4 - Multiplicacao de uma matriz por escalar\n");
     printf("5 - Transposta de uma matriz\n");
-    printf("6 - Encerrar programa\n");
+    printf("6 - Encerrar o programa\n");
     printf("Opcao escolhida: ");
 }
 
+
+/**
+ * @brief Programa que Calcula: A soma, e/ou subtração, e/ou multiĺicação de duas matrizes, e/ou as traspostas das matrizes
+ * e a multiplicação de uma das matrizes passadas, por um escalar. Devem ser feitas as verificações se é possível ou não realizar
+ * as operações e informar caso não seja possível;
+ * 
+ * @OBS: Verificar os casos de testes para mais detalhes;
+ * 
+ * @return int Programa Principal;
+ */
 int main() {
     // Variável lógica (verdadeiro = 1, falso = 0);
     unsigned short int opcao;
-    const unsigned short int SOMA = 1, SUBTRACAO = 2, MULTIPLICACAO = 3,
-                             MULTIPLICACAO_ESCALAR = 4, TRANSPOSTA = 5, ENCERRAR = 6;
+    const unsigned short int OPCAO_MATRIZ_1 = 1, OPCAO_MATRIZ_2 = 2;
     const unsigned short int  FALSO = 0, VERDADEIRO = 1;
     unsigned short int parada = FALSO;
     int linhas1, colunas1, linhas2, colunas2;
@@ -35,9 +53,12 @@ int main() {
     // A declaração teve de ser feita neste local devido ao fato da estrutura "switch" não aceitar matrizes de tamanho 'variável' dentro da estrutura;
     int matrizResultante[linhas1][colunas1];
 
+    int matriz1Transposta[colunas1][linhas1], matriz2Transposta[colunas2][linhas2], matrizMultiplicacao[linhas1][colunas2];
+
     do {
         imprimeMenu();
-        scanf("%d", &opcao);
+        scanf("%hd", &opcao);
+        printf("\n");
         
         switch(opcao) {
             case SOMA:
@@ -45,7 +66,7 @@ int main() {
                     matrix_add(linhas1, colunas1, matriz1, linhas2, colunas2, matriz2, matrizResultante);
                     matrix_print(linhas1, colunas1, matrizResultante);
                 }else {
-                    printf("ERRO! Nao foi possivel realizar a adicao de matrizes.");
+                    printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
                 break;
 
@@ -54,23 +75,22 @@ int main() {
                     matrix_sub(linhas1, colunas1, matriz1, linhas2, colunas2, matriz2, matrizResultante);
                     matrix_print(linhas1, colunas1, matrizResultante);
                 }else {
-                    printf("ERRO! Nao foi possivel realizar a subtracao de matrizes.");
+                    printf("Erro: as dimensoes da matriz nao correspondem\n");
                 }
                 break;
 
             case MULTIPLICACAO:
                 if (possible_matrix_multiply(colunas1, linhas2)){
-                    matrix_sub(linhas1, colunas1, matriz1, linhas2, colunas2, matriz2, matrizResultante);
-                    matrix_print(linhas1, colunas1, matrizResultante);
+                    matrix_multiply(linhas1, colunas1, matriz1, linhas2, colunas2, matriz2, matrizResultante);
+                    matrix_print(linhas1, colunas2, matrizResultante);
                 }else {
-                    printf("ERRO! Nao foi possivel realizar a multiplicacao de matrizes.");
+                    printf("Erro: o numero de colunas da primeira matriz eh diferente do numero de linhas da segunda matriz\n\n");
                 }
                 break;
 
             case MULTIPLICACAO_ESCALAR:
-                const unsigned short int OPCAO_MATRIZ_1 = 1, OPCAO_MATRIZ_2 = 2;
-                unsigned short int opcaoMatriz;
                 int escalar;
+                unsigned short int opcaoMatriz;
 
                 scanf("%d %hd", &escalar, &opcaoMatriz);
                 
@@ -86,20 +106,11 @@ int main() {
                 break;
 
             case TRANSPOSTA:
-                const unsigned short int OPCAO_MATRIZ_1 = 1, OPCAO_MATRIZ_2 = 2;
-                unsigned short int opcaoMatriz;
-
-                scanf("%hd", &opcaoMatriz);
-
-                if (opcaoMatriz == OPCAO_MATRIZ_1){
-                    transpose_matrix(linhas1, colunas1, matriz1, escalar);
-                    matrix_print(linhas1, colunas1, matriz1);
-                }else if (opcaoMatriz == OPCAO_MATRIZ_2) {
-                    transpose_matrix(linhas2, colunas2, matriz2 , escalar);
-                    matrix_print(linhas2, colunas2, matriz2);
-                }else {
-                    printf("ERRO! Nao foi possivel multiplicar a matriz %hd pelo escalar %d.", opcaoMatriz, escalar);
-                }
+                transpose_matrix(linhas1, colunas1, matriz1, matriz1Transposta);
+                matrix_print(colunas1, linhas1, matriz1Transposta);
+                transpose_matrix(linhas2, colunas2, matriz2, matriz2Transposta);
+                matrix_print(colunas2, linhas2, matriz2Transposta);
+                
                 break;
 
             case ENCERRAR:
