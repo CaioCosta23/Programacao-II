@@ -158,11 +158,7 @@ void imprimeMesExtenso(int mes) {
 }
 
 void imprimeDataExtenso(int dia, int mes, int ano) {
-    if (verificaDataValida(dia, mes, ano)){
-        printf("%02d de ");
-        imprimeMesExtenso(mes);
-        printf(" de %04d/n");
-    }else {
-        printf("A primeira e/ou segunda data(s) invalida(s)\n");
-    }
+    printf("%02d de ");
+    imprimeMesExtenso(mes);
+    printf(" de %04d/n");
 }
