@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "data.h"
 
 #define NUMERO_MESES_ANO 12
