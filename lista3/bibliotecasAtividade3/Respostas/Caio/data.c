@@ -68,7 +68,7 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
     unsigned short int dia, mes, ano;
     unsigned int quantidadeDias = 0;
     
-    if (calculaDiferencaDias(dia1, mes1, ano1, dia2, mes2, ano2) == 1) {
+    if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 1) {
         dia = dia1;
         mes = mes1;
         ano = ano1;
@@ -88,7 +88,7 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
             }
             quantidadeDias += 1;
         }
-    }else if (calculaDiferencaDias(dia1, mes1, ano2, dia2, mes2, ano2) == - 1) {
+    }else if (comparaData(dia1, mes1, ano2, dia2, mes2, ano2) == - 1) {
         dia = dia2;
         mes = mes2;
         ano = ano2;
