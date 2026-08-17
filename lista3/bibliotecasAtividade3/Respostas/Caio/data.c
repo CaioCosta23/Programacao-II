@@ -73,7 +73,7 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
         mes = mes1;
         ano = ano1;
 
-        while((dia != dia) && (mes != mes2) && (ano != ano2)) {
+        while((dia != dia2) && (mes != mes2) && (ano != ano2)) {
             if (dia == numeroDiasMes(mes, ano)){
                 dia = 1;
 
