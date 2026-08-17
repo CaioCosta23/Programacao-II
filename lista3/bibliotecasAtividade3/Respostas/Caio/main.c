@@ -39,9 +39,9 @@ int main() {
         
         diferencaDias = calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano);
         if (diferencaDias < 10)
-            printf("A diferenca em dias entre as duas datas eh: %02d", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
+            printf("A diferenca em dias entre as datas eh: %02d", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
         else
-            printf("A diferenca em dias entre as duas datas eh: %d", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
+            printf("A diferenca em dias entre as datas eh: %d dias\n", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
     }else{
         printf("A primeira e/ou segunda data(s) invalida(s)\n");
     }
