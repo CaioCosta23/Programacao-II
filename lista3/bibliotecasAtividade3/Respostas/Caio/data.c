@@ -43,25 +43,22 @@ int numeroDiasMes(int mes, int ano) {
 }
 
 int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2) {
-    if (ano1 > ano2){
+    if (ano1 > ano2)
         return 1;
-    }else if (ano1 == ano2){
-        if (mes1 > mes2) {
+    else if (ano1 == ano2)
+        if (mes1 > mes2)
             return 1;
-        }else if (mes1 == mes2) {
-            if (dia1 > dia2) {
+        else if (mes1 == mes2)
+            if (dia1 > dia2)
                 return 1;
-            }else if (dia1 == dia2) {
+            else if (dia1 == dia2)
                 return 0;
-            }else {
+            else
                 return -1;
-            }
-        }else {
+        else
             return -1;
-        }
-    }else{
+    else
         return -1;
-    }
 }
 
 int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2) {
@@ -69,31 +66,11 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
     unsigned int quantidadeDias = 0;
     
     if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == 1) {
-        dia = dia1;
-        mes = mes1;
-        ano = ano1;
-
-        while((dia != dia2) && (mes != mes2) && (ano != ano2)) {
-            if (dia == numeroDiasMes(mes, ano)){
-                dia = 1;
-
-                if (mes == NUMERO_MESES_ANO){
-                    mes = 1;
-                    ano++;
-                }else {
-                    mes++;
-                }
-            }else{
-                dia++;
-            }
-            quantidadeDias += 1;
-        }
-    }else if (comparaData(dia1, mes1, ano2, dia2, mes2, ano2) == - 1) {
         dia = dia2;
         mes = mes2;
         ano = ano2;
 
-        while((dia != dia1) && (mes != mes1) && (ano != ano1)) {
+        while((dia != dia1) || (mes != mes1) || (ano != ano1)) {
             if (dia == numeroDiasMes(mes, ano)){
                 dia = 1;
 
@@ -108,11 +85,30 @@ int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int a
             }
             quantidadeDias += 1;
         }
-    }else{
-        return 0;
+    }else if (comparaData(dia1, mes1, ano1, dia2, mes2, ano2) == -1) {
+        dia = dia1;
+        mes = mes1;
+        ano = ano1;
+
+
+        while((dia != dia2) || (mes != mes2) || (ano != ano2)) {
+            if (dia == numeroDiasMes(mes, ano)){
+                dia = 1;
+
+                if (mes == NUMERO_MESES_ANO){
+                    mes = 1;
+                    ano++;
+                }else {
+                    mes++;
+                }
+            }else{
+                dia++;
+            }
+            quantidadeDias += 1;
+        }
     }
 
-    return -1;
+    return quantidadeDias;
 
 }
 
