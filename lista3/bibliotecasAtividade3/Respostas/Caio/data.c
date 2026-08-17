@@ -163,5 +163,5 @@ void imprimeMesExtenso(int mes) {
 void imprimeDataExtenso(int dia, int mes, int ano) {
     printf("%02d de ", dia);
     imprimeMesExtenso(mes);
-    printf(" de %04d/n", ano);
+    printf(" de %04d\n", ano);
 }
