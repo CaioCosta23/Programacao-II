@@ -30,16 +30,16 @@ int main() {
         printf("Segunda data: ");
         imprimeDataExtenso(data2.dia, data2.mes, data2.ano);
 
-        if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == 1)
+        if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == - 1)
             printf("A primeira data eh mais antiga\n");
-        else if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == -1)
+        else if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == 1)
             printf("A segunda data eh mais antiga\n");
         else
             printf("As datas sao iguais\n");
         
         diferencaDias = calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano);
         if (diferencaDias < 10)
-            printf("A diferenca em dias entre as datas eh: %02d", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
+            printf("A diferenca em dias entre as datas eh: %02d dias", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
         else
             printf("A diferenca em dias entre as datas eh: %d dias\n", calculaDiferencaDias(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano));
     }else{
