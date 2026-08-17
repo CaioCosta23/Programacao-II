@@ -30,7 +30,7 @@ int main() {
         printf("Segunda data: ");
         imprimeDataExtenso(data2.dia, data2.mes, data2.ano);
 
-        if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == - 1)
+        if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == -1)
             printf("A primeira data eh mais antiga\n");
         else if (comparaData(data1.dia, data1.mes, data1.ano, data2.dia, data2.mes, data2.ano) == 1)
             printf("A segunda data eh mais antiga\n");
