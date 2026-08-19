@@ -17,13 +17,13 @@ int main() {
         if (escalaObjetivo == FAHRENHEINT) {
             printf("Temperature: %.2fFº", convert_temperature(temperatura, convert_celsius_to_fahrenheit));
         }else if (escalaObjetivo == KELVIN) {
-            printf("Temperature: %.2fKº", convert_temperature(temperatura, convert_celsius_to_kelvin));
+            printf("Temperature: %.2fK", convert_temperature(temperatura, convert_celsius_to_kelvin));
         }
     }else if (escalaAlvo == FAHRENHEINT) {
         if (escalaObjetivo == CELSIUS) {
             printf("Temperature: %.2fCº", convert_temperature(temperatura, convert_fahrenheit_to_celsius));
         }else if (escalaObjetivo == KELVIN) {
-            printf("Temperature: %.2fKº", convert_temperature(temperatura, convert_fahrenheit_to_kelvin));
+            printf("Temperature: %.2fK", convert_temperature(temperatura, convert_fahrenheit_to_kelvin));
         }
     }else if (escalaAlvo == KELVIN) {
         if (escalaObjetivo == CELSIUS) {
