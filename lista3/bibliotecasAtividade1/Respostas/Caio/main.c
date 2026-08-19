@@ -3,6 +3,11 @@
 
 #include "esfera_utils.h"
 
+/**
+ * @brief Programa que calcula a área e o volume de uma esfera;
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     float raio;
 
