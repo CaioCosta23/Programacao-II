@@ -24,6 +24,13 @@ void imprimirMenu() {
     printf("Opcao escolhida: ");
 }
 
+/**
+ * @brief  Programa que realiza algumas operações em uma String (Obtém tamanho da String, copia uma string para outra,
+ * converte uma string para que todas as suas letras estejam em letras maiúsculas, Converte uma string para que todas 
+ * as suas letras estejam em letras miniúsculas);
+ * 
+ * @return int Programa Principal;
+ */
 int main() {
     char string[TAMANHO_MAXIMO];
     unsigned short int opcao;
