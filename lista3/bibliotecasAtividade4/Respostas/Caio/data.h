@@ -51,6 +51,19 @@ int comparaData(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2);
 int calculaDiasAteMes(int mes, int ano);
 
 /**
+ * @brief Retorna a diferença (em dias) entre uma data e outra;
+ * 
+ * @param dia1 Dia da primeira data;
+ * @param mes1 Mês da primeira data;
+ * @param ano1 Ano da primeira data;
+ * @param dia2 Dia da segunda data;
+ * @param mes2 Mês da segunda data;
+ * @param ano2 Ano da segunda data;
+ * @return int Diferença (em número de dias) entre uma data e outra;
+ */
+int calculaDiferencaDias(int dia1, int mes1, int ano1, int dia2, int mes2, int ano2);
+
+/**
  * @brief Imprime o nome de um mês por extenso;
  * 
  * @param mes Mês da data referenciada;
