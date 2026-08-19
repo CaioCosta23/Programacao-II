@@ -16,6 +16,12 @@ Data leData(){
     return data;
 }
 
+/**
+ * @brief Programa que recebe duas datas, imprime as duas datas, verifica qual é a mais antiga ou se as duas são iguais,
+ * a diferença(em dias) entre uma data e outra;
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     Data data1, data2;
 
