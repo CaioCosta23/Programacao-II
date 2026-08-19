@@ -77,7 +77,7 @@ void imprimeMesExtenso(int mes);
  * @param mes Mês da data;
  * @param ano Ano da data;
  */
-void imprimeData(int dia, int mes, int ano);
+void imprimeDataExtenso(int dia, int mes, int ano);
 
 /**
  * @brief Imprime a próxima data (no formato "dd/mm/AAAA");
