@@ -51,6 +51,13 @@ float convert_fahrenheit_to_celsius(float temperature);
  */
 float convert_fahrenheit_to_kelvin(float temperature);
 
+/**
+ * @brief Converte uma temperatura para outra;
+ * 
+ * @param temperature emperatura a ser convertida;
+ * @param convert_func Função de especificação de quel tipo de conversão será feita;
+ * @return float Temperatura convertida de uma escala para outra;
+ */
 float convert_temperature(float temperature, float convert_func(float temperature));
 
 #endif
