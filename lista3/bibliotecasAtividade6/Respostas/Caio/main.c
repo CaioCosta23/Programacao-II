@@ -7,6 +7,11 @@
 #define FAHRENHEINT 'f'
 #define KELVIN 'k'
 
+/**
+ * @brief Programa que faz a conversão de uma escala de temperatura para oura (Kelvin, Celsius, Fahrenheit);
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     float temperatura;
     char escalaAlvo, escalaObjetivo;
