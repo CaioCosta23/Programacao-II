@@ -34,7 +34,7 @@ int main() {
 
     do {
         imprimirMenu();
-        scanf("%d", &opcao);
+        scanf("%hd", &opcao);
 
         switch(opcao) {
             case OBTER_TAMANHO:
