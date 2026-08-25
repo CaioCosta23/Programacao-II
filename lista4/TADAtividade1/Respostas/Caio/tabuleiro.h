@@ -29,15 +29,12 @@ tTabuleiro CriaTabuleiro();
 tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y);
 
 /**
- * @brief 
+ * @brief Verifica se existe posições livres no tabuleiro;
  * 
  * @param tabuleiro Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que possui os dados atualizados do tabuleiro;
- * @param peca Peça que representa o jogador;
- * @param x Coordenada X do tabuleiro;
- * @param y Coordenada Y do tabuleiro;
  * @return int 1 (verdadeiro) se tem osição livre no tabuleiro ou 0 (falso), caso contrário;
  */
-int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y);
+int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro);
 
 /**
  * @brief Verifica se a posição do tabuleiro está marcada;
@@ -51,7 +48,7 @@ int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y);
 int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca);
 
 /**
- * @brief 
+ * @brief Verifica se uma posição está livre no tabuleiro;
  * 
  * @param tabuleiro Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que possui os dados atualizados do tabuleiro;
  * @param x Coordenada X do tabuleiro;
