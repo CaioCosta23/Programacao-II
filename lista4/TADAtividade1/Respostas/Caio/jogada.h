@@ -40,6 +40,6 @@ int ObtemJogadaY(tJogada jogada) {
  * @param jogada tJogada Tipo Abstrato de Dado (T.A.D) estruturado que contém os atuais dados do tabuleiro do jogo;
  * @return int 1 (verdadeiro) se a jogada for bem sucedida, ou 0 (casonrário);
  */
-int FoiJOgadaBemSucedida(tJogada jogada);
+int FoiJogadaBemSucedida(tJogada jogada);
 
 #endif
