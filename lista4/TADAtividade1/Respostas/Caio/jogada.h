@@ -20,9 +20,7 @@ tJogada LeJogada();
  * @param jogada tJogada Tipo Abstrato de Dado (T.A.D) estruturado que contém os atuais dados do tabuleiro do jogo;
  * @return int valor do da coordenada X
  */
-int ObtemJogadaX(tJogada jogada) {
-    return jogada.x;
-}
+int ObtemJogadaX(tJogada jogada);
 
 /**
  * @brief Busca/Obtém o valor da coordenada Y no tabuleiro;
@@ -30,9 +28,7 @@ int ObtemJogadaX(tJogada jogada) {
  * @param jogada tJogada Tipo Abstrato de Dado (T.A.D) estruturado que contém os atuais dados do tabuleiro do jogo;
  * @return int valor de coordenda do jogo
  */
-int ObtemJogadaY(tJogada jogada) {
-    return jogada.x;
-}
+int ObtemJogadaY(tJogada jogada);
 
 /**
  * @brief Verifica se uma jogada foi bemsucedida;
