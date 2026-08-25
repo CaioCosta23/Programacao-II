@@ -15,7 +15,7 @@ int main() {
 
     do {
         ComecaJogo(jogo);
-    }while((!AcabouJogo(jogo)));
+    }while(ContinuaJogo(jogo));
 
     return 0;
 }
