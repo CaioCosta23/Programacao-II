@@ -15,7 +15,7 @@ typedef struct {
 tJogada LeJogada();
 
 /**
- * @brief 
+ * @brief Busca/Obtém o valor X de uma jogada no tabuleiro;
  * 
  * @param jogada tJogada Tipo Abstrato de Dado (T.A.D) estruturado que contém os atuais dados do tabuleiro do jogo;
  * @return int valor do da coordenada X
