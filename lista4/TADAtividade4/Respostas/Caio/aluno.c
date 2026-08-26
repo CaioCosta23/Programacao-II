@@ -58,7 +58,7 @@ int calculaMediaAluno(tAluno aluno) {
     return (aluno.n1 + aluno.n2 + aluno.n3) / quantidadeNotas;
 }
 
-int VerificaAprovacaoAluno(tAluno aluno) {
+int VerificaAprovacao(tAluno aluno) {
     const unsigned short int mediaAprovacao = 7;
 
     if (calculaMediaAluno(aluno) >= mediaAprovacao)
@@ -67,6 +67,6 @@ int VerificaAprovacaoAluno(tAluno aluno) {
     return 0;
 }
 
-void imprimeAluno(tAluno aluno) {
+void ImprimeAluno(tAluno aluno) {
     printf("%s\n", aluno.nome);
 }
