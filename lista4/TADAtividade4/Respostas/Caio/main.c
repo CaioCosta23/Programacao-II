@@ -42,7 +42,7 @@ int main() {
         alunos[a] = LeAluno();
     }
 
-    OrdenaAlunos(alunos, quantidadeAlunos);
+    ordenaAlunos(alunos, quantidadeAlunos);
 
     for(a = 0; a < quantidadeAlunos; a++) {
         if (VerificaAprovacao(alunos[a]))
