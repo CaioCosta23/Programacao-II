@@ -3,8 +3,26 @@
 
 #include "aluno.h"
 
+// Função auxiliar para copiar um nome (apenas para não utilizar a biblioteca <string.h> com a função strcpy(destino, origem), que tanbém copia uma string para outra);
+static void copiaNome(tAluno aluno, char nome[]) {
+    unsigned int indice = 0;
+
+    do {
+        aluno.nome[indice] = nome[indice];
+        indice++;
+    }while(nome[indice] != 0);
+}
+
 tAluno CriaAluno(char nome[], int matricula, int n1, int n2, int n3) {
     tAluno aluno;
+
+    copiaNome(aluno, nome);
+    aluno.matricula = matricula;
+    aluno.n1 = n1;
+    aluno.n2 = n2;
+    aluno.n3 = n3;
+
+    return aluno;
 }
 
 tAluno LeAluno() {
@@ -17,7 +35,7 @@ tAluno LeAluno() {
     unsigned short int n1, n2, n3;
 
     scanf("%49s\n", nome);
-    scanf("%d\n", matricula);
+    scanf("%d\n", &matricula);
     scanf("%hd %hd %hd\n", &n1, &n2, &n3);
 
     aluno = CriaAluno(nome, matricula, n1, n2, n3);
