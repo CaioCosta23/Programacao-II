@@ -48,13 +48,13 @@ int calculaMediaAluno(tAluno aluno);
  * @param aluno Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados do aluno a ser verifcada a aprovação;
  * @return int 1 (verdadeiro) se o aluno foi aprovado ou 0 (falso), caso contrário;
  */
-int VerificaAprovacaoAluno(tAluno aluno);
+int VerificaAprovacao(tAluno aluno);
 
 /**
  * @brief Imprime os dados de um aluno;
  * 
  * @param aluno Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados do aluno;
  */
-void imprimeAluno(tAluno aluno);
+void ImprimeAluno(tAluno aluno);
 
 #endif
