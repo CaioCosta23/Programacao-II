@@ -7,7 +7,7 @@ typedef struct Aluno {
 } tAluno;
 
 /**
- * @brief 
+ * @brief Cria um aluno com os dados passados como parâmetro;
  * 
  * @param nome Nome do aluno;
  * @param matricula Número (ou ID - Identificador) da matrícula do aluno;
