@@ -91,7 +91,8 @@ int ObtemNumeroConta(tConta conta) {
  * @return tConta Conta procurada (caso a mesma tenha sido achada) ou uma conta com valores inicialiados (caso a conta procurada não tenha sido achada);
  */
 tConta BuscaConta(tConta contas[], int quantidadeContas) {
-    tConta conta = {-1, NULL, -1};
+    tUsuario usuario = {"", ""};
+    tConta conta = {-1, usuario, -1};
     int c;
                 
     for(c = 0; c < quantidadeContas; c++) {
@@ -123,6 +124,7 @@ int main() {
     unsigned int quantidadeMaximaContas, operacao;
     unsigned int quantidadeContas = 0;
     unsigned short encerrar = 0;
+    tConta conta;
 
     scanf("%d\n", &quantidadeMaximaContas);
 
@@ -136,8 +138,6 @@ int main() {
                 encerrar = 1;
                 break;
             case SAQUE:
-                tConta conta;
-
                 conta = BuscaConta(contas, quantidadeContas);
 
                 if (ObtemNumeroConta(conta) != -1)
@@ -145,8 +145,6 @@ int main() {
 
                 break;
             case DEPOSITO:
-                tConta conta;
-
                 conta = BuscaConta(contas, quantidadeContas);
 
                 if (ObtemNumeroConta(conta) != -1)
