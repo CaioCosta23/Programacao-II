@@ -12,6 +12,21 @@
 #define TAMANHO_MAXIMO_NOME 20
 #define TAMANHO_MAXIMO_CPF 15
 
+#define NAO_EXISTE -1
+
+/**
+ * @brief Lê o número de uma conta;
+ * 
+ * @return int Número lido que será colocado na conta;
+ */
+int LeNumeroConta() {
+    int numeroConta;
+
+    scanf("%d", &numeroConta);
+
+    return numeroConta;
+}
+
 /**
  * @brief Lê um valor (real);
  * 
@@ -47,30 +62,14 @@ tUsuario LeUsuario() {
  * @return tConta Tipo de Dados Abstrato (T.A.D.) que representa a estrutura que contém os dados inicializados de uma conta;
  */
 tConta LeConta() {
-    int numeroConta;
     tUsuario usuario;
     tConta conta;
                 
     usuario = LeUsuario();
 
-    scanf("%d\n", &numeroConta);
-
-    conta = CriaConta(numeroConta, usuario);
+    conta = CriaConta(LeNumeroConta(), usuario);
 
     return conta;
-}
-
-/**
- * @brief Lê o número de uma conta;
- * 
- * @return int Número lido que será colocado na conta;
- */
-int LeNumeroConta() {
-    int numeroConta;
-
-    scanf("%d\n", &numeroConta);
-
-    return numeroConta;
 }
 
 /**
@@ -88,21 +87,23 @@ int ObtemNumeroConta(tConta conta) {
  * 
  * @param contas Lista de estruturas abstratas de dados do tipo conta (com todos os seus dados atualizados);
  * @param quantidadeContas Quantidade de contas na lista/vetor/array;
- * @return tConta Conta procurada (caso a mesma tenha sido achada) ou uma conta com valores inicialiados (caso a conta procurada não tenha sido achada);
+ * @return int Índice da posição da conta achada (e caso não seja encontrada, retorna um valor negativo para indicar que a conta não foi encontrada);
  */
-tConta BuscaConta(tConta contas[], int quantidadeContas) {
-    tUsuario usuario = {"", ""};
-    tConta conta = {-1, usuario, -1};
-    int c;
+int BuscaConta(tConta contas[], int quantidadeContas) {
+    int c, numero;
+    int posicao = NAO_EXISTE;
+
+    numero = LeNumeroConta();
                 
     for(c = 0; c < quantidadeContas; c++) {
-        if (VerificaConta(contas[c], LeNumeroConta())){
-            conta = contas[c];
+        //printf("Numero: %d - Conta: %d\n", numero, contas[c].numero);
+        if (VerificaConta(contas[c], numero)){
+            posicao = c;
             break;
         }
     }
-
-    return conta;
+    //printf("Result: %d\n", posicao);
+    return posicao;
 }
 
 /**
@@ -111,7 +112,7 @@ tConta BuscaConta(tConta contas[], int quantidadeContas) {
  * @param contas Lista de estruturas abstratas de dados do tipo conta (com todos os seus dados atualizados);
  * @param quantidadeContas Quantidade de contas que a lista/vetor/array possui;
  */
-static void ImprimeListaContas(tConta contas[], int quantidadeContas) {
+void ImprimeListaContas(tConta contas[], int quantidadeContas) {
     int c;
 
     for(c = 0; c < quantidadeContas; c++) {
@@ -124,31 +125,31 @@ int main() {
     unsigned int quantidadeMaximaContas, operacao;
     unsigned int quantidadeContas = 0;
     unsigned short encerrar = 0;
-    tConta conta;
+    int posicao;
 
     scanf("%d\n", &quantidadeMaximaContas);
 
     tConta contas[quantidadeMaximaContas];
 
     while(1) {
-        scanf("%d", &operacao);
+        scanf("%d\n", &operacao);
 
         switch(operacao) {
             case SAIR:
                 encerrar = 1;
                 break;
             case SAQUE:
-                conta = BuscaConta(contas, quantidadeContas);
+                posicao = BuscaConta(contas, quantidadeContas);
 
-                if (ObtemNumeroConta(conta) != -1)
-                    SaqueConta(conta, LeValor());
+                if (posicao != NAO_EXISTE)
+                    contas[posicao] = SaqueConta(contas[posicao], LeValor());
 
                 break;
             case DEPOSITO:
-                conta = BuscaConta(contas, quantidadeContas);
+                posicao = BuscaConta(contas, quantidadeContas);
 
-                if (ObtemNumeroConta(conta) != -1)
-                    DepositoConta(conta, LeValor());
+                if (posicao != NAO_EXISTE)
+                    contas[posicao] = DepositoConta(contas[posicao], LeValor());
                 break;
 
             case CADASTRO:
