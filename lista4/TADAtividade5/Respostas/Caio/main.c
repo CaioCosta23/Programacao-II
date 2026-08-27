@@ -120,7 +120,11 @@ void ImprimeListaContas(tConta contas[], int quantidadeContas) {
     }
 }
 
-
+/**
+ * @brief Programa que simula um caixa eletronico (cadastro, depósito, saque, extrato/relatório);
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     unsigned int quantidadeMaximaContas, operacao;
     unsigned int quantidadeContas = 0;
