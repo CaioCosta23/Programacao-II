@@ -98,13 +98,23 @@ int CalculaDiferencaDias(tData data1, tData data2) {
 
     comparacaoData = ComparaData(data1, data2);
 
-    if (comparacaoData == 1) {
-        while((data2.dia != data1.dia) || (data2.mes != data1.mes) || (data2.ano != data1.ano)) {
-            diferenca += 1;
-        }
-    }else if (comparacaoData == -1) {
-        while((data1.dia != data2.dia) || (data1.mes != data2.mes) || (data1.ano != data2.ano)) {
-            diferenca += 1;
+    if (comparacaoData != 0){
+        tData dataAuxiliar;
+
+        if (comparacaoData == 1) {
+            dataAuxiliar = CriaData(data2.dia, data2.mes, data2.ano);
+
+            while((data2.dia != data1.dia) || (dataAuxiliar.mes != data1.mes) || (dataAuxiliar.ano != data1.ano)) {
+                dataAuxiliar = AvancaDiaData(dataAuxiliar);
+                diferenca += 1;
+            }
+        }else if (comparacaoData == -1) {
+            dataAuxiliar = CriaData(data1.dia, data1.mes, data1.ano);
+
+            while((dataAuxiliar.dia != data2.dia) || (dataAuxiliar.mes != data2.mes) || (dataAuxiliar.ano != data2.ano)) {
+                dataAuxiliar = AvancaDiaData(dataAuxiliar);
+                diferenca += 1;
+            }
         }
     }else {
         /*
