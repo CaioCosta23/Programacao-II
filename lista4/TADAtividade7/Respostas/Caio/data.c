@@ -172,7 +172,7 @@ void ImprimeMesExtenso(tData data) {
 }
 
 void ImprimeDataExtenso(tData data) {
-    printf("%02d ", data.dia);
+    printf("%02d de ", data.dia);
     ImprimeMesExtenso(data);
-    printf(" %04d\n", data.ano);
+    printf(" de %04d\n", data.ano);
 }
