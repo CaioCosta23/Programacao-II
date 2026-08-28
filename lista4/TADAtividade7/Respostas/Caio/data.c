@@ -85,7 +85,7 @@ int ComparaData(tData data1, tData data2) {
         else
             return -1;
     else
-        return 0;
+        return -1;
 }
 
 int CalculaDiasAteMes(tData data) {
@@ -117,7 +117,6 @@ int CalculaDiferencaDias(tData data1, tData data2) {
             }
         }
     }else {
-        printf("Entrou");
         /*
          * Neste caso, não há necessidade de preocupação de tamanho (por atribuir um 'short int' a um 'int'), uma vez que sabemos que somente há
          * 3 possibilidade de resultaos para um compara data (-1, 0 ou 1) e naturalmente o valor 0 será a mesma coisa que a diferença de dias entre 
