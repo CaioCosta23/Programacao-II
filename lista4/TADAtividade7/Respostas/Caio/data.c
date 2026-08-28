@@ -50,7 +50,7 @@ tData CriaData(int dia, int mes, int ano) {
 }
 
 int VerificaDataValida(tData data) {
-    return (((data.dia > 0) && (data.dia < NumeroDiasMes(data))) && ((data.mes > 0) && (data.mes < NUMERO_MESES_ANO)));
+    return (((data.dia > 0) && (data.dia <= NumeroDiasMes(data))) && ((data.mes > 0) && (data.mes <= NUMERO_MESES_ANO)));
 }
 
 int VerificaBissexto(tData data) {
