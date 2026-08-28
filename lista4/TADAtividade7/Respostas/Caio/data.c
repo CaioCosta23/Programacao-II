@@ -73,7 +73,7 @@ int ComparaData(tData data1, tData data2) {
     if (data1.ano > data2.ano)
         return 1;
     else if (data1.ano == data2.ano)
-        if (data2.mes > data2.mes)
+        if (data1.mes > data2.mes)
             return 1;
         else if (data1.mes == data2.mes)
             if (data1.dia > data2.dia)
