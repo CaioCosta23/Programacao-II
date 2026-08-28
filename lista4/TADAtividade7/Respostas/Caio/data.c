@@ -164,7 +164,7 @@ void ImprimeMesExtenso(tData data) {
             printf("Novembro");
             break;
         case DEZEMBRO:
-            printf("Dezemmbro");
+            printf("Dezembro");
             break;
         default:
             printf("Erro! Mes inexistente/ data invalida.");
