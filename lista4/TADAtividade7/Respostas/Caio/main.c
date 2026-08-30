@@ -13,7 +13,7 @@ tData leData() {
     int ano;
     tData data;
 
-    scanf("%02hd/%02hd/%04d\n", dia, mes, ano);
+    scanf("%02hd/%02hd/%04d\n", &dia, &mes, &ano);
 
     data = CriaData(dia, mes, ano);
 
