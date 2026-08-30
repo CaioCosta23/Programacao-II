@@ -47,19 +47,20 @@ int main() {
                 ImprimeDataExtenso(data2);
                 printf("Segunda data: ");
                 ImprimeDataExtenso(data1);
-                printf("A primeira data eh mais antiga\n");
+                printf("A segunda data eh mais antiga\n");
             }else if (comparacaoData == -1) {
                 ImprimeDataExtenso(data1);
                 printf("Segunda data: ");
                 ImprimeDataExtenso(data2);
-                printf("A segunda data eh mais antiga\n");
+                printf("A primeira data eh mais antiga\n");
             }
         }else {
+            ImprimeDataExtenso(data1);
             printf("Segunda data: ");
             ImprimeDataExtenso(data2);
             printf("As datas sao iguais\n");
         }
-        printf("A diferenca em dias entre as datas eh: %d dias\n", CalculaDiferencaDias(data1, data2));
+        printf("A diferenca em dias entre as datas eh: %02d dias\n", CalculaDiferencaDias(data1, data2));
     }
 
     return 0;
