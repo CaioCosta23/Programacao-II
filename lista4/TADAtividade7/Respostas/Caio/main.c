@@ -22,9 +22,10 @@ tData leData() {
 
 
 /**
- * @brief 
+ * @brief Programa que lê datas, informa qual é mais antiga e qual é mais atual, imprime-as na tela
+ * e informa a diferença (em dias) entre as datas;
  * 
- * @return int 
+ * @return int Programa principal;
  */
 int main() {
     tData data1, data2;
