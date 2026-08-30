@@ -36,7 +36,7 @@ int main() {
     if ((!(VerificaDataValida(data1))) || (!(VerificaDataValida(data2)))) {
         printf("A primeira e/ou segunda data(s) invalida(s)\n");
     }else {
-        unsigned short int comparacaoData;
+        short int comparacaoData;
 
         comparacaoData = ComparaData(data1, data2);
 
