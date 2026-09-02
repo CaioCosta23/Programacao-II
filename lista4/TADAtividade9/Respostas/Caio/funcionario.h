@@ -27,7 +27,7 @@ tFuncionario leFuncionario();
  * 
  * @param funcionario Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que possui as informações de um funcionário;
  */
-int getIdFuncionário(tFuncionario funcionario);
+int getIdFuncionario(tFuncionario funcionario);
 
 /**
  * @brief Imprime todos os dados de um funcionário;
