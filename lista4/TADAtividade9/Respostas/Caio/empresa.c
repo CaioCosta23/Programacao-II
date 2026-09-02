@@ -12,6 +12,7 @@ static int verificaFuncionario(tEmpresa empresa, tFuncionario funcionario) {
     for(f = 0; f < empresa.qtdFuncionarios; f++) {
         if (getIdFuncionario(empresa.funcionarios[f]) == getIdFuncionario(funcionario)) {
             jaExiste = 1;
+            break;
         }
     }
     return jaExiste;
