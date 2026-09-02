@@ -46,10 +46,10 @@ tEmpresa leEmpresa() {
 }
 
 tEmpresa contrataFuncionarioEmpresa(tEmpresa empresa, tFuncionario funcionario) {
-    if (verificaFuncionario(empresa, funcionario))
+    if (!(verificaFuncionario(empresa, funcionario)))
         empresa.funcionarios[empresa.qtdFuncionarios++] = funcionario;
     else
-        printf("A empresa %d ja possui um funcionario com o id %d", empresa.id, getIdFuncionario(funcionario));
+        printf("A empresa %d ja possui um funcionario com o id %d\n", empresa.id, getIdFuncionario(funcionario));
 
     return empresa;
 }
@@ -57,7 +57,7 @@ tEmpresa contrataFuncionarioEmpresa(tEmpresa empresa, tFuncionario funcionario) 
 void imprimeEmpresa(tEmpresa empresa) {
     int f;
 
-    printf("Empresa %d", empresa.id);
+    printf("Empresa %d:\n", empresa.id);
 
     for(f = 0; f < empresa.qtdFuncionarios; f++) {
         imprimeFuncionario(empresa.funcionarios[f]);
