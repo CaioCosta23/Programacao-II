@@ -47,6 +47,8 @@ tEmpresa leEmpresa() {
 tEmpresa contrataFuncionarioEmpresa(tEmpresa empresa, tFuncionario funcionario) {
     if (verificaFuncionario(empresa, funcionario))
         empresa.funcionarios[empresa.qtdFuncionarios++] = funcionario;
+    else
+        printf("A empresa %d ja possui um funcionario com o id %d", empresa.id, getIdFuncionario(funcionario));
 
     return empresa;
 }
