@@ -47,14 +47,26 @@ tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int
     copiaString(c3, departamento.c3);
     copiaString(nome, departamento.nome);
     copiaString(diretor, departamento.diretor);
-    departamento.m1 = m1;
-    departamento.m2 = m2;
-    departamento.m3 = m3;
+
+    if (validaMediaDepartamento(m1))
+        departamento.m1 = m1;
+    else
+        departamento.m1 = 0;
+    
+    if (validaMediaDepartamento(m2))
+        departamento.m2 = m2;
+    else
+        departamento.m2 = 0;
+    
+    if (validaMediaDepartamento(m3))
+        departamento.m3 = m3;
+    else
+        departamento.m3 = 0;
 
     return departamento;
 }
 
-int valorMediaDepartamento(int media) {
+int validaMediaDepartamento(int media) {
     return ((media >= 0) && (media <= 10));
 }
 
