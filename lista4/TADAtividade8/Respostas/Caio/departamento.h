@@ -55,7 +55,7 @@ double calculaMediaGeralDepartamento(tDepartamento depto);
  * @param d Lista/vetor/array de Tipos Abstratos de Dados (T.A.D.s) que representam uma lista de estruturas de dados que contém as informações de departamentos;
  * @param tamanho Tamanho da lista/vetor/array de departamentos;
  */
-void oredenaPorMediaDepartamentos(tDepartamento d[], int tamanho);
+void ordenaPorMediaDepartamentos(tDepartamento d[], int tamanho);
 
 /**
  * @brief Imprime as informações de um departamento;
