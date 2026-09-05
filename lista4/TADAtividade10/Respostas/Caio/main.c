@@ -12,8 +12,10 @@
 void imprimeMenu() {
     printf("Lista de operacoes:\n");
     printf("1 - Cadastrar livros.\n");
-    printf("2 - Remoover livros.\n");
-    printf("3 - Listar todos os livros cadastrados\n");
+    printf("2 - Remover livros.\n");
+    printf("3 - Listar todos os livros cadastrados.\n");
+
+    printf("\n");
 }
 
 int main() {
@@ -25,24 +27,26 @@ int main() {
 
     scanf("%d\n", &quantidadeOperacoes);
 
+    imprimeMenu();
+
     for(o = 0; o < quantidadeOperacoes; o++) {
-        imprimeMenu();
-        
-        scanf("%d", &opcao);
+
+        scanf("%hd\n", &opcao);
 
         switch(opcao) {
             case CADASTRAR:
-                biblioteca = adicionarLivrosNaBiblioteca(biblioteca, lerLivro());
+                biblioteca = adicionarLivroNaBiblioteca(biblioteca, lerLivro());
                 break;
             case REMOVER:
                 char titulo[MAX_CARACTERES];
                 
                 scanf("%[^\n]\n", titulo);
                 
-                biblioteca = removerLivroNaBiblioteca(biblioteca, titulo);
+                biblioteca = removerLivroDaBiblioteca(biblioteca, titulo);
                 break;
             case LISTAR:
                 listarLivrosDaBiblioteca(biblioteca);
+                break;
             default:
                 printf("Erro! A opcao digitada eh invalida.\n");
                 break;
