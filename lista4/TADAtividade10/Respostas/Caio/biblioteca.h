@@ -24,7 +24,7 @@ tBiblioteca inicializarBiblioteca();
  * @param livro Tipo Abstrato de Dados (T.A.D) que representa a estrutura que contém as informações de um livro (com dados atuaizados);
  * @return tBiblioteca Tipo Abstrato de Dados (T.A.D) que representa a estrutura que contém as informações de uma biblioteca, com o livro já adicionado a lista (de livros) da biblioteca;
  */
-tBiblioteca adicionarLivrosNaBiblioteca(tBiblioteca biblioteca, tLivros livro);
+tBiblioteca adicionarLivroNaBiblioteca(tBiblioteca biblioteca, tLivros livro);
 
 /**
  * @brief  Remove um livro (caso o mesmo exista) da lista (de livros) da biblioteca;
@@ -33,7 +33,7 @@ tBiblioteca adicionarLivrosNaBiblioteca(tBiblioteca biblioteca, tLivros livro);
  * @param titulo Título do livro que será removido da biblioteca;
  * @return tBiblioteca Tipo Abstrato de Dados (T.A.D) que representa a estrutura que contém as informações de uma biblioteca com o livro que contém o título citado (caso exista na biblioteca) remoido da lista (de livros);
  */
-tBiblioteca removerLivroNaBiblioteca(tBiblioteca biblioteca, char titulo[]);
+tBiblioteca removerLivroDaBiblioteca(tBiblioteca biblioteca, char titulo[]);
 
 /**
  * @brief Verifica se um livroé o mesmo que o citado pelo título;
