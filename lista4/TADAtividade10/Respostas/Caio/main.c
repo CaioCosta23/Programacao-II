@@ -22,6 +22,7 @@ int main() {
     int quantidadeOperacoes, o;
     unsigned short int opcao;
     tBiblioteca biblioteca;
+    unsigned short int encerrar = 0; // Variável lógica que indica se o programa deve ser encerrado precocemente;
 
     biblioteca = inicializarBiblioteca();
 
@@ -48,8 +49,13 @@ int main() {
                 listarLivrosDaBiblioteca(biblioteca);
                 break;
             default:
-                printf("Erro! A opcao digitada eh invalida.\n");
+                printf("Operacao invalida!\n");
+                encerrar = 1;
                 break;
+        }
+
+        if (encerrar) {
+            break;
         }
     }
 
