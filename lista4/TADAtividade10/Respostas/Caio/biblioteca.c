@@ -23,6 +23,7 @@ static int stringsIguais(char origem[], char comparado[]) {
         if ((origem[indice] == '\0') || (comparado[indice] == '\0'))
             break;
         
+        indice++;
     }
     return iguais;
 }
@@ -55,7 +56,6 @@ static tBiblioteca ordenaLivrosBiblioteca(tBiblioteca biblioteca, int indiceLivr
     for(l = indiceLivro; l < (biblioteca.tamanho - 1); l++) {
         trocaPosicoes(biblioteca.livros, l, (l + 1));
     }
-    biblioteca.tamanho--;
 
     return biblioteca;
 }
@@ -69,13 +69,6 @@ tBiblioteca inicializarBiblioteca() {
     return biblioteca;
 }
 
-/**
- * @brief Adiciona um livro na lista (de livros) da biblioteca;
- * 
- * @param biblioteca Tipo Abstrato de Dados (T.A.D) que representa a estrutura que contém as informações de uma biblioteca (com dados atualizados);
- * @param livro Tipo Abstrato de Dados (T.A.D) que representa a estrutura que contém as informações de um livro (com dados atuaizados);
- * @return tBiblioteca Tipo Abstrato de Dados (T.A.D) que representa a estrutura que contém as informações de uma biblioteca, com o livro já adicionado a lista (de livros) da biblioteca;
- */
 tBiblioteca adicionarLivroNaBiblioteca(tBiblioteca biblioteca, tLivros livro) {
     unsigned short int l;
 
@@ -128,7 +121,12 @@ int verificaTituloDoLivroNaBiblioteca(tLivros livro, char titulo[]){
 void listarLivrosDaBiblioteca(tBiblioteca biblioteca) {
     unsigned short int l;
 
-    for(l = 0; l < biblioteca.tamanho; l++) {
-        imprimeLivro(biblioteca.livros[l]);
+    if (biblioteca.tamanho > 0){
+        printf("\nLista de Livros na Biblioteca:\n");
+        for(l = 0; l < biblioteca.tamanho; l++) {
+            imprimeLivro(biblioteca.livros[l]);
+        }
+    }else {
+        printf("A biblioteca esta vazia!\n");
     }
 }
