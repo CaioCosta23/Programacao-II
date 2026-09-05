@@ -8,7 +8,7 @@ tLivros lerLivro() {
 
     scanf("%[^\n]\n", livro.titulo);
     scanf("%[^\n]\n", livro.autor);
-    scanf("%d\n", livro.anoPublicacao);
+    scanf("%d\n", &livro.anoPublicacao);
 
     return livro;
 }
