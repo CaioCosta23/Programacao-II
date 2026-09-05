@@ -25,7 +25,7 @@ tDepartamento leDepartamento() {
 int main() {
     int quantidadeDepartamentos, d;
     
-    scanf("%d", &quantidadeDepartamentos);
+    scanf("%d\n", &quantidadeDepartamentos);
 
     tDepartamento departamentos[quantidadeDepartamentos];
 
@@ -33,7 +33,7 @@ int main() {
         departamentos[d] = leDepartamento();
     }
 
-    oredenaPorMediaDepartamentos(departamentos, quantidadeDepartamentos);
+    ordenaPorMediaDepartamentos(departamentos, quantidadeDepartamentos);
 
     for(d = 0; d < quantidadeDepartamentos; d++) {
         imprimeAtributosDepartamento(departamentos[d]);
