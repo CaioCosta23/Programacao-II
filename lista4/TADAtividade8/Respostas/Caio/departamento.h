@@ -23,7 +23,7 @@ typedef struct Departamento {
  * @param diretor Nome do diretor do departamento;
  * @return tDepartamento Tipo Abstrato de Dados (T.A.D.) que representa a estrutura com os dados do departamento com informações inicializadas; 
  */
-tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[STRING_MAX], int m1, int m2, int m3, char diretor[]);
+tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int m1, int m2, int m3, char diretor[]);
 
 /**
  * @brief Verifica se a média de um departamento tem valor válido;
