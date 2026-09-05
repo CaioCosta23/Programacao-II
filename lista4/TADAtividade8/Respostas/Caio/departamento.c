@@ -72,10 +72,11 @@ int validaMediaDepartamento(int media) {
 
 double calculaDesvioPadraoDepartamento(tDepartamento depto) {
     double media;
+    const unsigned short int quantidadeCursos = 3;
 
     media = calculaMediaGeralDepartamento(depto);
 
-    return sqrt((pow((depto.m1 - media), 2)) + (pow((depto.m2 - media), 2)) + (pow((depto.m3 - media), 2)));
+    return sqrt(((pow(((double)depto.m1 - media), 2)) + (pow(((double)depto.m2 - media), 2)) + (pow(((double)depto.m3 - media), 2))) / quantidadeCursos);
 }
 
 double calculaMediaGeralDepartamento(tDepartamento depto) {
@@ -106,4 +107,6 @@ void imprimeAtributosDepartamento(tDepartamento depto) {
     printf("curso3 => %s, media3 => %d\n", depto.c3, depto.m3);
     printf("media geral => %.2lf\n", calculaMediaGeralDepartamento(depto));
     printf("desvio padrao => %.2lf\n", calculaDesvioPadraoDepartamento(depto));
+
+    printf("\n");
 }
