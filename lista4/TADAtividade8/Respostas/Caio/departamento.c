@@ -104,6 +104,6 @@ void imprimeAtributosDepartamento(tDepartamento depto) {
     printf("curso1 => %s, media1 => %d\n", depto.c1, depto.m1);
     printf("curso2 => %s, media2 => %d\n", depto.c2, depto.m2);
     printf("curso3 => %s, media3 => %d\n", depto.c3, depto.m3);
-    printf("media geral => %.2lf", calculaMediaGeralDepartamento(depto));
-    printf("desvio padrao => %.2lf", calculaDesvioPadraoDepartamento(depto));
+    printf("media geral => %.2lf\n", calculaMediaGeralDepartamento(depto));
+    printf("desvio padrao => %.2lf\n", calculaDesvioPadraoDepartamento(depto));
 }
