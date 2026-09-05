@@ -31,7 +31,7 @@ tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int
  * @param media Média de um departamento;
  * @return int 1 (verdadeiro) se a média for válida ou 0 (falso), caos contrário;
  */
-int valorMediaDepartamento(int media);
+int validaMediaDepartamento(int media);
 
 /**
  * @brief Calcula o desvio padrão da média das notas de um departamento;
