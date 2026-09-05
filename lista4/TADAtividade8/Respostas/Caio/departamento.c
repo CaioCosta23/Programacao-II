@@ -41,7 +41,8 @@ static void trocaPosicoes(tDepartamento lista[], int indice1, int indice2) {
 
 tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int m1, int m2, int m3, char diretor[]) {
     tDepartamento departamento;
-    
+    double media;
+
     copiaString(c1, departamento.c1);
     copiaString(c2, departamento.c2);
     copiaString(c3, departamento.c3);
@@ -62,6 +63,13 @@ tDepartamento criaDepartamento(char c1[], char c2[], char c3[], char nome[], int
         departamento.m3 = m3;
     else
         departamento.m3 = 0;
+    
+    media = calculaMediaGeralDepartamento(departamento);
+
+    if (validaMediaDepartamento(media))
+        departamento.media_geral = media;
+    else
+        departamento.media_geral = 0;
 
     return departamento;
 }
@@ -71,12 +79,9 @@ int validaMediaDepartamento(int media) {
 }
 
 double calculaDesvioPadraoDepartamento(tDepartamento depto) {
-    double media;
     const unsigned short int quantidadeCursos = 3;
 
-    media = calculaMediaGeralDepartamento(depto);
-
-    return sqrt(((pow(((double)depto.m1 - media), 2)) + (pow(((double)depto.m2 - media), 2)) + (pow(((double)depto.m3 - media), 2))) / quantidadeCursos);
+    return sqrt(((pow(((double)depto.m1 - depto.media_geral), 2)) + (pow(((double)depto.m2 - depto.media_geral), 2)) + (pow(((double)depto.m3 - depto.media_geral), 2))) / quantidadeCursos);
 }
 
 double calculaMediaGeralDepartamento(tDepartamento depto) {
@@ -87,12 +92,10 @@ double calculaMediaGeralDepartamento(tDepartamento depto) {
 
 void ordenaPorMediaDepartamentos(tDepartamento d[], int tamanho) {
     int d1, d2;
-    double mediaReferencia;
 
-    for(d1 = 0; d1 < tamanho - 1; d1++) {
-        mediaReferencia = calculaMediaGeralDepartamento(d[d1]);
+    for(d1 = 0; d1 < (tamanho - 1); d1++) {
         for(d2 = d1 + 1; d2 < tamanho; d2++) {
-            if (mediaReferencia < calculaMediaGeralDepartamento(d[d2]))
+            if (d[d1].media_geral < d[d2].media_geral)
                 trocaPosicoes(d, d1, d2);
         }
     }
@@ -105,7 +108,7 @@ void imprimeAtributosDepartamento(tDepartamento depto) {
     printf("curso1 => %s, media1 => %d\n", depto.c1, depto.m1);
     printf("curso2 => %s, media2 => %d\n", depto.c2, depto.m2);
     printf("curso3 => %s, media3 => %d\n", depto.c3, depto.m3);
-    printf("media geral => %.2lf\n", calculaMediaGeralDepartamento(depto));
+    printf("media geral => %.2lf\n", depto.media_geral);
     printf("desvio padrao => %.2lf\n", calculaDesvioPadraoDepartamento(depto));
 
     printf("\n");
