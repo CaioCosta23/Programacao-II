@@ -42,7 +42,7 @@ tBiblioteca removerLivroNaBiblioteca(tBiblioteca biblioteca, char titulo[]);
  * @param titulo Título do livro que será comparado com o título do outro;
  * @return int 1 (verdadeiro) se o título do livro for igual ao do citado ou 0 (falso) caso contrário;
  */
-int verificaTituoDoLivroNaBiblioteca(tLivros livro, char titulo[]);
+int verificaTituloDoLivroNaBiblioteca(tLivros livro, char titulo[]);
 
 /**
  * @brief Lista os dados de uma biblioteca;
