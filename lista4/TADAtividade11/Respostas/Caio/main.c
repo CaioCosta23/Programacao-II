@@ -67,7 +67,7 @@ int main() {
                 scanf("%s %f %f\n", nome, &salario, &porcentagemComissao);
                 scanf("%d\n", &idLoja);
 
-                posicaoBuscada = encontraPosicaoLoja(lojas, (posicaoLoja + 1), idLoja);
+                posicaoBuscada = encontraPosicaoLoja(lojas, posicaoLoja, idLoja);
                 
                 if (posicaoBuscada >= 0)
                     lojas[posicaoBuscada] = ContrataVendedor(lojas[posicaoBuscada], RegistraVendedor(nome,salario, porcentagemComissao));
@@ -78,7 +78,7 @@ int main() {
 
                 scanf("%d %s %f\n", &idLoja, nome, &valorVenda);
 
-                posicaoBuscada = encontraPosicaoLoja(lojas, (posicaoLoja + 1), idLoja);
+                posicaoBuscada = encontraPosicaoLoja(lojas, posicaoLoja, idLoja);
                 
                 if (posicaoBuscada >= 0)
                     lojas[posicaoBuscada] = RegistraVenda(lojas[posicaoBuscada], nome, valorVenda);
@@ -87,7 +87,7 @@ int main() {
             case RELATORIO_GERAL:
                 int l;
 
-                for(l = 0; l <= posicaoLoja; l++) {
+                for(l = 0; l < posicaoLoja; l++) {
                     lojas[l] = CalculaLucro(lojas[l]);
                     ImprimeRelatorioLoja(lojas[l]);
                 }
