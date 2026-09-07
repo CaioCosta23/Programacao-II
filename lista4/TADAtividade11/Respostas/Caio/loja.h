@@ -30,6 +30,16 @@ tLoja AbreLoja(int id, float aluguel);
 int VerificaIdLoja(tLoja loja, int id);
 
 /**
+ * @brief Registra uma nova venda de um vendedor da loja;
+ * 
+ * @param loja Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações de uma loja (atualizada);
+ * @param nome Nome do vendedor no qual será regsitrado a venda;
+ * @param valor Valor da venda;
+ * @return tLoja Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações de uma loja  com as informações da venda adicionadas ao vendedor que a realizou;
+ */
+tLoja RegistraVenda(tLoja loja, char nome[50], float valor);
+
+/**
  * @brief Registra um vendedor na loja;
  * 
  * @param loja Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações de uma loja (atualizada);
