@@ -8,20 +8,20 @@
  * 
  * @param vendedores Lista/Vetor/'Array' de Tipos Abstratos de Dados (T.A.D.s) que represrntam as estruturas que contém as informações de um vendedores (com dados atuallizados);
  * @param totalVendedores Total da vendedores em uma loja;
- * @param vendedor Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações de um vendedor (com dados atuallizados);
- * @return unsigned short int 1 (vedadeiro) se o vendedor está presente na lista de vendedores ou 0 (falso), caso contrário;
+ * @param nome Nome do vendedor procurado na lista de vendedores da loja;
+ * @return short int Índice da posição do vendedor se o mesmo estiver presente na lista de vendedores ou -1, caso contrário;
  */
-static unsigned short int encontraVendedor(tVendedor vendedores[], int totalVendedores, tVendedor vendedor) {
-    unsigned short int encontrado = 0; // Variável lógica;
+static short int encontraPosicaoVendedor(tVendedor vendedores[], int totalVendedores, char nome[]) {
+    short int posicao = -1;
     int v;
 
     for(v = 0; v < totalVendedores; v++) {
-        if (VerificaNomeVendedor(vendedores[v], vendedor.nome)){
-            encontrado = 1;
+        if (VerificaNomeVendedor(vendedores[v], nome)){
+            posicao = v;
             break;
         }
     }
-    return encontrado;
+    return posicao;
 }
 
 tLoja AbreLoja(int id, float aluguel) {
@@ -39,8 +39,19 @@ int VerificaIdLoja(tLoja loja, int id) {
     return (loja.id == id);
 }
 
+tLoja RegistraVenda(tLoja loja, char nome[50], float valor) {
+    short int posicao;
+
+     posicao = encontraPosicaoVendedor(loja.vendedores, loja.totalVendedores, nome);
+
+    if (posicao >= 0)
+        loja.vendedores[posicao] = ContabilizaVenda(loja.vendedores[posicao], valor);
+    
+    return loja;
+}
+
 tLoja ContrataVendedor(tLoja loja, tVendedor vendedor) {
-    if (!(encontraVendedor(loja.vendedores, loja.totalVendedores, vendedor)))
+    if (encontraPosicaoVendedor(loja.vendedores, loja.totalVendedores, vendedor.nome) >=1)
         loja.vendedores[loja.totalVendedores++] = vendedor;
     
     return loja;        
