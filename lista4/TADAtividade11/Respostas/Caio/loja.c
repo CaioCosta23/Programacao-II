@@ -35,7 +35,7 @@ tLoja AbreLoja(int id, float aluguel) {
     return loja;
 }
 
-int VerificaLoja(tLoja loja, int id) {
+int VerificaIdLoja(tLoja loja, int id) {
     return (loja.id == id);
 }
 
