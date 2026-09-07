@@ -51,7 +51,7 @@ tLoja RegistraVenda(tLoja loja, char nome[50], float valor) {
 }
 
 tLoja ContrataVendedor(tLoja loja, tVendedor vendedor) {
-    if (encontraPosicaoVendedor(loja.vendedores, loja.totalVendedores, vendedor.nome) >=1)
+    if (encontraPosicaoVendedor(loja.vendedores, loja.totalVendedores, vendedor.nome) < 0)
         loja.vendedores[loja.totalVendedores++] = vendedor;
     
     return loja;        
@@ -60,8 +60,8 @@ tLoja ContrataVendedor(tLoja loja, tVendedor vendedor) {
 tLoja CalculaLucro(tLoja loja) {
     int v;
 
-    loja.lucro -= loja.aluguel;
-
+    loja.lucro -= loja.aluguel; 
+    
     for(v = 0; v < loja.totalVendedores; v++) {
         loja.lucro += (GetTotalVendido(loja.vendedores[v]) - GetTotalRecebido(loja.vendedores[v]));
     }
@@ -71,9 +71,7 @@ tLoja CalculaLucro(tLoja loja) {
 void ImprimeRelatorioLoja(tLoja loja) {
     int v;
 
-    loja = CalculaLucro(loja);
-
-    printf("Loja %d: Lucro total: R$%.2f\n", loja.id, loja.lucro);
+    printf("Loja %d: Lucro total: R$ %.2f\n", loja.id, loja.lucro);
     for(v = 0; v < loja.totalVendedores; v++) {
         ImprimeRelatorioVendedor(loja.vendedores[v]);
     }
