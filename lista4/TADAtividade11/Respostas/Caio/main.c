@@ -1,4 +1,4 @@
-#include <stdio.h>>
+#include <stdio.h>
 #include <stdlib.h>
 
 #include "loja.h"
@@ -76,7 +76,7 @@ int main() {
             case REGISTRAR_VENDA:
                 float valorVenda;
 
-                scanf("%d %s %f\n", &idLoja, nome, valorVenda);
+                scanf("%d %s %f\n", &idLoja, nome, &valorVenda);
 
                 posicaoBuscada = encontraPosicaoLoja(lojas, (posicaoLoja + 1), idLoja);
                 
