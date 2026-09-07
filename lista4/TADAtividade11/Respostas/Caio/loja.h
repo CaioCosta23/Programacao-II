@@ -53,4 +53,4 @@ tLoja CalculaLucro(tLoja loja);
  */
 void ImprimeRelatorioLoja(tLoja loja);
 
-#endi
+#endif
