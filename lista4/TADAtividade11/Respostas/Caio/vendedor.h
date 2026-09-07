@@ -62,7 +62,7 @@ float GetTotalVendido(tVendedor vendedor);
  * @brief Obtém o vvalor total recebido por um vededor, referente a vlor do seu salário junto a comissão(ões) de venda(s) feitas pelo mesmo;
  * 
  * @param vendedor Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações (atualizadas) de um vendedor;
- * @return float Valor total recebido pelo endedor (em salários e comissões);
+ * @return float Valor total recebido pelo vendedor (em salários e comissões);
  */
 float GetTotalRecebido(tVendedor vendedor);
 
@@ -71,6 +71,6 @@ float GetTotalRecebido(tVendedor vendedor);
  * 
  * @param vendedor Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações (atualizadas) de um vendedor;
  */
-void imprimeRelatorioVendedor(tVendedor vendedor);
+void ImprimeRelatorioVendedor(tVendedor vendedor);
 
 #endif
