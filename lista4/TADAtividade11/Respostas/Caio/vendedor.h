@@ -9,21 +9,21 @@ typedef struct Vendedor {
 /**
  * @brief Registra (cria) um vendedor;
  * 
- * @param nome NOme do vendedor
+ * @param nome NOme do vendedor (com no máximo 50 caracteres);
  * @param salario Salário (base) do vendedor;
  * @param prct_comissao Porcentagem de comissão do valor de cada venda a ser recebido pelo vendedor;
  * @return tVendedor Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações de um vendedor (com seus dados inicializados);
  */
-tVendedor RegistraVendedor(char nome[], float salario, float prct_comissao);
+tVendedor RegistraVendedor(char nome[50], float salario, float prct_comissao);
 
 /**
  * @brief Verifica (compara) o nome de um vendedor com outro nome recebido;
  * 
  * @param vendedor Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações (atualizadas) de um vendedor;
- * @param nome Nome que será comparado ao do vendedor;
+ * @param nome Nome (com no máximo 50 caracteres) que será comparado ao do vendedor;
  * @return int 1 (verdadeiro) se os nomes forem iguais ou 0 (falso), caso contrário
  */
-int VerificaNomeVendedor(tVendedor vendedor, char nome[]);
+int VerificaNomeVendedor(tVendedor vendedor, char nome[50]);
 
 /**
  * @brief Contabiliza uma venda realizada por um vendedor; 
