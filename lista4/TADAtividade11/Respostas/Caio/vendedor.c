@@ -15,7 +15,7 @@ static void copiaString(char origem[500], char destino[50]) {
     while(1) {
         destino[indice] = origem[indice];
 
-        if ((origem [indice]== '\0') || (destino[indice] == '\0'))
+        if ((origem[indice] == '\0') || (destino[indice] == '\0'))
             break;
         
         indice++;
@@ -39,7 +39,7 @@ static unsigned short int comparaString(char origem[50], char comparado[50]) {
             break;
         }
 
-        if (origem[indice] != comparado[indice])
+        if ((origem[indice] == '\0') || (comparado[indice] == '\0'))
             break;
         
         indice++;
@@ -62,7 +62,7 @@ int VerificaNomeVendedor(tVendedor vendedor, char nome[50]) {
     return comparaString(vendedor.nome, nome);
 }
 
-tVendedor Contabiliza(tVendedor vendedor, float valor) {
+tVendedor ContabilizaVenda(tVendedor vendedor, float valor) {
     vendedor.valor_vendido += valor;
 
     return vendedor;
@@ -73,7 +73,7 @@ float GetSalario(tVendedor vendedor) {
 }
 
 float GetComissao(tVendedor vendedor) {
-    return vendedor.prct_comissao;
+    return GetTotalVendido(vendedor) * vendedor.prct_comissao;
 }
 
 float GetTotalVendido(tVendedor vendedor) {
@@ -81,10 +81,10 @@ float GetTotalVendido(tVendedor vendedor) {
 }
 
 float GetTotalRecebido(tVendedor vendedor) {
-    return GetSalario(vendedor) + (GetTotalVendido(vendedor) * GetComissao(vendedor));
+    return GetSalario(vendedor) + GetComissao(vendedor);
 }
 
 void ImprimeRelatorioVendedor(tVendedor vendedor) {
-    printf("\t%s > Total vendido: R$%.2f\n", vendedor.nome, GetTotalRecebido(vendedor));
+    printf("\t%s > Total vendido: R$%.2f\n", vendedor.nome, GetTotalVendido(vendedor));
     printf("\t\tTotal recebido: R$%.2f\n", GetTotalRecebido(vendedor));
 }
