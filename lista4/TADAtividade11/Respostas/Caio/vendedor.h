@@ -43,7 +43,7 @@ tVendedor ContabilizaVenda(tVendedor vendedor, float valor);
 float GetSalario(tVendedor vendedor);
 
 /**
- * @brief Obtémm o valor da comissão de uma venda recebida de um vendedor;
+ * @brief Obtémm o valor (em reais) da comissão de uma venda recebida de um vendedor;
  * 
  * @param vendedor Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações (atualizadas) de um vendedor;
  * @return float Valor da comissão e uma venda, recebida pelo vendedor;
