@@ -52,3 +52,5 @@ tLoja CalculaLucro(tLoja loja);
  * @param loja Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém as informações de uma loja (atualizada);
  */
 void ImprimeRelatorioLoja(tLoja loja);
+
+#endi
