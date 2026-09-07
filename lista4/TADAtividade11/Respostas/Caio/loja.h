@@ -27,7 +27,7 @@ tLoja AbreLoja(int id, float aluguel);
  * @param id ID (Identificador - único) de uma loja, que será comparado a da outra loja;
  * @return int 1 (verdadeiro) se o ID (identificador - único) da loja é igual ao referenciado;
  */
-int VerificaLoja(tLoja loja, int id);
+int VerificaIdLoja(tLoja loja, int id);
 
 /**
  * @brief Registra um vendedor na loja;
