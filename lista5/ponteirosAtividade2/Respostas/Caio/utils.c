@@ -11,7 +11,7 @@ int EhPrimo(int n) {
     int p;
     int quantidadeDivisores = 0;
 
-    for(p = 1; p < n; p++) {
+    for(p = 1; p <= n; p++) {
         if (n % p == 0)
             quantidadeDivisores += 1;
     }
