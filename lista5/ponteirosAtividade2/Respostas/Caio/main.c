@@ -17,7 +17,7 @@ int main(){
     while(casos) {
         int m, n, menor, maior;
 
-        LeIntervalor(&m, &n);
+        LeIntervalo(&m, &n);
 
         ObtemMaiorEMenorPrimo(m, n, &menor, &maior);
 
