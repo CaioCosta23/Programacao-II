@@ -17,9 +17,10 @@ void TrocaSeAchaMenor(int *vet, int tam, int *paraTrocar) {
     inicio = *paraTrocar;
 
     for(v = inicio; v < tam; v++) {
-        if ((v == inicio) || (*(vet + v) < menor))
+        if ((v == inicio) || (*(vet + v) < menor)) {
             menor = *(vet + v);
             *paraTrocar = v;
+        }
     }
 }
 
@@ -28,7 +29,7 @@ void OrdeneCrescente(int *vet, int tam) {
 
     for(v = 0; v < tam; v++) {
         valorAnalisado = v;
-        TrocaSeAchaMenor(vet, tam, valorAnalisado);
+        TrocaSeAchaMenor(vet, tam, &valorAnalisado);
 
         auxiliar = *(vet + v);
         *(vet + v) = *(vet + valorAnalisado);
