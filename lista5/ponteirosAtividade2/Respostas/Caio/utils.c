@@ -21,12 +21,16 @@ int EhPrimo(int n) {
 
 void ObtemMaiorEMenorPrimo(int m, int n, int *menor, int *maior){
     int p;
-
-    *maior = m;
-    *menor = m;
+    unsigned short int primeiroPrimo = 1; // Variável lógica para verificar se é o primeiro número primo capturado;
 
     for(p = m; p <= n; p++) {
         if (EhPrimo(p)) {
+            if (primeiroPrimo) {
+                *maior = p;
+                *menor = p;
+                primeiroPrimo = 0;
+            }
+
             if (p > *maior)
                 *maior = p;
             
