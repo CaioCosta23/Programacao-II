@@ -7,13 +7,13 @@ void LeNumeros(int *array, int tamanho) {
     int a;
 
     for(a = 0; a < tamanho; a++) {
-        scanf("%d", *(array + a));
+        scanf("%d", (array + a));
     }
 }
 
 void EncontraMaiorMenorMedia(int *array, int tamanho, int *maior, int *menor, float *media) {
     int a;
-    int soma = 0;;
+    int soma = 0;
 
     for(a = 0; a < tamanho; a++) {
         if (a == 0) {
