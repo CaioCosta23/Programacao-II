@@ -26,7 +26,7 @@ void LeMatriz(int **matriz, int linhas, int colunas);
  * @param linhas Número de linhas da matriz;
  * @param colunas Numero de colunas da matriz;
  */
-void imprimeMatrizTransposta(int **matriz, int linhas, int colunas);
+void ImprimeMatrizTransposta(int **matriz, int linhas, int colunas);
 
 /**
  * @brief Destrói/Libera (a memória dinâmicamente da) matriz; 
