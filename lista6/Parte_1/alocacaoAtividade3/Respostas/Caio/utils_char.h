@@ -6,6 +6,8 @@
  * 
  * @param tamanho Tamanho do vetor/lista/'array';
  * @return char* Ponteiro para o vetor/lista/'array';
+ * 
+ * @OBS: Todas as posições do vetor/lista/'array' devem ser inicialiadas com '_';
  */
 char *CriaVetor(int tamanho);
 
