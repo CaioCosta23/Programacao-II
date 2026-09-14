@@ -32,6 +32,8 @@ void ImprimeString(char *vetor, int tamanho){
 
     for(v = 0; v < tamanho; v++) 
         printf("%c", *(vetor + v));
+    
+    printf("\n");
 }
 
 
