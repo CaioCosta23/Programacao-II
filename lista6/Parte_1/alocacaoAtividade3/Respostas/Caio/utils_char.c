@@ -11,6 +11,12 @@ char *CriaVetor(int tamanho) {
     if (vetor == NULL)
         printf("Erro! Alocacao de memoria na criacao do vetor mal-sucedido.");
     
+    int v;
+    const char caractereInicial = '_';
+
+    for(v = 0; v < tamanho; v++)
+        *(vetor + v) = caractereInicial;
+    
     return vetor;
 }
 
