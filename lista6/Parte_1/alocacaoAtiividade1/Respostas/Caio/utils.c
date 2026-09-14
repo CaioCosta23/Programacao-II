@@ -17,7 +17,7 @@ void LeVetor(int *vetor, int tamanho) {
     int v;
 
     for(v = 0; v < tamanho; v++) 
-        scanf("%d", *(vetor + v));
+        scanf("%d", (vetor + v));
 }
 
 float CalculaMedia(int *vetor, int tamanho) {
