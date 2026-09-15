@@ -10,13 +10,16 @@
  * @param string Ponteiro para a 'string' (vetor/lista/'array' de caracteres);
  * @return unsigned int Tamanho da 'string' (vetor/lista/'array' de caracteres);
  */
-unsigned int obtemTamanhoString(char *string) {
+int *obtemTamanhoString(char *string) {
+    int *ponteiroTamanho = NULL;
     unsigned int tamanho = 0;
 
     while(*(string + tamanho) != '\0')
         tamanho++;
     
-    return tamanho;
+    *ponteiroTamanho = tamanho;
+
+    return ponteiroTamanho;
 }
 
 /**
@@ -27,9 +30,9 @@ unsigned int obtemTamanhoString(char *string) {
  * @return int Programa principal;
  */
 int main() {
-    char *string, *vetor;
-    unsigned int tamanho;
-
+    char *string = NULL; 
+    char *vetor;
+    int *tamanho;
 
     vetor = CriaVetorTamPadrao();
 
@@ -37,7 +40,7 @@ int main() {
 
     tamanho = obtemTamanhoString(string);
 
-    AumentaTamanhoVetor(vetor, tamanho);
+    vetor = AumentaTamanhoVetor(vetor, *tamanho);
 
     vetor = LeVetor(string, tamanho);
 
