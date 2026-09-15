@@ -8,8 +8,10 @@ char *CriaVetor(int tamanho) {
 
     vetor = (char*)malloc(tamanho * sizeof(char));
 
-    if (vetor == NULL)
+    if (vetor == NULL){
         printf("Erro! Alocacao de memoria na criacao do vetor mal-sucedido.");
+        exit(1);
+    }
     
     int v;
     const char caractereInicial = '_';
@@ -21,10 +23,19 @@ char *CriaVetor(int tamanho) {
 }
 
 void LeVetor(char *vetor, int tamanho) {
-    int v;
+    int v = 0;
+    char letra;
 
-    for(v = 0; v < tamanho; v++)
-        scanf("%c", (vetor + v));
+    while(v < tamanho) {
+        scanf("%c", &letra);
+
+        if (letra == '\n')
+            break;
+
+        *(vetor + v) = letra;
+
+        v++;
+    }
 }
 
 void ImprimeString(char *vetor, int tamanho){
