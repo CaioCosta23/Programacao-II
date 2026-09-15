@@ -28,7 +28,7 @@ void LeData(tData *data);
  * @param data Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações da data (com os dados atualizados);
  * @return int 1 (verdadeiro) se o ano eh bissexto ou 0 (falso) caso contrário;
  */
-int EhBissexyto(tData *data);
+int EhBissexto(tData *data);
 
 /**
  * @brief Informa a quantidade de dias que um mês possui;
