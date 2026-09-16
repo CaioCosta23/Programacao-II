@@ -54,7 +54,7 @@ int InformaQtdDiasNoMes(tData *data) {
 }
 
 void AvancaParaDiaSeguinte(tData *data) {
-    if ((*data).mes == InformaQtdDiasNoMes(data)) {
+    if ((*data).dia == InformaQtdDiasNoMes(data)) {
         data->dia = 1;
         if ((*data).mes == DEZEMBRO) {
             data->mes = 1;
