@@ -10,14 +10,17 @@
  * @return int Programa principal;
  */
 int main() {
-    tData *data1, *data2;
+    tData data1, data2;
 
-    LeData(data1);
-    LeData(data2);
+    LeData(&data1);
+    LeData(&data2);
 
-    while(!(EhIgual(data1, data2))) {
-        ImprimeData(data1);
-        AvancaParaDiaSeguinte(data1);
+    while(!(EhIgual(&data1, &data2))) {
+        ImprimeData(&data1);
+
+        printf("\n");
+
+        AvancaParaDiaSeguinte(&data1);
     }
 
     return 0;
