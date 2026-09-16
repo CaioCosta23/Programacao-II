@@ -17,7 +17,7 @@ typedef struct {
 void cadastrarEvento(Evento *eventos, int *numEventos);
 
 /**
- * @brief 
+ * @brief Troca a data de um evento;
  * 
  * @param eventos Ponteiro (vetor/lista/'array') Tipos Abstratos de Dados (T.A.D.s) que contém as informações dos eventos (com os dados atualizados);
  * @param numEventos Ponteiro para o numero de eventos da lista/vetor/'array' de eventos;
@@ -32,7 +32,7 @@ void trocarDataEvento(Evento *eventos, int *numEventos);
  * @param indiceB Ponteiro para o índice da segunda posição da troca;
  * @param numEventos Ponteiro para o numero de eventos da lista/vetor/'array' de eventos;
  */
-void trocarIndicesEventos(Evento *eventos, int *indiceA, int *indiceB, int numEventos);
+void trocarIndicesEventos(Evento *eventos, int *indiceA, int *indiceB, int *numEventos);
 
 /**
  * @brief Exibe os eventos da listaaa/vetor/'array'  de eventos;
@@ -40,6 +40,6 @@ void trocarIndicesEventos(Evento *eventos, int *indiceA, int *indiceB, int numEv
  * @param eventos Ponteiro (vetor/lista/'array') Tipos Abstratos de Dados (T.A.D.s) que contém as informações dos eventos (com os dados atualizados);
  * @param numEventos Ponteiro para o numero de eventos da lista/vetor/'array' de eventos;
  */
-void exibirEventos(Evento *eventos, int numEventos);
+void exibirEventos(Evento *eventos, int *numEventos);
 
 #endif
