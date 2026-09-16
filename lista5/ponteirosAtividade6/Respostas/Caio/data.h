@@ -52,7 +52,7 @@ void AvancaParaDiaSeguinte(tData *data);
  * @param data2 Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações da segunda data (com os dados atualizados);
  * @return int 1 (verdadeiro) se as datas são iguai ou 0 (falso), caso contrário;
  */
-int EhIgual(tData *data1, tData data2);
+int EhIgual(tData *data1, tData *data2);
 
 /**
  * @brief Imprime os dados de uma data;
