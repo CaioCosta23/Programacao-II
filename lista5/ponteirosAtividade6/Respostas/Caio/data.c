@@ -34,6 +34,19 @@ void LeData(tData *data) {
     scanf("%hd %hd %d", &dia, &mes, &ano);
 
     InicializaDataParam(dia, mes, ano, data);
+
+    if ((*data).dia > InformaQtdDiasNoMes(data))
+        data->dia = InformaQtdDiasNoMes(data);
+    if ((*data).dia < 1)
+        data->dia = 1;
+    
+    if ((*data).mes > DEZEMBRO)
+        data->mes = DEZEMBRO;
+    if ((*data).mes < JANEIRO)
+        data->mes = JANEIRO;
+    
+    if ((*data).ano < 1)
+        data->ano = 1;
 }
 
 int EhBissexto(tData *data) {
