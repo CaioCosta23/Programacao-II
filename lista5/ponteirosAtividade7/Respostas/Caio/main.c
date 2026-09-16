@@ -33,7 +33,7 @@ int main() {
     unsigned short int opcao;
     unsigned short int sair = 0;
     int numeroEventos = 0;
-    Evento *eventos;
+    Evento eventos[MAX_EVENTOS];
 
     exibirMenu();
 
@@ -45,16 +45,16 @@ int main() {
                 cadastrarEvento(eventos, &numeroEventos);
                 break;
             case EXIBIR_EVENTOS:
-                exibirEventos(eventos, numeroEventos);
+                exibirEventos(eventos, &numeroEventos);
                 break;
             case TROCAR_DATA:
-                trocarDataEvento(eventos, numeroEventos);
+                trocarDataEvento(eventos, &numeroEventos);
                 break;
             case TROCAR_INDICES_POSICOES_LISTA_EVENTOS:
                 int indice1, indice2;
 
-                scanf("%d %d\\n", &indice1, &indice2);
-                trocarIndicesEventos(eventos, &indice1, &indice2, numeroEventos);
+                scanf("%d %d\n", &indice1, &indice2);
+                trocarIndicesEventos(eventos, &indice1, &indice2, &numeroEventos);
                 break;
             case SAIR:
                 sair = 1;
