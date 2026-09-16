@@ -14,7 +14,7 @@ typedef struct {
  * @param eventos Ponteiro (vetor/lista/'array') Tipos Abstratos de Dados (T.A.D.s) que contém as informações dos eventos;
  * @param numEventos Ponteiro pata o número de eventos da lista/vetor/'array';
  */
-void cadastrarEvvento(Evento *eventos, int *numEventos);
+void cadastrarEvento(Evento *eventos, int *numEventos);
 
 /**
  * @brief 
