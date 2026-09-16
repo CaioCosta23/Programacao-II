@@ -31,7 +31,7 @@ void LeData(tData *data) {
     unsigned short int dia, mes;
     unsigned int ano;
 
-    scanf("%hd %hd %d", &data->dia, &data->mes, &data->ano);
+    scanf("%hd %hd %d", &dia, &mes, &ano);
 
     InicializaDataParam(dia, mes, ano, data);
 }
