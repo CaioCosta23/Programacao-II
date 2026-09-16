@@ -35,6 +35,8 @@ int main() {
     int numeroEventos = 0;
     Evento eventos[MAX_EVENTOS];
 
+    printf("\n");
+    
     exibirMenu();
 
     while(1) {
@@ -58,6 +60,7 @@ int main() {
                 break;
             case SAIR:
                 sair = 1;
+                printf("Saindo...");
                 break;
         }
         if (sair)
