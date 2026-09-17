@@ -4,17 +4,17 @@
 #include "departamento.h"
 
 /**
- * @brief Copia uma 'string' para outra;
+ * @brief Copia uma 'string' (vetor/lista/'array' de caracteres) para outra;
  * 
  * @param origem Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que será copiada;
  * @param destino Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que receberá a cópia;
  */
-static void copiaString(char *origem, char *destino) {
+static void copiaString(char *origem, char destino[]) {
     int posicao = -1;
 
     do {
         posicao++;
-        *(destino + posicao) = *(origem + posicao);
+        *(destino + posicao) = origem[posicao];
     }while(*(origem + posicao) != '\0');
 }
 
@@ -48,12 +48,13 @@ static void trocaPosicoesDepartamento(tDepartamento *departamentos, int indice1,
 }
 
 
-tDepartamento CriaDepartamento(char *curso1, char *curso2, char *curso3, int m1, int m2, int m3, char *diretor) {
+tDepartamento CriaDepartamento(char *curso1, char *curso2, char *curso3, char *nome, int m1, int m2, int m3, char *diretor) {
     tDepartamento departamento;
 
     copiaString(curso1, departamento.curso1);
     copiaString(curso2, departamento.curso2);
     copiaString(curso3, departamento.curso3);
+    copiaString(nome, departamento.nome);
 
     departamento.m1 = m1;
     departamento.m2 = m2;
@@ -77,12 +78,12 @@ void OrdenaDepartamentosPorMedia(tDepartamento *vetor_deptos, int num_deptos) {
 }
 
 void ImprimeAtributosDepartamento(tDepartamento depto) {
-    printf("Departamento: %s\n", depto.nome);
-    printf("Diretor: %s\n", depto.diretor);
-    printf("1o curso: %s\n", depto.curso1);
-    printf("Media do 1o curso: %d\n", depto.m1);
-    printf("2o curso: %s\n", depto.curso2);
-    printf("Media do 2o curso: %d\n", depto.m2);
-    printf("3o curso: %s\n", depto.curso3);
-    printf("Media do 3o curso: %d\n", depto.m3);
+    printf("\nDepartamento: %s\n", depto.nome);
+    printf("\tDiretor: %s\n", depto.diretor);
+    printf("\t1o curso: %s\n", depto.curso1);
+    printf("\tMedia do 1o curso: %d\n", depto.m1);
+    printf("\t2o curso: %s\n", depto.curso2);
+    printf("\tMedia do 2o curso: %d\n", depto.m2);
+    printf("\t3o curso: %s\n", depto.curso3);
+    printf("\tMedia do 3o curso: %d", depto.m3);
 }
