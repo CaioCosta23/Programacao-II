@@ -14,13 +14,14 @@ typedef struct departamento {
  * @param curso1 Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que representa o nome do curso 1 do departamento; 
  * @param curso2 Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que representa o nome do curso 2 do departamento;
  * @param curso3 Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que representa o nome do curso 3 do departamento;
+ * @param nome Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que representa o nome do departamento;
  * @param m1 Média das notas do curso 1;
  * @param m2 Média das notas do curso 2;
  * @param m3 Média das notas do curso 3;
  * @param diretor Ponteiro para a 'string' (vetor/lista/'array' de caracteres) que representa o nome do diretor do departamento;
  * @return tDepartamento Tipo Abstrato de Dado (T.A.D.) que representa a estrutura que contém os dados (inicializados) de um departamento;
  */
-tDepartamento CriaDepartamento(char *curso1, char *curso2, char *curso3, int m1, int m2, int m3, char *diretor);
+tDepartamento CriaDepartamento(char *curso1, char *curso2, char *curso3, char *nome, int m1, int m2, int m3, char *diretor);
 
 /**
  * @brief Ordena os departamentos (na lista/vetor/'array' de departamentos) pela média das notas "médias" de cada um dos cursos (em ordem decrescente);
