@@ -16,7 +16,7 @@ void cadastrarEvento(Evento *eventos, int *numEventos) {
 void trocarDataEvento(Evento *eventos, int *numEventos) {
     unsigned int posicao;
 
-    scanf("%hd\n", &posicao);
+    scanf("%d\n", &posicao);
 
     if ((posicao < 0) || (posicao >= *numEventos)) {
         printf("Indice invalido!\n");
@@ -27,7 +27,7 @@ void trocarDataEvento(Evento *eventos, int *numEventos) {
 }
 
 void trocarIndicesEventos(Evento *eventos, int *indiceA, int *indiceB, int *numEventos) {
-    if (((*indiceA < 0) || (*indiceA >= *numEventos)) || ((*indiceB < 0) || (indiceB >= *numEventos))) {
+    if (((*indiceA < 0) || (*indiceA >= *numEventos)) || ((*indiceB < 0) || (*indiceB >= *numEventos))) {
         printf("Indices invalidos!\n");
     }else {
         Evento auxiliar;
