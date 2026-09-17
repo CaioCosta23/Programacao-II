@@ -21,10 +21,11 @@ int main () {
         scanf("%[^\n]\n", nome);
         scanf("%[^\n]\n", diretor);
         scanf("%[^\n]\n", curso1);
-        scanf("%[^\n]\n", curso1);
         scanf("%[^\n]\n", curso2);
         scanf("%[^\n]\n", curso3);
         scanf("%d %d %d\n", &media1, &media2, &media3);
+
+        departamentos[d] = CriaDepartamento(curso1, curso2, curso3, nome, media1, media2, media3, diretor);
     }
 
     OrdenaDepartamentosPorMedia(departamentos, quantidadeDepartamentos);
