@@ -50,7 +50,6 @@ void AssociaFamiliasGruposPessoas(tPessoa *pessoas) {
     }
 }
 
-
 void ImprimePessoa(tPessoa *pessoa) {
     if (VerificaSeTemPaisPessoa(pessoa)){
         printf("NOME COMPLETO: ");
