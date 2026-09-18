@@ -7,16 +7,18 @@ void cadastrarEvento(Evento *eventos, int *numEventos) {
     if (*numEventos == MAX_EVENTOS) {
         printf("Limite de eventos atingido!\n");
     }else {
-        scanf("[^\n]\n", (eventos + *numEventos)->nome);
+        scanf("\n%s\n", (eventos + *numEventos)->nome);
         scanf("%d %d %d\n", &(eventos + *numEventos)->dia, &(eventos + *numEventos)->mes, &(eventos + *numEventos)->ano);
         printf("Evento cadastrado com sucesso!\n");
+
+        (*numEventos)++;
     }
 }
 
 void trocarDataEvento(Evento *eventos, int *numEventos) {
     unsigned int posicao;
 
-    scanf("%d\n", &posicao);
+    scanf("\n%d\n", &posicao);
 
     if ((posicao < 0) || (posicao >= *numEventos)) {
         printf("Indice invalido!\n");
