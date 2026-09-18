@@ -28,14 +28,14 @@ void LePessoa(tPessoa *pessoa);
  * @param pessoa Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações de uma pessoa (com os dados atualizados);
  * @return int 1 (verdadeiro) se a pessoa possui pai e/ou mãe ou 0 (falso), caso contrário;
  */
-int VerificaSeTemPaiPessoa(tPessoa *pessoa);
+int VerificaSeTemPaisPessoa(tPessoa *pessoa);
 
 /**
  * @brief Associa o parentesco de uma pessoa à outra, por meio da leitura de dados da entrada de dados;
  * 
  * @param pessoas Ponteiro para um vetor/lista/'array' de Tipos Abstratos de Dados (T.A.D.s) que representa a estrutura que contém as informações de pessoas (com os dados atualizados);
  */
-void AssociaFamiliasGrupoPessoas(tPessoa *pessoas);
+void AssociaFamiliasGruposPessoas(tPessoa *pessoas);
 
 /**
  * @brief Imprime as informações de uma pessoa (caso aaaa mesma possui pai e/ou mãe);
