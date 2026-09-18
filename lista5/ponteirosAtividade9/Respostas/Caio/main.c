@@ -3,6 +3,11 @@
 
 #include "pessoa.h"
 
+/**
+ * @brief Programa que lê uma quantidade o nome de pessoas e associa seu paraentesco;
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     unsigned int quantidadePessoas, p;
 
