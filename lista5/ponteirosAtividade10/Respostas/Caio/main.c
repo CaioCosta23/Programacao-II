@@ -17,7 +17,7 @@ int main() {
 
     for(p = 0; p < quantidadePessoas; p++) {
         pessoas[p] = CriaPessoa();
-        LePessoas(&pessoas[p]);
+        LePessoa(&pessoas[p]);
     }
     AssociaFamiliasGruposPessoas(pessoas, quantidadePessoas);
 
