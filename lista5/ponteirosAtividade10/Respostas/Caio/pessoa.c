@@ -46,7 +46,7 @@ tPessoa CriaPessoa() {
 }
 
 void LePessoa(tPessoa *pessoa) {
-    scanf("%[^\n]\n", pessoa->nome);
+    scanf("\n%[^\n]\n", pessoa->nome);
 }
 
 int VerificaSeTemPaisPessoa(tPessoa *pessoa) {
@@ -54,7 +54,7 @@ int VerificaSeTemPaisPessoa(tPessoa *pessoa) {
 }
 
 int VerificaIrmaoPessoa(tPessoa *pessoa1, tPessoa *pessoa2) {
-    return (((*pessoa1). pai == (*pessoa2).pai) || ((*pessoa1).mae == (*pessoa2).mae));
+    return ((((*pessoa1).pai == (*pessoa2).pai) && ((*pessoa1).pai != NULL) && ((*pessoa2).pai != NULL)) || (((*pessoa1).mae == (*pessoa2).mae) && ((*pessoa1).mae != NULL) && ((*pessoa2).mae != NULL)));
 }
 
 void AssociaFamiliasGruposPessoas(tPessoa *pessoas, int numPessoas) {
@@ -66,16 +66,21 @@ void AssociaFamiliasGruposPessoas(tPessoa *pessoas, int numPessoas) {
     for(a = 0; a < quantidadeAssociacoes; a++) {
         scanf("mae: %d, pai: %d, filho: %d\n", &indiceMae, &indicePai, &indiceFilho);
 
-        if ((verificaPosicaoLista(indiceMae, numPessoas)) && (verificaPosicaoLista(indicePai, numPessoas)) && (verificaPosicaoLista(indiceFilho, numPessoas))) {
-            (pessoas + indiceFilho)->mae = (pessoas + indiceMae);
-            (pessoas + indiceFilho)->pai = (pessoas + indicePai);
+        if (verificaPosicaoLista(indiceFilho, numPessoas)) {
+            if (verificaPosicaoLista(indiceMae, numPessoas))
+                (pessoas + indiceFilho)->mae = (pessoas + indiceMae);
+            if (verificaPosicaoLista(indicePai, numPessoas))
+                (pessoas + indiceFilho)->pai = (pessoas + indicePai);
         }
     }
 
-    for(a = 0; a < (numPessoas - 1); a++) {
-        for(p = a + 1; p < numPessoas; p++) {
-            if (VerificaIrmaoPessoa((pessoas + a), (pessoas + p))) {
+    for(a = 0; a < numPessoas; a++) {
+        for(p = 0; p < numPessoas; p++) {
+            if (a == p)
+                continue;
+            if (VerificaIrmaoPessoa(&pessoas[a], &pessoas[p])) {
                 (pessoas + a)->irmao = (pessoas + p);
+                break;
             }
         }
     }
@@ -84,23 +89,26 @@ void AssociaFamiliasGruposPessoas(tPessoa *pessoas, int numPessoas) {
 
 void ImprimePessoa(tPessoa *pessoa) {
     if (VerificaSeTemPaisPessoa(pessoa)) {
+        printf("NOME COMPLETO: %s\n", (*pessoa).nome);
+        
         printf("PAI: ");
         if ((*pessoa).pai != NULL)
             imprimeNome((*pessoa).pai);
         else
-            printf("NAO INFORMADO.\n"); 
+            printf("NAO INFORMADO\n"); 
         
         printf("MAE: ");
         if ((*pessoa).mae != NULL)
             imprimeNome((*pessoa).mae);
         else
-            printf("NAO INFORMADO.\n"); 
+            printf("NAO INFORMADO\n"); 
 
         printf("IRMAO: ");
         if (verificaSeTemIrmaoPessoa(pessoa))
             imprimeNome((*pessoa).irmao);
         else
-            printf("NAO INFORMADO.\n");   
+            printf("NAO INFORMADO\n");   
         
+        printf("\n");
     }
 }
