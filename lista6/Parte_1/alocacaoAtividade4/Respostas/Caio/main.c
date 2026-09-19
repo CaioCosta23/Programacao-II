@@ -18,7 +18,6 @@ int main() {
     tamanho = TAM_PADRAO;
 
     vetor = CriaVetorTamPadrao();
-    //vetor = AumentaTamanhoVetor(vetor, TAM_PADRAO);
     vetor = LeVetor(vetor, &tamanho);
 
     ImprimeString(vetor);
