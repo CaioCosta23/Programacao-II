@@ -16,6 +16,7 @@ char *CriaVetorTamPadrao();
  * @param vetor Ponteiro para o vetor/lista/'array' de caracteres;
  * @param tamanho Tamanho do vetor/lista/'array';
  * @return char* Ponteiro para o vetor/lista/'array' com o tamanho aumentado (realocado dinamicamente - na memória);
+ * @OBS: Aumente a memória adicionando o valor de "TAM_PADRAO";
  */
 char *AumentaTamanhoVetor(char *vetor, int tamanhoantigo);
 
