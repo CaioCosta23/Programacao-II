@@ -27,7 +27,6 @@ int **CriaMatriz(int linhas, int colunas){
                 exit(1);
             }
     }
-
     return matriz;
 }
 
