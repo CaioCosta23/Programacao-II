@@ -5,9 +5,8 @@
 #include "tabuleiro.h"
 
 typedef struct {
-    tTabuleiro tabulero;
-    tJogador jogador1;
-    tJogador jogador2;
+    tTabuleiro tabuleiro;
+    tJogador jogador1, jogador2;
 }tJogo;
 
 /**
