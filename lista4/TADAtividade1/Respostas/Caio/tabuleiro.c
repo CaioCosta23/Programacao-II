@@ -63,6 +63,7 @@ void ImprimeTabuleiro(tTabuleiro tabuleiro) {
     unsigned int l, c;
 
     for(l = 0; l < TAM_TABULEIRO; l++) {
+        printf("\t");
         for(c = 0; c < TAM_TABULEIRO; c++) {
             if (tabuleiro.posicoes[l][c] == tabuleiro.pecaVazio)
                 printf("%c", tabuleiro.pecaVazio);
