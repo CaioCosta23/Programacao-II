@@ -18,7 +18,7 @@ typedef struct {
 tTabuleiro CriaTabuleiro();
 
 /**
- * @brief 
+ * @brief Marcaa posição (com as coordenadas especificadas) no tabuleiro, com a peça do jogador;
  * 
  * @param tabuleiro Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que possui os dados atualizados do tabuleiro;
  * @param peca Peça que representa o jogador (1 ou 2);
@@ -37,13 +37,13 @@ tTabuleiro MarcaPosicaoTabuleiro(tTabuleiro tabuleiro, int peca, int x, int y);
 int TemPosicaoLivreTabuleiro(tTabuleiro tabuleiro);
 
 /**
- * @brief Verifica se a posição do tabuleiro está marcada;
+ * @brief Verifica se a posição do tabuleiro está marcada (com a peça o jogador);
  * 
  * @param tabuleiro Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que possui os dados atualizados do tabuleiro;
  * @param x Coordenada X do tabuleiro;
  * @param y Coordenada Y do tabuleiro;
  * @param peca Peça que representa o jogador;
- * @return int 1 (verdadeiro) se a posição está marcada ou 0, caso contrário;
+ * @return int 1 (verdadeiro) se a posição está marcada ou 0 (falso), caso contrário;
  */
 int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro tabuleiro, int x, int y, int peca);
 
