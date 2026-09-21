@@ -19,7 +19,6 @@ static tJogada inicializaJogada(tJogada jogada) {
     return jogada;
 }
 
-
 tJogada LeJogada() {
     tJogada jogada;
 
@@ -34,7 +33,6 @@ tJogada LeJogada() {
 
     return jogada;
 }
-
 
 int ObtemJogadaX(tJogada jogada) {
     return jogada.x;
