@@ -1,0 +1,352 @@
+- Arquivo de configuração encontrado!
+ - Arquivos header necessários do professor existem na pasta Includes
+ - Arquivos objetos necessários do professor existem na pasta Gabarito-obj.
+
+#######################################
+ALUNO: Caio
+#######################################
+
+CRIANDO O DIRETÓRIO DE RESULTADO PARA Caio:
+ - Diretório Resultados/Caio criado com sucesso!
+ - Diretório Resultados/Caio/main criado com sucesso!
+ - Diretório Resultados/Caio/completo criado com sucesso!
+ - Diretório Resultados/Caio/jogada criado com sucesso!
+ - Diretório Resultados/Caio/jogador criado com sucesso!
+ - Diretório Resultados/Caio/tabuleiro criado com sucesso!
+ - Diretório Resultados/Caio/jogo criado com sucesso!
+ - Arquivos criados: ok!
+
+CHECKANDO OS ARQUIVOS DO ALUNO:
+ - Arquivo esperado 'Respostas/Caio/jogada.c' encontrado!
+ - Arquivo esperado 'Respostas/Caio/jogada.h' encontrado!
+ - Arquivo esperado 'Respostas/Caio/jogador.c' encontrado!
+ - Arquivo esperado 'Respostas/Caio/jogador.h' encontrado!
+ - Arquivo esperado 'Respostas/Caio/jogo.c' encontrado!
+ - Arquivo esperado 'Respostas/Caio/jogo.h' encontrado!
+ - Arquivo esperado 'Respostas/Caio/main.c' encontrado!
+ - Arquivo esperado 'Respostas/Caio/tabuleiro.c' encontrado!
+ - Arquivo esperado 'Respostas/Caio/tabuleiro.h' encontrado!
+ - Arquivos esperados enviados: Ok!
+
+COPIANDO OS ARQUIVOS PARA A PASTA DE RESULTADO DO ALUNO:
+ - Pasta main:
+ - Copiando os Casos de teste para a pasta Resultados/Caio/main
+ - Copiando os Includes/jogada.h Includes/jogador.h Includes/jogo.h Includes/tabuleiro.h do professor para a pasta Resultados/Caio/main
+ - Copiando os Includes/*.o do professor para a pasta Resultados/Caio/main
+ - Removendo o main.o do professor da pasta Resultados/Caio/main
+ - Copiando o Respostas/Caio/main.c do aluno para a pasta Resultados/Caio/main
+ - Pasta completo:
+ - Copiando os Casos de teste para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/jogada.c do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/jogada.h do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/jogador.c do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/jogador.h do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/jogo.c do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/jogo.h do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/main.c do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/tabuleiro.c do aluno para a pasta Resultados/Caio/completo
+ - Copiando os Respostas/Caio/tabuleiro.h do aluno para a pasta Resultados/Caio/completo
+ - Pasta jogada:
+ - Copiando os Casos de teste para a pasta Resultados/Caio/jogada
+ - Copiando os Includes/jogada.h Includes/jogador.h Includes/jogo.h Includes/tabuleiro.h do professor para a pasta Resultados/Caio/jogada
+ - Copiando os Includes/*.o do professor para a pasta Resultados/Caio/jogada
+ - Removendo o jogada.o do professor da pasta Resultados/Caio/jogada
+ - Copiando o Respostas/Caio/jogada.c do aluno para a pasta Resultados/Caio/jogada
+ - Pasta jogador:
+ - Copiando os Casos de teste para a pasta Resultados/Caio/jogador
+ - Copiando os Includes/jogada.h Includes/jogador.h Includes/jogo.h Includes/tabuleiro.h do professor para a pasta Resultados/Caio/jogador
+ - Copiando os Includes/*.o do professor para a pasta Resultados/Caio/jogador
+ - Removendo o jogador.o do professor da pasta Resultados/Caio/jogador
+ - Copiando o Respostas/Caio/jogador.c do aluno para a pasta Resultados/Caio/jogador
+ - Pasta tabuleiro:
+ - Copiando os Casos de teste para a pasta Resultados/Caio/tabuleiro
+ - Copiando os Includes/jogada.h Includes/jogador.h Includes/jogo.h Includes/tabuleiro.h do professor para a pasta Resultados/Caio/tabuleiro
+ - Copiando os Includes/*.o do professor para a pasta Resultados/Caio/tabuleiro
+ - Removendo o tabuleiro.o do professor da pasta Resultados/Caio/tabuleiro
+ - Copiando o Respostas/Caio/tabuleiro.c do aluno para a pasta Resultados/Caio/tabuleiro
+ - Pasta jogo:
+ - Copiando os Casos de teste para a pasta Resultados/Caio/jogo
+ - Copiando os Includes/jogada.h Includes/jogador.h Includes/jogo.h Includes/tabuleiro.h do professor para a pasta Resultados/Caio/jogo
+ - Copiando os Includes/*.o do professor para a pasta Resultados/Caio/jogo
+ - Removendo o jogo.o do professor da pasta Resultados/Caio/jogo
+ - Copiando o Respostas/Caio/jogo.c do aluno para a pasta Resultados/Caio/jogo
+ - Copiando Arquivos Extras do Aluno:
+ - Arquivos copiados: ok!
+
+COMPILANDO OS ARQUIVOS NA PASTA DE RESULTADO DO ALUNO:
+ - Compilação dos arquivos do aluno na pasta main ok!
+ - Arquivo de output gerado: Resultados/Caio/main/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta completo ok!
+ - Arquivo de output gerado: Resultados/Caio/completo/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta jogada ok!
+ - Arquivo de output gerado: Resultados/Caio/jogada/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta jogador ok!
+ - Arquivo de output gerado: Resultados/Caio/jogador/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta tabuleiro ok!
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/result_compilation.txt
+ - Compilação dos arquivos do aluno na pasta jogo ok!
+ - Arquivo de output gerado: Resultados/Caio/jogo/result_compilation.txt
+ - Arquivos Compilados: ok!
+
+LINKANDO OS ARQUIVOS COMPILADOS:
+ - Pasta main:
+ - Gerando o binário prog linkando com o(s) arquivo(s) main/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/Caio/main/result_linking.txt
+ - Pasta completo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) completo/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/Caio/completo/result_linking.txt
+ - Pasta jogada:
+ - Gerando o binário prog linkando com o(s) arquivo(s) jogada/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/Caio/jogada/result_linking.txt
+ - Pasta jogador:
+ - Gerando o binário prog linkando com o(s) arquivo(s) jogador/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/Caio/jogador/result_linking.txt
+ - Pasta tabuleiro:
+ - Gerando o binário prog linkando com o(s) arquivo(s) tabuleiro/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/result_linking.txt
+ - Pasta jogo:
+ - Gerando o binário prog linkando com o(s) arquivo(s) jogo/*.o
+ - Arquivos Linkados: Ok! Binário prog gerado com sucesso.
+ - Arquivo de output gerado: Resultados/Caio/jogo/result_linking.txt
+
+EXECUTANDO O VALGRIND EM CADA CASO:
+ - Pasta main / Caso 1:
+ - Arquivo de output gerado: Resultados/Caio/main/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta main / Caso 2:
+ - Arquivo de output gerado: Resultados/Caio/main/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta main / Caso 3:
+ - Arquivo de output gerado: Resultados/Caio/main/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta main / Caso 4:
+ - Arquivo de output gerado: Resultados/Caio/main/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta main / Caso 5:
+ - Arquivo de output gerado: Resultados/Caio/main/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta main / Caso 6:
+ - Arquivo de output gerado: Resultados/Caio/main/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta main (máximo 1.66) - 60.00 de 60 - 100.00% de 1.66: 1.66.
+ -----
+ - Pasta completo / Caso 1:
+ - Arquivo de output gerado: Resultados/Caio/completo/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta completo / Caso 2:
+ - Arquivo de output gerado: Resultados/Caio/completo/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta completo / Caso 3:
+ - Arquivo de output gerado: Resultados/Caio/completo/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta completo / Caso 4:
+ - Arquivo de output gerado: Resultados/Caio/completo/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta completo / Caso 5:
+ - Arquivo de output gerado: Resultados/Caio/completo/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta completo / Caso 6:
+ - Arquivo de output gerado: Resultados/Caio/completo/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta completo (máximo 1.66) - 60.00 de 60 - 100.00% de 1.66: 1.66.
+ -----
+ - Pasta jogada / Caso 1:
+ - Arquivo de output gerado: Resultados/Caio/jogada/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogada / Caso 2:
+ - Arquivo de output gerado: Resultados/Caio/jogada/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogada / Caso 3:
+ - Arquivo de output gerado: Resultados/Caio/jogada/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogada / Caso 4:
+ - Arquivo de output gerado: Resultados/Caio/jogada/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogada / Caso 5:
+ - Arquivo de output gerado: Resultados/Caio/jogada/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogada / Caso 6:
+ - Arquivo de output gerado: Resultados/Caio/jogada/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta jogada (máximo 1.67) - 60.00 de 60 - 100.00% de 1.67: 1.67.
+ -----
+ - Pasta jogador / Caso 1:
+ - Arquivo de output gerado: Resultados/Caio/jogador/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogador / Caso 2:
+ - Arquivo de output gerado: Resultados/Caio/jogador/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogador / Caso 3:
+ - Arquivo de output gerado: Resultados/Caio/jogador/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogador / Caso 4:
+ - Arquivo de output gerado: Resultados/Caio/jogador/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogador / Caso 5:
+ - Arquivo de output gerado: Resultados/Caio/jogador/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogador / Caso 6:
+ - Arquivo de output gerado: Resultados/Caio/jogador/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta jogador (máximo 1.67) - 60.00 de 60 - 100.00% de 1.67: 1.67.
+ -----
+ - Pasta tabuleiro / Caso 1:
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta tabuleiro / Caso 2:
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta tabuleiro / Caso 3:
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta tabuleiro / Caso 4:
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta tabuleiro / Caso 5:
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta tabuleiro / Caso 6:
+ - Arquivo de output gerado: Resultados/Caio/tabuleiro/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta tabuleiro (máximo 1.67) - 60.00 de 60 - 100.00% de 1.67: 1.67.
+ -----
+ - Pasta jogo / Caso 1:
+ - Arquivo de output gerado: Resultados/Caio/jogo/Casos/1/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogo / Caso 2:
+ - Arquivo de output gerado: Resultados/Caio/jogo/Casos/2/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogo / Caso 3:
+ - Arquivo de output gerado: Resultados/Caio/jogo/Casos/3/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogo / Caso 4:
+ - Arquivo de output gerado: Resultados/Caio/jogo/Casos/4/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogo / Caso 5:
+ - Arquivo de output gerado: Resultados/Caio/jogo/Casos/5/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Pasta jogo / Caso 6:
+ - Arquivo de output gerado: Resultados/Caio/jogo/Casos/6/result_valgrind.txt.
+ - Valgrind: Ok! allocs: 2, frees: 2, errors: 0 | Desconto do valgrind: 0.0%
+ - Resultado para o saida.txt: Ok! Peso: 10
+ - Nota para o Caso (soma dos pesos): 10.0 (soma total) - 0% (desconto do valgrind) = 10.00 de 10 pontos.
+ - Nota para a pasta jogo (máximo 1.67) - 60.00 de 60 - 100.00% de 1.67: 1.67.
+ -----
+
+#######################################
+RESULTADOS FINAIS
+#######################################
+
+----------------------------------------------------------------------------
+Aluno: Caio
+ - Arquivos Esperados Corretos: 9 de 9
+ - Pastas Compiladas Corretamente: 6 de 6 
+ - Pastas Linkadas Corretamente: 6 de 6
+ - Teste main
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de Caio para o teste main: 1.66
+ - Teste completo
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de Caio para o teste completo: 1.66
+ - Teste jogada
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de Caio para o teste jogada: 1.67
+ - Teste jogador
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de Caio para o teste jogador: 1.67
+ - Teste tabuleiro
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de Caio para o teste tabuleiro: 1.67
+ - Teste jogo
+ - Resultados corretos: 6 de 6
+ - Valgrinds corretos: 6 de 6
+ - Nota de Caio para o teste jogo: 1.67
+ - Nota de Caio: 0+(1.67)+(1.67)+(1.67)+(1.67)+(1.66)+(1.66)
+ - Nota de Caio: 10.00
+
+----------------------------------------------------------------------------
+
+Arquivo CSV Resultado.csv com os resultados finais foi gerado na pasta raíz!
+
+
+
