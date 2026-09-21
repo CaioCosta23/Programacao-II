@@ -15,12 +15,17 @@ tJogador CriaJogador(int idJogador) {
 
 tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
     tJogada jogada;
+    unsigned short int encerrarJogada = 0;
 
-    printf("Jogador %d\n", jogador.id);
+    do {
+        printf("Jogador %d\n", jogador.id);
 
-    jogada = LeJogada();
-    
-    if (FoiJogadaBemSucedida(jogada)) {
+        jogada = LeJogada();
+
+        if (!(FoiJogadaBemSucedida(jogada))){
+            printf("Formato invalido!\n");
+            continue;
+        }
         if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada))){
             unsigned short int adversario;
 
@@ -33,6 +38,7 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
                 if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), jogador.id))) {
                     printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                     tabuleiro = MarcaPosicaoTabuleiro(tabuleiro, jogador.id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+                    encerrarJogada = 1;
                 }else {
                     printf("Posicao invalida (OCUPADA - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                 }
@@ -40,9 +46,10 @@ tTabuleiro JogaJogador(tJogador jogador, tTabuleiro tabuleiro) {
                 printf("Posicao invalida (OCUPADA - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
             }
         }else {
-            printf("Posicao invalida (FORA DO TABULEIRO - [%d %d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-        }
-    }
+            printf("Posicao invalida (FORA DO TABULEIRO - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
+        }    
+    }while(!(encerrarJogada));
+
     return tabuleiro;
 }
 
