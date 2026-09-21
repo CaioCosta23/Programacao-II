@@ -17,6 +17,13 @@ typedef struct {
 tJogo CriaJogo();
 
 /**
+ * @brief Começa e roda o jogo da velha;
+ * 
+ * @param jogo Tipo Abstrato de Dado (T.A.D) estruturado que contém os dados (atualizados) do jogo;
+ */
+void ComecaJogo(tJogo jogo);
+
+/**
  * @brief Verifica se o jogo deve continuar (reiniciar) ou não;
  * 
  * @return int 1 (verdadeiro) se o jogo deve continuar, ou 0 (falso), caso contrário;
@@ -30,12 +37,5 @@ int ContinuaJogo();
  * @return int 1 (verdadeiro) se o jogo acabou, ou 0 (falso), caso contrário;
  */
 int AcabouJogo(tJogo jogo);
-
-/**
- * @brief Começa e roda o jogo da velha;
- * 
- * @param jogo Tipo Abstrato de Dado (T.A.D) estruturado que contém os dados (atualizados) do jogo;
- */
-void ComecaJogo(tJogo jogo);
 
 #endif
