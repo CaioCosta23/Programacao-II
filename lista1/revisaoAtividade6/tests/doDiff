@@ -1,22 +1,22 @@
 rm -rf outprog
 mkdir outprog
-../build/prog < input/test_1 > outprog/arquivo1
-../build/prog < input/test_2 > outprog/arquivo2
-../build/prog < input/test_3 > outprog/arquivo3
-../build/prog < input/test_4 > outprog/arquivo4
-../build/prog < input/test_5 > outprog/arquivo5
-../build/prog < input/test_6 > outprog/arquivo6
-../build/prog < input/test_7 > outprog/arquivo7
-../build/prog < input/test_8 > outprog/arquivo8
-../build/prog < input/test_9 > outprog/arquivo9
-../build/prog < input/test_10 > outprog/arquivo10
-diff output/test_1 outprog/arquivo1
-diff output/test_2 outprog/arquivo2
-diff output/test_3 outprog/arquivo3
-diff output/test_4 outprog/arquivo4
-diff output/test_5 outprog/arquivo5
-diff output/test_6 outprog/arquivo6
-diff output/test_7 outprog/arquivo7
-diff output/test_8 outprog/arquivo8
-diff output/test_9 outprog/arquivo9
-diff output/test_10 outprog/arquivo10
+../build/prog < input/entrada_1 > outprog/arquivo1
+../build/prog < input/entrada_2 > outprog/arquivo2
+../build/prog < input/entrada_3 > outprog/arquivo3
+../build/prog < input/entrada_4 > outprog/arquivo4
+../build/prog < input/entrada_5 > outprog/arquivo5
+../build/prog < input/entrada_6 > outprog/arquivo6
+../build/prog < input/entrada_7 > outprog/arquivo7
+../build/prog < input/entrada_8 > outprog/arquivo8
+../build/prog < input/entrada_9 > outprog/arquivo9
+../build/prog < input/entrada_10 > outprog/arquivo10
+diff output/saida_1 outprog/arquivo1
+diff output/saida_2 outprog/arquivo2
+diff output/saida_3 outprog/arquivo3
+diff output/saida_4 outprog/arquivo4
+diff output/saida_5 outprog/arquivo5
+diff output/saida_6 outprog/arquivo6
+diff output/saida_7 outprog/arquivo7
+diff output/saida_8 outprog/arquivo8
+diff output/saida_9 outprog/arquivo9
+diff output/saida_10 outprog/arquivo10
