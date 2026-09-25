@@ -6,13 +6,12 @@
 int main() {
     tJogo *jogo;
 
-    jogo = CriaJogo();
-
     do {
-        ComecaJogo(jogo);
-    }while(ContinuaJogo());
+        jogo = CriaJogo();
 
-    DestroiJOgo(jogo);
+        ComecaJogo(jogo);
+        DestroiJogo(jogo);
+    }while(ContinuaJogo());
 
     return 0;
 }
