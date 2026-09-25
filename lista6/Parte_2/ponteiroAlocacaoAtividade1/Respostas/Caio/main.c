@@ -6,7 +6,7 @@
 /**
  * @brief Programma que simula um jogo da velha (com memória alocada dinamicamente);
  * 
- * @return int Programa prrincipal
+ * @return int Programa principal;
  */
 int main() {
     tJogo *jogo;
