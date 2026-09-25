@@ -41,9 +41,11 @@ void ComecaJogo(tJogo *jogo) {
     else
             jogador = (*jogo).jogador2;
         
-        jogo->tabuleiro = JogaJogador(jogador, (*jogo).tabuleiro);
+        JogaJogador(jogador, (*jogo).tabuleiro);
         
         ImprimeTabuleiro((*jogo).tabuleiro);
+
+        jogadas++;
     } while(!(AcabouJogo(jogo)));
 }
 
@@ -53,7 +55,9 @@ int ContinuaJogo() {
     unsigned short int sair = 0; // Variável lógica;
 
     while(1) {
-        scanf(" %c", &resposta);
+        printf("Jogar novamente? (s,n)\n");
+        scanf("%*[^sn]");
+        scanf("%c", &resposta);
 
         if ((resposta != CONTINUAR) && (resposta != NAO_CONTINUAR)) {
             printf("Resposta invalida! Por favor, digite 's' (minusculo) ou 'n' (minusculo).");
@@ -70,10 +74,10 @@ int AcabouJogo(tJogo *jogo) {
     unsigned short int resultado;
 
     if (VenceuJogador((*jogo).jogador1, (*jogo).tabuleiro)) {
-        printf("JOGADOR %d venceu!\n", PECA_1);
+        printf("JOGADOR %d Venceu!\n", PECA_1);
         resultado = 1;
     }else if (VenceuJogador((*jogo).jogador2, (*jogo).tabuleiro))  {
-        printf("JOGADOR %d venceu!\n", PECA_2);
+        printf("JOGADOR %d Venceu!\n", PECA_2);
         resultado = 1;
     }else if (!(TemPosicaoLivreTabuleiro((*jogo).tabuleiro))) {
         printf("Sem vencedor!\n");
