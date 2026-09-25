@@ -91,7 +91,7 @@ void DestroiJogo(tJogo *jogo) {
         if ((*jogo).jogador1 != NULL)
             DestroiJogador((*jogo).jogador1);
         if ((*jogo).jogador2 != NULL)
-            Destroi((*jogo).jogador2);
+            DestroiJogador((*jogo).jogador2);
         
         free(jogo);
     }
