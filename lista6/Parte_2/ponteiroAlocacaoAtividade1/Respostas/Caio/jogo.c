@@ -33,12 +33,15 @@ tJogo *CriaJogo() {
 
 void ComecaJogo(tJogo *jogo) {
     unsigned short int jogadas = 0;
+    tJogador *jogador;
 
     do {
         if (jogadas % 2 == 0)
-            jogo->tabuleiro = JogaJogador((*jogo).jogador1, (*jogo).tabuleiro);
-        else 
-            jogo->tabuleiro = JogaJogador((*jogo).jogador2, (*jogo).tabuleiro);
+            jogador = (*jogo).jogador1;
+    else
+            jogador = (*jogo).jogador2;
+        
+        jogo->tabuleiro = JogaJogador(jogador, (*jogo).tabuleiro);
         
         ImprimeTabuleiro((*jogo).tabuleiro);
     } while(!(AcabouJogo(jogo)));
@@ -64,7 +67,21 @@ int ContinuaJogo() {
 }
 
 int AcabouJogo(tJogo *jogo) {
-    return ((VenceuJogador((*jogo).jogador1, (*jogo).tabuleiro)) || (VenceuJogador((*jogo).jogador2, (*jogo).tabuleiro)) || (!(TemPosicaoLivreTabuleiro((*jogo).tabuleiro))));
+    unsigned short int resultado;
+
+    if (VenceuJogador((*jogo).jogador1, (*jogo).tabuleiro)) {
+        printf("JOGADOR %d venceu!\n", PECA_1);
+        resultado = 1;
+    }else if (VenceuJogador((*jogo).jogador2, (*jogo).tabuleiro))  {
+        printf("JOGADOR %d venceu!\n", PECA_2);
+        resultado = 1;
+    }else if (!(TemPosicaoLivreTabuleiro((*jogo).tabuleiro))) {
+        printf("Sem vencedor!\n");
+        resultado = 1;
+    }else {
+        resultado = 0;
+    }
+    return resultado;
 }
 
 void DestroiJogo(tJogo *jogo) {
