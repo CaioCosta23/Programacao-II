@@ -17,7 +17,7 @@ tJogada *CriaJogada() {
     jogada->y = INICIALIZACAO_DADOS;
     jogada->sucesso = INICIALIZACAO_DADOS;
 
-    return jogada;;
+    return jogada;
 }
 
 void LeJogada(tJogada *jogada) {
