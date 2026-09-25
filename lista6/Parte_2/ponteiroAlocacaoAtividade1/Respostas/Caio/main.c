@@ -3,6 +3,11 @@
 
 #include "jogo.h"
 
+/**
+ * @brief Programma que simula um jogo da velha (com memória alocada dinamicamente);
+ * 
+ * @return int Programa prrincipal
+ */
 int main() {
     tJogo *jogo;
 
