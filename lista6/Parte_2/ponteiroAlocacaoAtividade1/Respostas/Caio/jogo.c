@@ -87,11 +87,11 @@ int AcabouJogo(tJogo *jogo) {
 void DestroiJogo(tJogo *jogo) {
     if (jogo != NULL) {
         if ((*jogo).tabuleiro != NULL)
-            free((*jogo).tabuleiro);
+            DestroiTabuleiro((*jogo).tabuleiro);
         if ((*jogo).jogador1 != NULL)
-            free((*jogo).jogador1);
+            DestroiJogador((*jogo).jogador1);
         if ((*jogo).jogador2 != NULL)
-            free((*jogo).jogador2);
+            Destroi((*jogo).jogador2);
         
         free(jogo);
     }
