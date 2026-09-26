@@ -7,7 +7,7 @@ mov: geraos
 	mv *.o build
 
 geraexe: build/tabuleiro.o build/jogador.o build/jogada.o build/jogo.o build/main.o
-	gcc build/tabuleiro.o build/jogador.o build/jogada.o build/jogo.o build/main.o -o prog
+	gcc build/tabuleiro.o build/jogador.o build/jogada.o build/jogo.o build/main.o -o build/prog
 
 clean:
-	rm -rf build/*.o
+	rm -rf build/*.o prog
