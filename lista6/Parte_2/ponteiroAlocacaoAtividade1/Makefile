@@ -1,12 +1,12 @@
-all: geraos geraexe
+all: geraos mov geraexe
 
-geraos: tabuleiro.c jogador.c jogada.c jogo.c main.c
+geraos: Respostas/Caio/tabuleiro.c Respostas/Caio/jogador.c Respostas/Caio/jogada.c Respostas/Caio/jogo.c Respostas/Caio/main.c
 	gcc -c Respostas/Caio/tabuleiro.c Respostas/Caio/jogador.c Respostas/Caio/jogada.c Respostas/Caio/jogo.c Respostas/Caio/main.c
 
 mov:
-	mv Respostas/Caio/*.o ../../build
+	mv Respostas/Caio/*.o build
 
-geraexe: tabuleiro.c jogador.c jogada.c jogo.c main.c
+geraexe: build/tabuleiro.o build/jogador.o build/jogada.o build/jogo.c build/main.o
 	gcc build/tabuleiro.o build/jogador.o build/jogada.o build/jogo.o build/main.o -o prog
 
 clean:
