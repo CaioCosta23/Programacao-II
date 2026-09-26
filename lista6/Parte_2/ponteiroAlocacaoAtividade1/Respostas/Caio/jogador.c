@@ -33,17 +33,6 @@ void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
             continue;
         }
         
-        unsigned short int adversario;
-
-        if ((*jogador).id == PECA_1) {
-            adversario = PECA_2;
-        }else if ((*jogador).id == PECA_2) {
-            adversario = PECA_1;
-        }else {
-            printf("Erro! O jogador não possui o ID (identificador esperado.\n)");
-            exit(1);
-        }
-        
         if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
             if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id)))
                 if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada))) {
