@@ -49,19 +49,17 @@ tTabuleiro *CriaTabuleiro() {
         for(c = 0; c < TAM_TABULEIRO; c++)
             tabuleiro->posicoes[l][c] = (*tabuleiro).pecaVazio;
 
-
     return tabuleiro;
 }
 
 int TemPosicaoLivreTabuleiro(tTabuleiro *tabuleiro) {
     unsigned short int l, c;
 
-    for(l = 0; l < TAM_TABULEIRO; l++) {
-        for(c = 0; c < TAM_TABULEIRO; c++) {
+    for(l = 0; l < TAM_TABULEIRO; l++)
+        for(c = 0; c < TAM_TABULEIRO; c++)
             if (EstaLivrePosicaoTabuleiro(tabuleiro, l, c));
                 return 1;
-        }
-    }
+
     return 0;
 }
 
@@ -70,17 +68,14 @@ int EhPosicaoValidaTabuleiro(int x, int y) {
 }
 
 int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y, int peca) {
-    char simboloPeca;
-
     if (peca == PECA_1) {
-        simboloPeca = (*tabuleiro).peca1;
+        return ((*tabuleiro).posicoes[y][x] == (*tabuleiro).peca1);
     }else if (peca == PECA_2){
-        simboloPeca = (*tabuleiro).peca2;
+        return ((*tabuleiro).posicoes[y][x] == (*tabuleiro).peca2);
     }else {
         printf("Erro! Peca/Jogador nao existente.\n");
         exit(1);
     }
-    return ((*tabuleiro).posicoes[y][x] == simboloPeca);
 }
 
 int EstaLivrePosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y) {
@@ -88,23 +83,21 @@ int EstaLivrePosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y) {
 }
 
 void MarcaPosicaoTabuleiro(tTabuleiro *tabuleiro, int peca, int x, int y) {
-    char simboloPeca;
-
     if (peca == PECA_1) {
-        simboloPeca = (*tabuleiro).peca1;
+        tabuleiro->posicoes[y][x] = (*tabuleiro).peca1;
     }else if (peca == PECA_2){
-        simboloPeca = (*tabuleiro).peca2;
+        tabuleiro->posicoes[y][x] = (*tabuleiro).peca2;
     }else {
         printf("Erro! Peca/Jogador nao existente.\n");
         exit(1);
     }
-    tabuleiro->posicoes[y][x] = simboloPeca;
 }
 
 void ImprimeTabuleiro(tTabuleiro *tabuleiro) {
     unsigned short int l, c;
 
     for(l = 0; l < TAM_TABULEIRO; l++) {
+        printf("\t");
         for(c = 0; c < TAM_TABULEIRO; c++) {
             printf("%c", (*tabuleiro).posicoes[l][c]);
         }
