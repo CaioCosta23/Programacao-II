@@ -43,6 +43,13 @@ tTabuleiro *CriaTabuleiro() {
     tabuleiro->peca2 = SIMBOLO_PECA_2;
     tabuleiro->pecaVazio = SIMBOLO_VAZIO;
 
+    unsigned short int c;
+
+    for(l = 0; l < TAM_TABULEIRO; l++)
+        for(c = 0; c < TAM_TABULEIRO; c++)
+            tabuleiro->posicoes[l][c] = (*tabuleiro).pecaVazio;
+
+
     return tabuleiro;
 }
 
@@ -51,7 +58,7 @@ int TemPosicaoLivreTabuleiro(tTabuleiro *tabuleiro) {
 
     for(l = 0; l < TAM_TABULEIRO; l++) {
         for(c = 0; c < TAM_TABULEIRO; c++) {
-            if ((*tabuleiro).posicoes[l][c])
+            if (EstaLivrePosicaoTabuleiro(tabuleiro, l, c));
                 return 1;
         }
     }
@@ -68,17 +75,16 @@ int EstaMarcadaPosicaoPecaTabuleiro(tTabuleiro *tabuleiro, int x, int y, int pec
     if (peca == PECA_1) {
         simboloPeca = (*tabuleiro).peca1;
     }else if (peca == PECA_2){
-        simboloPeca = (*tabuleiro).peca1;
+        simboloPeca = (*tabuleiro).peca2;
     }else {
         printf("Erro! Peca/Jogador nao existente.\n");
         exit(1);
     }
-    
     return ((*tabuleiro).posicoes[y][x] == simboloPeca);
 }
 
 int EstaLivrePosicaoTabuleiro(tTabuleiro *tabuleiro, int x, int y) {
-    return ((*tabuleiro).posicoes[y][x] == SIMBOLO_VAZIO);
+    return ((*tabuleiro).posicoes[y][x] == (*tabuleiro).pecaVazio);
 }
 
 void MarcaPosicaoTabuleiro(tTabuleiro *tabuleiro, int peca, int x, int y) {
@@ -92,11 +98,10 @@ void MarcaPosicaoTabuleiro(tTabuleiro *tabuleiro, int peca, int x, int y) {
         printf("Erro! Peca/Jogador nao existente.\n");
         exit(1);
     }
-
     tabuleiro->posicoes[y][x] = simboloPeca;
 }
 
-void ImprimeTabueiro(tTabuleiro *tabuleiro) {
+void ImprimeTabuleiro(tTabuleiro *tabuleiro) {
     unsigned short int l, c;
 
     for(l = 0; l < TAM_TABULEIRO; l++) {
@@ -108,7 +113,7 @@ void ImprimeTabueiro(tTabuleiro *tabuleiro) {
 }
 
 void DestroiTabuleiro(tTabuleiro *tabuleiro) {
-    if (tabuleiro != NULL)
+    if (tabuleiro != NULL) {
         if ((*tabuleiro).posicoes != NULL){
             unsigned short int l;
 
@@ -118,4 +123,5 @@ void DestroiTabuleiro(tTabuleiro *tabuleiro) {
             free((*tabuleiro).posicoes);
         }
         free(tabuleiro);
+    }
 }
