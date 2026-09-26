@@ -28,9 +28,10 @@ tTabuleiro *CriaTabuleiro() {
     
     unsigned short int l;
 
-    for(l = 0; l < TAM_TABULEIRO; l++) {
+    for(l = 0; l < TAM_TABULEIRO; l++)
         tabuleiro->posicoes[l] = NULL;
 
+    for(l = 0; l < TAM_TABULEIRO; l++) {
         tabuleiro->posicoes[l] = (char*)malloc(TAM_TABULEIRO * sizeof(char));
 
         if ((*tabuleiro).posicoes[l] == NULL) {
@@ -57,7 +58,7 @@ int TemPosicaoLivreTabuleiro(tTabuleiro *tabuleiro) {
 
     for(l = 0; l < TAM_TABULEIRO; l++)
         for(c = 0; c < TAM_TABULEIRO; c++)
-            if (EstaLivrePosicaoTabuleiro(tabuleiro, l, c));
+            if (EstaLivrePosicaoTabuleiro(tabuleiro, l, c))
                 return 1;
 
     return 0;
