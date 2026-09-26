@@ -22,10 +22,12 @@ tJogada *CriaJogada() {
 
 void LeJogada(tJogada *jogada) {
     printf("Digite uma posicao (x e y):\n");
-    if (scanf("%d %d\n", &jogada->x, &jogada->y) == 2)
+    if (scanf("%d %d", &jogada->x, &jogada->y) == 2) {
+        scanf("%*[^\n]\n");
         jogada->sucesso = 1;
-    else
+    }else {
         jogada->sucesso = 0;
+    }
 }
 
 int ObtemJogadaX(tJogada *jogada) {
