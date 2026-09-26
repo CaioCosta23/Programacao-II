@@ -21,7 +21,8 @@ tJogador *CriaJogador(int idJogador) {
 
 void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
     tJogada *jogada;
-    char peca;
+    
+    jogada = CriaJogada();
 
     while(1) {
         LeJogada(jogada);
@@ -32,10 +33,22 @@ void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
             printf("Formato invalido!\n");
             continue;
         }
+        
+        unsigned short int adversario;
 
+        if ((*jogador).id == PECA_1) {
+            adversario = PECA_2;
+        }else if ((*jogador).id == PECA_2) {
+            adversario = PECA_1;
+        }else {
+            printf("Erro! O jogador não possui o ID (identificador esperado.\n)");
+            exit(1);
+        }
+        
         if (EhPosicaoValidaTabuleiro(ObtemJogadaX(jogada), ObtemJogadaY(jogada)))
-            if (EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id))
-                if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada))){
+            if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), adversario)))
+                if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id))) {
+                    printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                     MarcaPosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id);
                     break;
                 }else{
@@ -46,48 +59,39 @@ void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
         else
             printf("Posicao invalida (FORA DO TABULEIRO - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
     }
+    DestroiJogada(jogada);
 }
 
 int VenceuJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
-    unsigned short int linha, coluna, diagonalPrincipal, diagonalSecundaria; // Variáveis lógicas;
     unsigned short int l, c, d, s;
-    char pecaComparada;
+    unsigned short int linha, coluna, diagonalPrincipal, diagonalSecundaria;
 
-    if ((*jogador).id == PECA_1)
-        pecaComparada = (*tabuleiro).peca1;
-    else
-        pecaComparada = (*tabuleiro).peca2;
-
-    // Verifica se alguma linha ou coluna possui uma sequência;
-    for(l = 0; l < TAM_TABULEIRO; l++){
+    for(l = 0; l < TAM_TABULEIRO; l++) {
         linha = 1;
         coluna = 1;
         for(c = 0; c < TAM_TABULEIRO; c++) {
-            // Caso a sequência de peças do mesmo tipo seja quebrada, indica que ela não existe (verifica na linha e na coluna);
-            if ((*tabuleiro).posicoes[l][c] != pecaComparada)
+            if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, l, c, (*jogador).id)))
                 linha = 0;
-            if ((*tabuleiro).posicoes[c][l] != pecaComparada)
-                coluna = 0; 
+            if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, c, l, (*jogador).id)))
+                coluna = 0;
+            
         }
-        if ((linha) || coluna)
+        if ((linha) || (coluna))
             return 1;
     }
 
     diagonalPrincipal = 1;
-    diagonalSecundaria = 0;
-
-    // Verifica se a diagonal principal ou a secundária possuem uma sequência;
-    for(d = 0, s = (TAM_TABULEIRO - 1); (d < TAM_TABULEIRO && s >= 0); d++, d--){
-        // Caso a sequência de peças do mesmo tipo seja quebrada, indica que ela não existe (verifica na diagonal principal e na secundária);
-        if ((*tabuleiro).posicoes[d][d] != pecaComparada)
+    diagonalSecundaria = 1;
+    
+    for(d = 0, s = (TAM_TABULEIRO - 1); (d < TAM_TABULEIRO && s >= 0); d++, s--) {
+        if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, d, d, (*jogador).id)))
             diagonalPrincipal = 0;
-        if ((*tabuleiro).posicoes[d][s] != pecaComparada)
+        if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, d, s, (*jogador).id)))
             diagonalSecundaria = 0;
     }
 
     if ((diagonalPrincipal) || (diagonalSecundaria))
         return 1;
-    
     return 0;
 }
 
