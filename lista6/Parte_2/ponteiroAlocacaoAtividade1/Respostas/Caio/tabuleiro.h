@@ -75,7 +75,7 @@ void MarcaPosicaoTabuleiro(tTabuleiro *tabuleiro, int peca, int x, int y);
  * 
  * @param tabuleiro Ponteiro para Tipo Abstrato de Dados (T.A.D.) que retpresenta a estrutura que contém as informações de um tabuleiro (com dados atualizados);
  */
-void ImprimeTabueiro(tTabuleiro *tabuleiro);
+void ImprimeTabuleiro(tTabuleiro *tabuleiro);
 
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente) e um tabuleiro
