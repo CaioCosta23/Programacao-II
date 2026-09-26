@@ -25,9 +25,8 @@ void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
     jogada = CriaJogada();
 
     while(1) {
-        LeJogada(jogada);
-
         printf("Jogador %d\n", (*jogador).id);
+        LeJogada(jogada);
 
         if (!(FoiJogadaBemSucedida(jogada))) {
             printf("Formato invalido!\n");
@@ -49,7 +48,7 @@ void JogaJogador(tJogador *jogador, tTabuleiro *tabuleiro) {
             if (!(EstaMarcadaPosicaoPecaTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id)))
                 if (EstaLivrePosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada))) {
                     printf("Jogada [%d,%d]!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
-                    MarcaPosicaoTabuleiro(tabuleiro, ObtemJogadaX(jogada), ObtemJogadaY(jogada), (*jogador).id);
+                    MarcaPosicaoTabuleiro(tabuleiro, (*jogador).id, ObtemJogadaX(jogada), ObtemJogadaY(jogada));
                     break;
                 }else{
                     printf("Posicao invalida (OCUPADA - [%d,%d] )!\n", ObtemJogadaX(jogada), ObtemJogadaY(jogada));
