@@ -15,7 +15,7 @@ tCirculo Circulo_Cria(float x, float y, float r) {
 
     if (circulo == NULL) {
         printf("Erro! Alocacao de memoria de circulo mal-sucedida.\n");
-        exir(1);
+        exit(1);
     }
     Circulo_Atribui_Centro(circulo, Pto_Cria(x, y));
     Circulo_Atribui_Raio(circulo, r);
@@ -44,7 +44,9 @@ int Circulo_Interior(tCirculo c, tPonto p) {
 }
 
 void Circulo_Apaga(tCirculo c) {
-    if (c != NULL) {
+    if (c != NULL)
+        if ((*c).centro != NULL)
+            Pto_Apaga((*c).centro);
+
         free(c);
-    }
 }
