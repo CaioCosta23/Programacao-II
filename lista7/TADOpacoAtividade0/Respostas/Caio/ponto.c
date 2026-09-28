@@ -19,8 +19,8 @@ tPonto Pto_Cria(float x, float y) {
         exit(1);
     }
 
-    ponto->coordenadaX = x;
-    ponto->coordenadaY = y;
+    Pto_Atribui_x(ponto, x);
+    Pto_Atribui_y(ponto, y);
 
     return ponto;
 }
