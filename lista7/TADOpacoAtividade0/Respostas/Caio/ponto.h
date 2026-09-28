@@ -1,7 +1,7 @@
 #ifndef _PONTO
 #define _PONTO
 
-typedef struct Ponto *tPonto;
+typedef struct ponto *tPonto;
 
 /**
  * @brief Cria (aloca a memória dinamicamente de) um ponto;
