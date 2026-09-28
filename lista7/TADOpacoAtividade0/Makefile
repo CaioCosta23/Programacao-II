@@ -4,10 +4,10 @@ DEPS = Respostas/Caio/ponto.h Respostas/Caio/circulo.h
 OBJ = build/ponto.o build/circulo.o build/main.o
 
 build/%.o: Respostas/Caio/%.c $(DEPS)
-	$(CC) - c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 build/prog: $(OBJ)
-	$(CC) - o $@ $^ $(CFLAGS)
+	$(CC) -o $@ $^ $(CFLAGS)
 	echo "Compilado!"
 
 run:
