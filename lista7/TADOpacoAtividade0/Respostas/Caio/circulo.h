@@ -35,8 +35,9 @@ void Circulo_Atribui_Raio(tCirculo c, float r);
  * @brief Obtém o valor do raio do círculo;
  * 
  * @param c (Ponteiro para) Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualizados) de um círculo;
+ * @return float Valor doraio do círculo;
  */
-void Circulo_Acessa_Raio(tCirculo c);
+float Circulo_Acessa_Raio(tCirculo c);
 
 /**
  * @brief Obtém o ponto (Tipo Abstrato de Dados - T.A.D. - que representa um ponto) que representa o centro do círculo;
