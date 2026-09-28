@@ -15,7 +15,7 @@ tPonto Pto_Cria(float x, float y) {
     ponto = (tPonto)malloc(sizeof(struct ponto));
 
     if (ponto == NULL) {
-        prrintf (" Erro! Alocacao de memoria de ponto mal-sucedida.\n");
+        printf (" Erro! Alocacao de memoria de ponto mal-sucedida.\n");
         exit(1);
     }
 
@@ -46,7 +46,6 @@ float Pto_Distancia(tPonto p1, tPonto p2) {
 }
 
 void Pto_Apaga(tPonto p) {
-    if (p != NULL) {
+    if (p != NULL)
         free(p);
-    }
 }
