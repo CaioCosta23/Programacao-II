@@ -21,5 +21,8 @@ int main() {
 
     printf("%d", Circulo_Interior(circulo, ponto));
 
+    Circulo_Apaga(circulo);
+    Pto_Apaga(ponto);
+
     return 0;
 }
