@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -lm
-DEPS = Respostas/Caio/tadgen.h
-OBJ = build/tadgen.o build/main.o
+DEPS = Respostas/Caio/filme.h Respostas/Caio/locadora.h
+OBJ = build/filme.o build/locadora.o build/main.o
 
 build/%.o: Respostas/Caio/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
