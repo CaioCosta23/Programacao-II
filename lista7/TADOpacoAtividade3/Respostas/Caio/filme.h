@@ -10,7 +10,7 @@ typedef struct Filme tFilme;
  * 
  * @return tFilme* Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações de um filme (com seus dados inicializados);
  */
-tFilme *CriaFilme();
+tFilme *CriarFilme();
 
 /**
  * @brief Lê os dados de um filme;
@@ -50,7 +50,7 @@ int ObterQtdEstoqueFilme(tFilme *filme);
  * @param filme Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações de um filme (com seus dados atualizados);
  * @return int Quantidade de cópias do filme que está alugada;
  */
-int ObtemQtdAlugadaFilme(tFilme *filme);
+int ObterQtdAlugadaFilme(tFilme *filme);
 
 /**
  * @brief Compara um código ccom o código do filme e verifica se são iguais;
@@ -67,7 +67,7 @@ int EhMesmoCodigoFilme(tFilme *filme, int codigo);
  * @param filme Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações de um filme (com seus dados atualizados);
  * @OBS: Consequentemente, o registro de quantidade de cópias do filme que estão alugadas é incrementada e a quuantidade de cópias do filme que existe em estoque é decrementada;
  */
-void AlugaFilme(tFilme *filme);
+void AlugarFilme(tFilme *filme);
 
 /**
  * @brief Devolve um filme ao estoque;
@@ -75,7 +75,7 @@ void AlugaFilme(tFilme *filme);
  * @param filme Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações de um filme (com seus dados atualizados);
  * @OBS: Consequentemente, o registro de quantidade de cópias do filme que estão alugadas é decrementada e a quuantidade de cópias do filme que existe em estoque é incrementada;
  */
-void DevolveFilme(tFilme *filme);
+void DevolverFilme(tFilme *filme);
 
 /**
  * @brief Compara o nome de dois fimes e verifica qual é o maior (vem depois em ordem alfabética) ou se tem nomes iguais;
@@ -91,7 +91,7 @@ int CompararNomesFilmes(tFilme *filme1, tFilme *filme2);
  * 
  * @param filme Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações de um filme (com seus dados atualizados);
  */
-void ImprimeNomeFilme(tFilme *filme);
+void ImprimirNomeFilme(tFilme *filme);
 
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente de) um filme;
