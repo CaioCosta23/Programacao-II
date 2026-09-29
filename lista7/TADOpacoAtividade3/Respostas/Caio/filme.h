@@ -78,7 +78,7 @@ void AlugaFilme(tFilme *filme);
 void DevolveFilme(tFilme *filme);
 
 /**
- * @brief 
+ * @brief Compara o nome de dois fimes e verifica qual é o maior (vem depois em ordem alfabética) ou se tem nomes iguais;
  * 
  * @param filme1 Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações do primeiro filme (com seus dados atualizados);
  * @param filme2 Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações do segundo filme (com seus dados atualizados);
