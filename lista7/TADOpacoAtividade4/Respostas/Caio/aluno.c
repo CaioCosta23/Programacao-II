@@ -36,10 +36,10 @@ tAluno *CriaAluno() {
 
     aluno->notas = NULL;
 
-    aluno->notas = (int*)calloc(QUANTIDADE_NOTAS, sizeof(int));
+    aluno->notas = (float*)calloc(QUANTIDADE_NOTAS, sizeof(float));
 
-    if ((*aluno).nome == NULL){
-        printf("Erro! Alocacao de memoria do nome do aluno mal-sucedida.\n");
+    if ((*aluno).notas == NULL){
+        printf("Erro! Alocacao de memoria das notas do aluno mal-sucedida.\n");
         ApagaAluno(aluno);
         exit(1);
     }
@@ -53,8 +53,11 @@ void LeAluno(tAluno *aluno) {
     unsigned int contador = 0;
     static unsigned int TAMANHO_VETOR = TAMANHO_MAXIMO_NOME;
 
+    // Todo caractere fantasma (momo um '\n') é eliminado (tudo que não é letra)
+    scanf("%*[^A-Za-z]");
+
     while(1){
-        scanf("%c", letra);
+        scanf("%c", &letra);
 
         if (contador > TAMANHO_VETOR){
             TAMANHO_VETOR *= 2;
@@ -66,19 +69,22 @@ void LeAluno(tAluno *aluno) {
                 exit(1);
             }
         }
-        
+
+        if (letra == '\n'){
+            aluno->nome[contador++] = '\0';
+            break;
+        }
         aluno->nome[contador++] = letra;
 
-        if (letra == '\0')
-            break;
     }
-    scanf("%d", &aluno->matricula);
+    scanf("%d\n", &aluno->matricula);
 
     unsigned int n;
 
     for (n = 0; n < QUANTIDADE_NOTAS; n++)
-        scanf("%d", &aluno->notas[n]);
-    
+        scanf("%f", &aluno->notas[n]);
+
+    scanf("%*[^\n]\n");
 }
 
 int ComparaMatricula(tAluno *aluno1, tAluno *aluno2) {
@@ -111,6 +117,8 @@ void ImprimeAluno(tAluno *aluno) {
 
 void ApagaAluno(tAluno *aluno) {
     if (aluno != NULL){
+        if ((*aluno).nome != NULL)
+            free((*aluno).nome);
         if ((*aluno).notas != NULL)
             free((*aluno).notas);
         free(aluno);
