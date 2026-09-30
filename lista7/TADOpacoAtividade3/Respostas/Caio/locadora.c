@@ -97,11 +97,6 @@ tLocadora *CriarLocadora() {
         exit(1);
     }
 
-    unsigned int f;
-
-    for(f = 0; f < MAX_FILMES; f++)
-        locadora->filmes[f] = CriarFilme();
-
     locadora->quantidadeFilmes = 0;
     locadora->lucro = 0;
     
@@ -148,9 +143,9 @@ void LerCadastroLocadora(tLocadora *Locadora) {
             LeFilme(filme, codigo);
             CadastrarFilmeLocadora(Locadora, filme);
 
-            Locadora->quantidadeFilmes++;
             printf("Filme cadastrado %d - ", codigo);
             ImprimirNomeFilme(filme);
+            printf("\n");
         }
     }
 }
@@ -158,11 +153,13 @@ void LerCadastroLocadora(tLocadora *Locadora) {
 void AlugarFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCodigos) {
     unsigned int c, f;
     unsigned int contador = 0, custo = 0;
-    unsigned short int aluguelBemSucedido = 0;
+    unsigned short int aluguelBemSucedido = 0, filmeEncontrado = 0; // Variáveis Lógicas;
     
     for(c = 0; c < quantidadeCodigos; c++) {
+        filmeEncontrado = 0;
         for(f = 0; f < (*locadora).quantidadeFilmes; f++) {
             if (VerificarFilmeCadastrado(locadora, *(codigos + c))) {
+                filmeEncontrado = 1;
                 if (ObterQtdEstoqueFilme((*locadora).filmes[f]) > 0) {
                     contador += 1;
                     custo += ObterValorFilme((*locadora).filmes[f]);
@@ -178,14 +175,13 @@ void AlugarFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCodig
                     printf(" nao disponivel no estoque. Volte mais tarde.\n");
                 }
                 break;
-            }else {
-                printf("Filme %d nao cadastrado.\n", *(codigos + c));
-                break;
             }
         }
-        if (aluguelBemSucedido)
-            printf("Total de filmes alugados: %d com custo de R$%d\n", contador, custo);
+        if (!(filmeEncontrado))
+            printf("Filme %d nao cadastrado.\n", *(codigos + c));
     }
+    if (aluguelBemSucedido)
+        printf("Total de filmes alugados: %d com custo de R$%d\n", contador, custo);
 }
 
 void LerAluguelLocadora(tLocadora *locadora) {
@@ -194,10 +190,13 @@ void LerAluguelLocadora(tLocadora *locadora) {
 
 void DevolverFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCodigos) {
     unsigned int c, f;
+    unsigned short int filmeEncontrado;
 
     for(c = 0; c < quantidadeCodigos; c++) {
+          filmeEncontrado = 0;
         for(f = 0; f < (*locadora).quantidadeFilmes; f++) {
             if (VerificarFilmeCadastrado(locadora, *(codigos + c))) {
+                filmeEncontrado = 1;
                 if (ObterQtdAlugadaFilme((*locadora).filmes[f])) {
                     
                     DevolverFilme((*locadora).filmes[f]);
@@ -213,6 +212,8 @@ void DevolverFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCod
                 break;
             }        
         }
+        if (!(filmeEncontrado))
+            printf("Filme %d nao cadastrado.\n", *(codigos + c));
     }
 }
 
@@ -223,8 +224,9 @@ void LerDevolucaoLocadora(tLocadora *locadora) {
 void ConsultarEstoqueLocadora(tLocadora *locadora) {
     unsigned int f;
 
+    printf("~ESTOQUE~\n");
+
     for(f = 0; f < (*locadora).quantidadeFilmes; f++) {
-        printf("~ESTOQUE~\n");
         printf("%d - ", ObterCodigoFilme((*locadora).filmes[f]));
         ImprimirNomeFilme((*locadora).filmes[f]);
         printf(" Fitas em estoque: %d\n", ObterQtdEstoqueFilme((*locadora).filmes[f]));
