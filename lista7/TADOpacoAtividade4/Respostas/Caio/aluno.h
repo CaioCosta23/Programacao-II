@@ -42,7 +42,7 @@ int CalculaMediaAluno(tAluno *aluno);
  * @return int 1 (verdadeiro) se o aluno estiver aprovado ou 0 (falso), caso contrário;
  * @OBS: O aluno estará aprovado se a m´´´edia de suas notas for maior ou igual à 7;
  */
-int VerificaAAprovacao(tAluno *aluno);
+int VerificaAprovacao(tAluno *aluno);
 
 /**
  * @brief Imprime oos dados do aluno;
