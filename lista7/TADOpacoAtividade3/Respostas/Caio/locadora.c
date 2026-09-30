@@ -10,7 +10,7 @@ typedef void (*Fptr)(tLocadora*, int*, int);
 struct Locadora{
     tFilme **filmes;
     float lucro;
-    int  quantidadeFilmes;
+    int quantidadeFilmes;
 };
 
 
@@ -134,7 +134,7 @@ void LerCadastroLocadora(tLocadora *Locadora) {
             }
         }
         if (jaCadastrado) {
-            printf("Filme ja cadastrado no estoque.\n");
+            printf("Filme ja cadastrado no estoque\n");
             scanf("%*[^\n]\n");
         }else {
             tFilme *filme;
@@ -183,8 +183,6 @@ void AlugarFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCodig
     }
     if (aluguelBemSucedido)
         printf("Total de filmes alugados: %d com custo de R$%d\n", contador, custo);
-    
-    locadora->lucro += custo;
 }
 
 void LerAluguelLocadora(tLocadora *locadora) {
@@ -204,12 +202,14 @@ void DevolverFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCod
                     if (ObterQtdAlugadaFilme((*locadora).filmes[f])) {
                         
                         DevolverFilme((*locadora).filmes[f]);
+
+                        locadora->lucro += ObterValorFilme((*locadora).filmes[f]);
                         
                         printf("Filme %d - ", ObterCodigoFilme((*locadora).filmes[f]));
                         ImprimirNomeFilme((*locadora).filmes[f]);
-                        printf("Devolvido!\n");
+                        printf(" Devolvido!\n");
                     }else {
-                        printf("Nao eh possivel devolver o filme %d - ", *(codigos + c));
+                        printf("Nao e possivel devolver o filme %d - ", *(codigos + c));
                         ImprimirNomeFilme((*locadora).filmes[f]);
                         printf(".\n");
                     }
@@ -239,7 +239,8 @@ void ConsultarEstoqueLocadora(tLocadora *locadora) {
 }
 
 void ConsultarLucroLocadora(tLocadora *locadora) {
-    printf("Lucro total R$%.0f\n", (*locadora).lucro);
+    if ((*locadora).lucro > 0)
+        printf("\nLucro total R$%.0f\n", (*locadora).lucro);
 }
 
 int VerificarFilmeCadastrado(tLocadora *locadora, int codigo) {
