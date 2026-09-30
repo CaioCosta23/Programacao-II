@@ -41,14 +41,23 @@ int main () {
     locadora = CriarLocadora();
 
     while(scanf("%s\n", operacao) == 1){
-        if (ComparaStrings(operacao, CADASTRAR))
+        if (ComparaStrings(operacao, CADASTRAR)) {
             LerCadastroLocadora(locadora);
-        else if (ComparaStrings(operacao, ALUGAR))
+            printf("\n");
+        }else if (ComparaStrings(operacao, ALUGAR)) {
             LerAluguelLocadora(locadora);
-        else if (ComparaStrings(operacao, DEVOLVER))
+            printf("\n");
+        }else if (ComparaStrings(operacao, DEVOLVER)) {
             LerDevolucaoLocadora(locadora);
-        else if (ComparaStrings(operacao, CONSULTAR_ESTOQUE))
+            printf("\n");
+        }else if (ComparaStrings(operacao, CONSULTAR_ESTOQUE)) {
+            OrdenarFilmesLocadora(locadora);
             ConsultarEstoqueLocadora(locadora);
+            printf("\n");
+        }else {
+            printf("Entrada/Formato invalido!\n");
+        }
+            
         scanf("%*[^\n]\n");
     }
     ConsultarLucroLocadora(locadora);
