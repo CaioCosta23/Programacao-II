@@ -44,7 +44,7 @@ void AlugarFilmesLocadora(tLocadora *locadora, int *codigos, int quantidadeCodig
 void LerAluguelLocadora(tLocadora *locadora);
 
 /**
- * @brief 
+ * @brief Devolve filmes à locadora;
  * 
  * @param locadora Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados de uma locadora (atualizada);
  * @param codigos Lista/vetor/'array' de códigos que identificam cada filme a ser devolvido;
@@ -90,7 +90,7 @@ int VerificarFilmeCadastrado(tLocadora *locadora, int codigo);
 void OrdenarFilmesLocadora(tLocadora *locadora);
 
 /**
- * @brief Destróoi (libera/desaloca a memória dinamicamente de) uma locadora;
+ * @brief Destrói (libera/desaloca a memória dinamicamente de) uma locadora;
  * 
  * @param locadora Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados de uma locadora (atualizada);
  */
