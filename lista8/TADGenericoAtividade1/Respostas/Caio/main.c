@@ -9,8 +9,8 @@ int main() {
     unsigned short int erro = 0; // Variável lógica;
 
     printf("tad_gen_01\n");
-    printf("Digite o tipo e o numero de elementos:\n");
-    scanf("%d %d\n", type, quantidadeElementos);
+    printf("Digite o tipo e numero de elementos:");
+    scanf("%d %d\n", &type, &quantidadeElementos);
 
     switch(type) {
         case INT:
@@ -25,8 +25,6 @@ int main() {
             break;
     }
     if (!(erro)) {
-        printf("Digite o vetor:\n");
-
         LeGenerico(genericTad);
         ImprimeGenerico(genericTad);
         DestroiGenerico(genericTad);
