@@ -53,15 +53,17 @@ tGeneric *CriaGenerico (Type type, int numElem) {
 void LeGenerico(tGeneric *gen) {
     unsigned int d;
 
+    printf("\nDigite o vetor:\n");
+
     switch(gen->type){
         case INT:
             for(d = 0; d < (*gen).size; d++)
-                scanf("%d", (int*)(gen->data + d));
+                scanf("%d", (((int*)(gen->data)) + d));
             
             break;
         case FLOAT:
             for(d = 0; d < (*gen).size; d++)
-                scanf("%d", (int*)(gen->data + d));
+                scanf("%f", (((float*)(gen->data)) + d));
             break;
         default:
             printf("Tipo nao identificado.\n");
@@ -80,13 +82,14 @@ void ImprimeGenerico(tGeneric *gen) {
         if ((*gen).type == INT)
             printf("%d ", ((int*)(*gen).data)[d]);
         else if ((*gen).type == FLOAT)
-            printf("%d ", ((float*)(*gen).data)[d]);
+            printf("%.2f ", ((float*)(*gen).data)[d]);
     }
 }
 
 void DestroiGenerico(tGeneric *gen) {
-    if (gen != NULL)
+    if (gen != NULL) {
         if ((*gen).data != NULL)
             free((*gen).data);
         free(gen);
+    }
 }
