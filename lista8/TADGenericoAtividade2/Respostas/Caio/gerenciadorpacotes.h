@@ -26,7 +26,7 @@ void AdicionaPacoteNoGerenciador(tGerenciador *geren, tPacote *pac);
  * @param geren Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualizados) de um gerenciador de pacote;
  * @param idx Índice do pacote na lista/vetor/'array' de pacotes do gerenciador;
  */
-void ImprimirPacoteBoIndice(tGerenciador *geren, int idx);
+void ImprimirPacoteNoIndice(tGerenciador *geren, int idx);
 
 /**
  * @brief Imprime todos os pacotes da lista/vetor/'array' de pacotes do gerenciador;
