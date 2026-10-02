@@ -36,10 +36,10 @@ void ImprimirPacoteNoIndice(tGerenciador *geren, int idx);
 void ImprimirTodosPacotes(tGerenciador *geren);
 
 /**
- * @brief Dddddestrói (libera/desaloca dinamicamente a memória de) um gerenciador (de pacotes);
+ * @brief Destrói (libera/desaloca dinamicamente a memória de) um gerenciador (de pacotes);
  * 
  * @param geren Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualizados) de um gerenciador pacote;
  */
-void DestroiGerenciado(tGerenciador *geren);
+void DestroiGerenciador(tGerenciador *geren);
 
 #endif
