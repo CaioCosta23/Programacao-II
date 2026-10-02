@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -lm
-DEPS = Respostas/Caio/pacote.h build/gerenciadorpacotes.h
+DEPS = Respostas/Caio/pacote.h Respostas/Caio/gerenciadorpacotes.h
 OBJ = build/pacote.o build/gerenciadorpacotes.o build/main.o
 
 build/%.o: Respostas/Caio/%.c $(DEPS)
