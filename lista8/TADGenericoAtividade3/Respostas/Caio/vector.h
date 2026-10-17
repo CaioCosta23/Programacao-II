@@ -43,6 +43,6 @@ int VectorSize(Vector *v);
  * @param v Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) do vetor;
  * @param destroy Ponteiro para função ('callback') que destruirá (dealocará a memória dinamicamente de) um vetor;
  */
-void VectorDestroy(Vector **v, void (*destroy)(data_type));
+void VectorDestroy(Vector *v, void (*destroy)(data_type));
 
 #endif
