@@ -71,7 +71,10 @@ void VectorDestroy(Vector *v, void (*destroy)(data_type)) {
             unsigned int d;
 
             for(d = 0; d < (*v).size; d++)
-                destroy((*v).data);
+                destroy((*v).data[d]);
+            
+            free((*v).data);
         }
+        free(v);
     }
 }
