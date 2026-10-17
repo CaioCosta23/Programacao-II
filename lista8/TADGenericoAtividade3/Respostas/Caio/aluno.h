@@ -38,8 +38,8 @@ float GetNotaAluno(tAluno *aluno);
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente de) um aluno;
  * 
- * @param aluno Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) de um aluno;
+ * @param data_type (Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a) Estrutura que contém as informações (dados atualizados) de um aluno;
  */
-void DestroiAluno(tAluno *aluno);
+void DestroiAluno(data_type aluno);
 
 #endif
