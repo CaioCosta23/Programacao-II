@@ -3,7 +3,7 @@
 
 #include "aluno.h"
 
-#define MAX_CARACTERES 50
+#define MAX_CARACTERES 51
 
 struct Aluno {
     char nome[MAX_CARACTERES];
@@ -27,7 +27,7 @@ tAluno *CriaAluno() {
 }
 
 void LeAluno(tAluno *aluno) {
-    scanf("%[^;];%c;%f\n", aluno->nome, &aluno->genero, &aluno->nota);
+    scanf(" %[^;];%c;%f\n", aluno->nome, &aluno->genero, &aluno->nota);
 }
 
 char GetGeneroAluno(tAluno *aluno) {
@@ -38,7 +38,9 @@ float GetNotaAluno(tAluno *aluno) {
     return (*aluno).nota;
 }
 
-void DestroiAluno(tAluno *aluno) {
-    if (aluno != NULL)
-        free(aluno);
+void DestroiAluno(data_type aluno) {
+    tAluno *ponteiroAluno = (tAluno*)aluno;
+
+    if (ponteiroAluno != NULL)
+        free(ponteiroAluno);
 }
