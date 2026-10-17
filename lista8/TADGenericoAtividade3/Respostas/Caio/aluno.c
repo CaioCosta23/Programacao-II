@@ -14,12 +14,13 @@ struct Aluno {
 tAluno *CriaAluno() {
     tAluno *aluno = NULL;
 
-    aluno = (tAluno*)malloc(sizeof(aluno));
+    aluno = (tAluno*)malloc(sizeof(tAluno));
 
     if (aluno == NULL) {
         printf("Erro! Alocacao de memoria de aluno mal-sucedida!!\n");
         exit(1);
     }
+    
     aluno->genero = '\0';
     aluno->nota = 0;
 
@@ -27,7 +28,7 @@ tAluno *CriaAluno() {
 }
 
 void LeAluno(tAluno *aluno) {
-    scanf(" %[^;];%c;%f\n", aluno->nome, &aluno->genero, &aluno->nota);
+    scanf("%[^;];%c;%f\n", aluno->nome, &aluno->genero, &aluno->nota);
 }
 
 char GetGeneroAluno(tAluno *aluno) {
