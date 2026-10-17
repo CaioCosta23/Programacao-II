@@ -4,6 +4,12 @@
 #include "aluno.h"
 #include "relatorio.h"
 
+/**
+ * @brief Programa que lê os dados de aluno, mostra a média das notas de todos os alunos, porcentagem de aprovações,
+ * e a porcentagem de pessoas por gênero na turma;
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     int quantidadeAlunos, a;
     Vector *vector;
@@ -21,7 +27,6 @@ int main() {
     }
 
     ImprimeRelatorio(vector);
-
     VectorDestroy(vector, DestroiAluno);
 
     return 0;
