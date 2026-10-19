@@ -3,45 +3,7 @@
 
 #include "candidato.h"
 
-#define INITIAL_SIZE 20
-
-/**
- * @brief Realoca a memória dinamicamente de um dado ('string' - lista/array/vetor de caracteres);
- * 
- * @param palavra Lista/vetor/'array' de caracteres;
- */
-static void realocarMemoria(char *palavra, unsigned int novoTamanho) {
-    palavra = (char*)realloc(palavra, novoTamanho * sizeof(char));
-
-    if (palavra == NULL) {
-        printf("Erro! Realocacao de memoria de palavra mal-sucedida.\n");
-        exit(1);
-    }
-}
-
-/**
- * @brief Lê uma palavra;
- * 
- * @param palavra Lista/vetor/'array' de caracteres;
- */
-static void LePalavra(char *palavra) {
-    unsigned int contador = -1, tamanho = INITIAL_SIZE;
-    char caractere;
-
-    while(1) {
-        scanf("%c", &caractere);
-
-        if (contador == tamanho) {
-            tamanho *= 2;
-            realocarMemoria(palavra, tamanho);
-        }
-        if (caractere == ',')
-            break;
-        
-        palavra[contador++] = caractere;
-    }
-}
-
+#define INITIAL_SIZE 50
 
 tCandidato *CriaCandidato() {
     tCandidato *candidato = NULL;
@@ -72,15 +34,14 @@ tCandidato *CriaCandidato() {
     }
 
     candidato->cargo = '\0';
-    candidato->id -1;
+    candidato->id = -1;
     candidato->votos = 0;
+
+    return candidato;
 }
 
 void LeCandidato(tCandidato *candidato) {
-    LePalavra((*candidato).nome);
-    LePalavra((*candidato).partido);
-
-    scanf(" %c, %d", candidato->nome, candidato->partido, &candidato->cargo, &candidato->id);
+    scanf("\n%[^,], %[^,], %c, %d\n", candidato->nome, candidato->partido, &candidato->cargo, &candidato->id);
 }
 
 int VerificaIdCandidato(tCandidato *candidato, int id) {
@@ -115,8 +76,8 @@ void ApagaCandidato(tCandidato *candidato) {
     if (candidato != NULL) {
         if ((*candidato).nome != NULL)
             free((*candidato).nome);
-        if ((*candidato).cargo != NULL)
-            free((*candidato).cargo);
+        if ((*candidato).partido != NULL)
+            free((*candidato).partido);
         
         free(candidato);
     }
