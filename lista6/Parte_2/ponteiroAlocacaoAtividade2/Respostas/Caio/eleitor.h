@@ -17,7 +17,7 @@ tEleitor *CriaEleitor();
  * 
  * @param eleitor Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (a serem lidas) do eleitor;
  */
-void LeElietor(tEleitor *eleitor);
+void LeEleitor(tEleitor *eleitor);
 
 /**
  * @brief Obtém o voto de um eleitor para presidente;
