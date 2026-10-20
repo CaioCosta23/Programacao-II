@@ -55,8 +55,8 @@ void ImprimeDadosAgencia(tAgencia *agencia);
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente de) uma agência;
  * 
- * @param agencia Ponteiro para Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de uma agência;
+ * @param agencia (Ponteiro para) Tipo genérico de Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de uma agência;
  */
-void DestroiAgencia(tAgencia *agencia);
+void DestroiAgencia(DataType agencia);
 
 #endif
