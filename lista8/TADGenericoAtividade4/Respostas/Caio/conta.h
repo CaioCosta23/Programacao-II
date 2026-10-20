@@ -30,8 +30,8 @@ float GetSaldoConta(tConta *conta);
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente de) uma conta;
  * 
- * @param conta Ponteiro para Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de uma conta;
+ * @param conta (Ponteiro para) Tipo genérico de Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de uma conta;
  */
-void DestroiConta(tConta *conta);
+void DestroiConta(DataType conta);
 
 #endif
