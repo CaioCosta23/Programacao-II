@@ -10,7 +10,7 @@ typedef float (*CalculadoraCallback)(float, float); // Renomeação do ponteiro 
  * @param num1 Primeiro número envolvido no cálculo;
  * @param num2 Segundo número envolvido no cálculo;
  * @param operacao Ponteiro para função ('callback') que fará referência ao tipo de operação à ser realizada;
- * @return float 
+ * @return float Valor resultante do cálculo;
  */
 float Calcular(float num1, float num2, CalculadoraCallback operacao);
 
