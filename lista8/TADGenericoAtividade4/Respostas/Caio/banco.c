@@ -114,6 +114,8 @@ void ImprimeRelatorioBanco(tBanco *banco) {
 
 void DestroiBanco(tBanco *banco) {
     if (banco != NULL) {
+        if ((*banco).vetorAgencias != NULL)
+            VectorDestroy((*banco).vetorAgencias, DestroiAgencia);
         if ((*banco).nome != NULL)
             free((*banco).nome);
 
