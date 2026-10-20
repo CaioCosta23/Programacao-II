@@ -3,6 +3,10 @@
 
 #include "banco.h"
 
+#define ADICIONAR_AGENCIA 'A'
+#define ADICIONAR_CONTA 'C'
+#define FINALIZAR 'F'
+
 /**
  * @brief Programa que Cria um banco, lê e insere ageências e contas nessas agências e por fim exibe um relatório dos dados do banco;
  * 
@@ -11,9 +15,10 @@
 int main() {
     tBanco *banco;
     char opcaoOperacao;
-    const char ADICIONAR_AGENCIA = 'A', ADICIONAR_CONTA = 'C', FINALIZAR = 'F';
 
     banco = CriaBanco();
+    
+    LeBanco(banco);
 
     while (1) {
         scanf("%c\n", &opcaoOperacao);
@@ -42,6 +47,8 @@ int main() {
                 scanf("%d\n", &numeroAgencia);
 
                 InsereContaBanco(banco, numeroAgencia, conta);
+                break;
+            default:
                 break;
         }
     }
