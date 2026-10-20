@@ -3,7 +3,8 @@
 
 #include "agencia.h"
 
-#define SIZE_STRING 50
+#define TAMANHO_NOME 50
+#define QUANTIDADE_CONTAS 10
 
 struct Agencia {
     Vector *vetorContas;
@@ -21,12 +22,15 @@ tAgencia *CriaAgencia() {
         exit(1);
     }
 
+    agencia->vetorContas = VectorConstruct();
+
     agencia->nome = NULL;
 
-    agencia->nome = (char*)calloc(SIZE_STRING, sizeof(char));
+    agencia->nome = (char*)calloc(TAMANHO_NOME, sizeof(char));
 
     if ((*agencia).nome == NULL) {
         printf("Erro! Alocacao de memoria do nome da agencia mal-sucedida.\n");
+        DestroiAgencia((DataType) agencia);
         exit(1);
     }
     agencia->id = -1;
@@ -66,11 +70,16 @@ void ImprimeDadosAgencia(tAgencia *agencia) {
     printf("\tSaldo médio: R$%.2f\n", GetSaldoMedioAgencia(agencia));
 }
 
-void DestroiAgencia(tAgencia *agencia) {
-    if (agencia != NULL) {
-        if ((*agencia).nome != NULL)
-            free((*agencia).nome);
+void DestroiAgencia(DataType agencia) {
+    tAgencia *ponteiroAgencia = (tAgencia*)agencia;
 
-        free(agencia);
+    if (ponteiroAgencia != NULL) {
+        if ((*ponteiroAgencia).vetorContas != NULL) {
+            VectorDestroy((*ponteiroAgencia).vetorContas, DestroiConta);
+        }
+        if ((*ponteiroAgencia).nome != NULL)
+            free((*ponteiroAgencia).nome);
+
+        free(ponteiroAgencia);
     }
 }
