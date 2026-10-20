@@ -29,6 +29,15 @@ void LeBanco(tBanco *banco);
 void AdicionaAgencia(tBanco *banco, tAgencia *agencia);
 
 /**
+ * @brief Insere uma conta de um usuário/cliente à uma determinada agência do banco;
+ * 
+ * @param banco Ponteiro para Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de um banco;
+ * @param numAgencia Número da agência do banco onde a conta será inserida;
+ * @param cliente Ponteiro para Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de uma conta;
+ */
+void InsereContaBanco(tBanco *banco, int numAgencia, tConta *cliente);
+
+/**
  * @brief Imprime os dados/informações de um banco;
  * 
  * @param banco Ponteiro para Tipo Abstrato de Daados (T.A.D.) que repre4senta a estrutura que contém as informações (dados atualizados) de um banco;
