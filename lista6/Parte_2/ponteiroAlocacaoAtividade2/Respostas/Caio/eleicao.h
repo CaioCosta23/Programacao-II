@@ -5,7 +5,7 @@
 #include "eleitor.h"
 
 typedef struct {
-    tCandidato **candidato, **governadores;
+    tCandidato **presidentes, **governadores;
     tEleitor **eleitores;
     int totalPresidentes, votosBrancosPresidente, votosNulosPresidente,
         totalGovernadores, votosBrancosGovernador, votosNulosGovernador,
