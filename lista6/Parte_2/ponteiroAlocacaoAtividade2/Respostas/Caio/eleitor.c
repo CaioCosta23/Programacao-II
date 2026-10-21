@@ -33,7 +33,7 @@ int ObtemVotoGovernador(tEleitor *eleitor) {
 }
 
 int EhMesmoEleitor(tEleitor *eleitor1, tEleitor *eleitor2) {
-    return ((*eleitor1).id == (*eleitor2). id);
+    return ((*eleitor1).id == (*eleitor2).id);
 }
 
 void ApagaEleitor(tEleitor *eleitor) {
