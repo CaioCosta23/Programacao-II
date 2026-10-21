@@ -31,7 +31,7 @@ static void realocarMemoriaVetorCandidatos(tCandidato **candidatos, unsigned int
  * @param tamanho Tamanho da memória que será realocada;
  */
 static void realocarMemoriaVetorEleitores(tEleitor **eleitores, unsigned int tamanho) {
-    eleitores = (tEleitor**)realloc(eleitores, tamanho * sizeof(tCandidato*));
+    eleitores = (tEleitor**)realloc(eleitores, tamanho * sizeof(tEleitor*));
 
     if (eleitores == NULL) {
         printf("Erro! Realocacao de memoria de lista/vetor/'array' candidatos mal-sucedida.\n");
