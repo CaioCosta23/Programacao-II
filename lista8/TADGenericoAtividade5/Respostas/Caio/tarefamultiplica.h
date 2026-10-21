@@ -15,7 +15,7 @@ tMult *CriaTarefaMultiplicar(float n1, float n2);
 /**
  * @brief Executa a multiplicação de dois números;
  * 
- * @param muil Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma tarefa de multiplicação;
+ * @param mult Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma tarefa de multiplicação;
  */
 void ExecutaTarefaMultiplicar(void *mult);
 
