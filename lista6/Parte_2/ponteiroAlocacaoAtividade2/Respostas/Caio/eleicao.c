@@ -92,10 +92,11 @@ tEleicao *InicializaEleicao() {
 }
 
 void RealizaEleicao(tEleicao *eleicao) {
-    unsigned int quantidadeCandidatos, c, quantidadeVoto, v;
+    unsigned int quantidadeCandidatos, c, quantidadeVotos, v, e;
     tCandidato *candidato;
     char cargo;
     tEleitor *eleitor;
+    unsigned short int eleitorEncontrado; // Variável lógica - Verifica se o eleitor já está registrado (ele o o seus respectivos votos);
 
     scanf("%d", &quantidadeCandidatos);
 
@@ -119,10 +120,28 @@ void RealizaEleicao(tEleicao *eleicao) {
             ApagaCandidato(candidato);
     }
 
+    scanf("%d\n", &quantidadeVotos);
+
+    if (quantidadeVotos > QUANTIDADE_INICIAL_ELEITORES)
+        realocarMemoriaVetorEleitores((*eleicao).eleitores, quantidadeVotos);
+
     for(v = 0; v < quantidadeVotos; v++) {
         eleitor = CriaEleitor();
 
         LeEleitor(eleitor);
+
+        eleitorEncontrado = 0;
+
+        if ((*eleicao).totalEleitores > 1) {
+            for(e = 0; e < (*eleicao).totalEleitores; e++)
+                if (EhMesmoEleitor(eleitor, (*eleicao).eleitores[e]))
+                    eleitorEncontrado = 1;
+        }
+            
+        if (eleitorEncontrado)
+            ApagaEleitor(eleitor);
+        else
+            eleicao->eleitores[(*eleicao).totalEleitores++] = eleitor;
     }
 
     // à fazer: Contabilidade de Votos;
@@ -131,42 +150,42 @@ void RealizaEleicao(tEleicao *eleicao) {
 void ImprimeResultadoEleicao(tEleicao *eleicao) {
     unsigned short int empate; // Variável lógica;
     unsigned int quantidadeVotosCandidato, maiorQuantidadeVotos, indiceMaisVotado, p, g;
-    unsigned int totalVotosPresidente = 0, totalVotosGovernedaor = 0;
+    unsigned int totalVotosPresidente = 0, totalVotosGovernador = 0;
 
     empate = 0;
 
     printf("- PRESIDENTE ELEITO: ");
 
-    for(p = 0 p < (*eleicao).totalPresidentes; p++) {
+    for(p = 0; p < (*eleicao).totalPresidentes; p++) {
         quantidadeVotosCandidato = ObtemVotos((*eleicao).presidentes[p]);
         
-        if (quantidadeVotosCandidato == maiorQuantidadeVotos) {
-            empate = 1;
-        }else if ((p == 0) || (quantidadeVotosCandidato > maiorQuantidadeVotos)) {
+        if ((p == 0) || (quantidadeVotosCandidato > maiorQuantidadeVotos)) {
             maiorQuantidadeVotos = quantidadeVotosCandidato;
             indiceMaisVotado = p;
             empate = 0;
+        }else if (quantidadeVotosCandidato == maiorQuantidadeVotos) {
+            empate = 1;
         }
         totalVotosPresidente += quantidadeVotosCandidato;
     }
     if (empate) 
         printf("EMPATE. SERA NECESSARIO UMA NOVA VOTACAO\n");
     else
-        ImprimeCandidato((*eleicao).presidentes[indiceMaisVotado], CalculaPercentualVotos((*eleicao.).presidentes[p], (totalVotosPresidente + (*eleicao).votosNulosPresidente + (*eleicao).votosBrancosPreidente)));
+        ImprimeCandidato((*eleicao).presidentes[indiceMaisVotado], CalculaPercentualVotos((*eleicao).presidentes[p], (totalVotosPresidente + (*eleicao).votosNulosPresidente + (*eleicao).votosBrancosPresidente)));
 
     empate = 0;
 
     printf("- GOVERNADOR ELEITO: ");
 
-    for(g = 0 g < (*eleicao).totalGovernadores; g++) {
+    for(g = 0; g < (*eleicao).totalGovernadores; g++) {
         quantidadeVotosCandidato = ObtemVotos((*eleicao).governadores[g]);
         
-        if (quantidadeVotosCandidato == maiorQuantidadeVotos) {
-            empate = 1
-        }else if ((g == 0) || (quantidadeVotosCandidato > maiorQuantidadeVotos)) {
+        if ((g == 0) || (quantidadeVotosCandidato > maiorQuantidadeVotos)) {
             maiorQuantidadeVotos = quantidadeVotosCandidato;
             indiceMaisVotado = g;
             empate = 0;
+        }else if (quantidadeVotosCandidato == maiorQuantidadeVotos) {
+            empate = 1;
         }
         totalVotosGovernador += quantidadeVotosCandidato;
     }
@@ -174,9 +193,9 @@ void ImprimeResultadoEleicao(tEleicao *eleicao) {
     if (empate) 
         printf("EMPATE. SERA NECESSARIO UMA NOVA VOTACAO\n");
     else
-        ImprimeCandidato((*eleicao).governadores[indiceMaisVotado], CalculaPercentualVotos((*eleicao.).governadores[g], (totalVotos + (*eleicao).votosNulosGovernador + (*eleicao).votosBrancosGovernador)));
+        ImprimeCandidato((*eleicao).governadores[indiceMaisVotado], CalculaPercentualVotos((*eleicao).governadores[g], (totalVotosGovernador + (*eleicao).votosNulosGovernador + (*eleicao).votosBrancosGovernador)));
 
-    printf("- NULOS E BRANCOS: %d, %d\n" ((*eleicao).votosNulosPresidente + (*eleicao).votosNulosGovernador), ((*eleicao).votosBrancosPresidente + (*eleicao).votosBrancosGovernador));
+    printf("- NULOS E BRANCOS: %d, %d\n", ((*eleicao).votosNulosPresidente + (*eleicao).votosNulosGovernador), ((*eleicao).votosBrancosPresidente + (*eleicao).votosBrancosGovernador));
 }
 
 void ApagaEleicao(tEleicao *eleicao) {
