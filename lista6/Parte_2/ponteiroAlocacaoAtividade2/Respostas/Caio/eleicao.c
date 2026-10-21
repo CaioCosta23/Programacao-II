@@ -34,7 +34,7 @@ static void realocarMemoriaVetorEleitores(tEleitor **eleitores, unsigned int tam
     eleitores = (tEleitor**)realloc(eleitores, tamanho * sizeof(tEleitor*));
 
     if (eleitores == NULL) {
-        printf("Erro! Realocacao de memoria de lista/vetor/'array' candidatos mal-sucedida.\n");
+        printf("Erro! Realocacao de memoria de lista/vetor/'array' eleitores mal-sucedida.\n");
         exit(1);
     }
 }
@@ -72,7 +72,7 @@ tEleicao *InicializaEleicao() {
 
     eleicao->eleitores = NULL;
 
-    eleicao->eleitores = (tCandidato**)malloc(QUANTIDADE_INICIAL_ELEITORES * sizeof(tCandidato*));
+    eleicao->eleitores = (tEleitor**)malloc(QUANTIDADE_INICIAL_ELEITORES * sizeof(tEleitor*));
 
     if ((*eleicao).eleitores == NULL) {
         printf("Erro! Alocacao de memoria para lista de eleitores mal-sucedida.\n");
