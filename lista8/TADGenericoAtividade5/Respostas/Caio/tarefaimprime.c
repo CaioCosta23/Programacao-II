@@ -13,7 +13,7 @@ struct impr {
  * @param mensagem (Ponteiro para) Lista/Vetor/'Array' de caracteres;
  * @return unsigned int Tamanho da mensagem(lista/vetor/'array' de caracteres);
  */
-static unsigned int obtemTamanhoMensagem(char * mensagem) {
+static unsigned int obtemTamanhoMensagem(char *mensagem) {
     unsigned int contador = 0;
 
     while(mensagem[contador] != '\0')
@@ -39,7 +39,7 @@ static void copiaMensagem(char *origem, char *destino) {
 }
 
 
-tImpr *CriaTarefaSoma(char msg) {
+tImpr *CriaTarefaImprimir(char *msg) {
     tImpr *impressao = NULL;
 
     impressao = (tImpr*)malloc(sizeof(tImpr));
@@ -67,7 +67,7 @@ tImpr *CriaTarefaSoma(char msg) {
 void ExecutaTarefaImprimir(void *imp) {
     tImpr *impressao = (tImpr*)imp;
 
-    printf("%s\n", (*impressao).mensagem);
+    printf("\n%s", (*impressao).mensagem);
 }
 
 void DestroiTarefaImprimir(void *imp) {
