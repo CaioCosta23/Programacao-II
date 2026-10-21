@@ -18,7 +18,7 @@ void LeVetor(Vetor *vetor) {
         scanf("%d", &vetor->elementos[e]);
 
     if (ultrapassouLimite){
-        scanf("*%[^\n]");
+        scanf("%*[^\n]");
         scanf("%*c");
     }
 }
@@ -30,7 +30,7 @@ int AplicarOperacaoVetor(Vetor *vetor, Operation op) {
     resultado = (*vetor).elementos[0];
 
     for(e = 1; e < (*vetor).tamanhoUtilizado; e++)
-        resultado = operacao(resultado, (*vetor).elementos[e]);
+        resultado = op(resultado, (*vetor).elementos[e]);
     
     return resultado;
 }
