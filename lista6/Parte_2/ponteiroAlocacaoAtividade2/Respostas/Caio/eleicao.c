@@ -132,10 +132,11 @@ void RealizaEleicao(tEleicao *eleicao) {
 
         LeEleitor(eleitor);
 
-        if ((*eleicao).totalEleitores > 1) {
+        if ((*eleicao).totalEleitores >= 1) {
             for(e = 0; e < (*eleicao).totalEleitores; e++)
                 if (EhMesmoEleitor(eleitor, (*eleicao).eleitores[e])) {
                     printf("ELEICAO ANULADA\n");
+                    ApagaEleitor(eleitor);
                     ApagaEleicao(eleicao);
                     exit(1);
                 }
@@ -156,11 +157,12 @@ void RealizaEleicao(tEleicao *eleicao) {
                 presidenteEncontrado = 1;
             }
         }
-        if (!(presidenteEncontrado))
+        if (!(presidenteEncontrado)) {
             if (votoPresidente == VOTO_BRANCO)
                 eleicao->votosBrancosPresidente += 1;
             else
                 eleicao->votosNulosPresidente += 1;
+        }
 
         for(c = 0; c < (*eleicao).totalGovernadores; c++) {
             if (VerificaIdCandidato((*eleicao).governadores[c], votoGovernador)) {
@@ -168,11 +170,12 @@ void RealizaEleicao(tEleicao *eleicao) {
                 governadorEncontrado = 1;
             }
         }
-        if (!(governadorEncontrado))
+        if (!(governadorEncontrado)) {
             if (votoGovernador == VOTO_BRANCO)
                 eleicao->votosBrancosGovernador += 1;
             else
                 eleicao->votosNulosGovernador += 1;
+        }
     }
 }
 
@@ -203,7 +206,7 @@ void ImprimeResultadoEleicao(tEleicao *eleicao) {
         if (((*eleicao).votosBrancosPresidente + (*eleicao).votosNulosPresidente) > maiorQuantidadeVotos)
             printf("SEM DECISAO\n");
         else
-            ImprimeCandidato((*eleicao).presidentes[indiceMaisVotado], CalculaPercentualVotos((*eleicao).presidentes[p], (totalVotosPresidente + (*eleicao).votosNulosPresidente + (*eleicao).votosBrancosPresidente)));
+            ImprimeCandidato((*eleicao).presidentes[indiceMaisVotado], CalculaPercentualVotos((*eleicao).presidentes[indiceMaisVotado], (totalVotosPresidente + (*eleicao).votosNulosPresidente + (*eleicao).votosBrancosPresidente)));
 
     empate = 0;
 
@@ -228,7 +231,7 @@ void ImprimeResultadoEleicao(tEleicao *eleicao) {
         if (((*eleicao).votosBrancosGovernador + (*eleicao).votosNulosGovernador) > maiorQuantidadeVotos)
             printf("SEM DECISAO\n");
         else
-            ImprimeCandidato((*eleicao).governadores[indiceMaisVotado], CalculaPercentualVotos((*eleicao).governadores[g], (totalVotosGovernador + (*eleicao).votosNulosGovernador + (*eleicao).votosBrancosGovernador)));
+            ImprimeCandidato((*eleicao).governadores[indiceMaisVotado], CalculaPercentualVotos((*eleicao).governadores[indiceMaisVotado], (totalVotosGovernador + (*eleicao).votosNulosGovernador + (*eleicao).votosBrancosGovernador)));
 
     printf("- NULOS E BRANCOS: %d, %d\n", ((*eleicao).votosNulosPresidente + (*eleicao).votosNulosGovernador), ((*eleicao).votosBrancosPresidente + (*eleicao).votosBrancosGovernador));
 }
