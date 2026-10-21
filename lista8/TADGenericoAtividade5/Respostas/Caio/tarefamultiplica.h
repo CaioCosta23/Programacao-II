@@ -10,14 +10,14 @@ typedef struct mult tMult;
  * @param n2 Segundo nnúmero, que será multiplicado com o primeiro;
  * @return tMult* Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (inicialzados) de uma tarefa de multiplicação;
  */
-tMult *CriaTarefaSoma(float n1, float n2);
+tMult *CriaTarefaMultiplicar(float n1, float n2);
 
 /**
  * @brief Executa a multiplicação de dois números;
  * 
  * @param muil Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma tarefa de multiplicação;
  */
-void ExecutaTarefaSoma(void *mult);
+void ExecutaTarefaMultiplicar(void *mult);
 
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente de) uma multiplicação;
