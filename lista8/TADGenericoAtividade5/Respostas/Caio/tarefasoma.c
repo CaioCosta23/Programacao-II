@@ -4,7 +4,7 @@
 #include "tarefasoma.h"
 
 struct soma {
-    float numero1, numero2, resultado;
+    float numero1, numero2;
 };
 
 tSoma *CriaTarefaSoma(float n1, float n2) {
@@ -18,7 +18,6 @@ tSoma *CriaTarefaSoma(float n1, float n2) {
     }
     adicao->numero1 = n1;
     adicao->numero2 = n2;
-    adicao->resultado = 0;
 
     return adicao;
 }
@@ -26,7 +25,7 @@ tSoma *CriaTarefaSoma(float n1, float n2) {
 void ExecutaTarefaSoma(void *sum) {
     tSoma *adicao = (tSoma*)sum;
 
-    adicao->resultado = (*adicao).numero1 + (*adicao).numero2;
+    printf("\nO resultado da soma de %.2f com %.2f eh: %.2f", (*adicao).numero1, (*adicao).numero2, ((*adicao).numero1 + (*adicao).numero2));
 }
 
 void DestroiTarefaSoma(void *sum) {
