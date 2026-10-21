@@ -26,4 +26,4 @@ void LeVetor(Vetor *vetor);
  */
 int AplicarOperacaoVetor(Vetor *vetor, Operation op);
 
-#endif;
+#endif
