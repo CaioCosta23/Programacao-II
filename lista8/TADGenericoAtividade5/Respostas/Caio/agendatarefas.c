@@ -27,11 +27,15 @@ static unsigned short int VerificaMaiorPrioridade(int prioridadeListada, int nov
 }
 
 /**
- * @brief Troca de posições duas tarefas da lista/vetor/'array' de tarefas da agenda e, consequentemente suas respsctivas prioridades (que estão nas mesmas posições na lista/vetor/'array' de prioridades, funções de execuçõa e liberação de tarefas da agenda);
+ * @brief Troca de posições duas tarefas da lista/vetor/'array' de tarefas da agenda e, consequentemente,
+ * suas respsctivas prioridades (que estão nas mesmas posições na lista/vetor/'array' de prioridades,
+ * funções de execução e liberação de tarefas da agenda);
  * 
  * @param agenda Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma agenda de tarefas;
- * @param indice1 Índice da posição da primeira tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas listas/vetores/'arrays');
- * @param indice2 Índice da posição da segunda tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas listas/vetores/'arrays');
+ * @param indice1 Índice da posição da primeira tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e
+ * prioridades de tarefas da agenda que será trocada com a segunda (em suas respectivas listas/vetores/'arrays');
+ * @param indice2 Índice da posição da segunda tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e
+ * prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas listas/vetores/'arrays');
  */
 static void trocaPosicoesTarefas(tAgendaTarefas *agenda, int indice1, int indice2) {
     void *tarefaAuxiliar;
