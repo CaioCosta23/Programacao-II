@@ -28,8 +28,8 @@ tConta *CriaConta() {
 }
 
 void LeConta(tConta *conta) {
+    LeUsuario((*conta).usuario);
     scanf("%d\n", &conta->numero);
-    LeUsuario(conta->usuario);
 }
 
 int VerificaConta(tConta *conta, int numero) {
