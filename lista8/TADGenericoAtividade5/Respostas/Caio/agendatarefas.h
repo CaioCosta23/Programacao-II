@@ -18,10 +18,10 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem);
  * @param tar Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma agenda de tarefas;
  * @param prioridade Prioridade da tarefa dentro da agenda de tarefas;
  * @param tarefa Ponteiro (genérico) para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualizados) de uma tarefa (soma ou multiplicação ou impressão);
- * @param execcuta Ponteiro para função ('callback') de execução de uma determinada tarefa;
+ * @param executa Ponteiro para função ('callback') de execução de uma determinada tarefa;
  * @param destroi  Ponteiro para função ('callback') de destruição (liberação/desalocação da memória dinamicamdente) de uma determinada tarefa;
  */
-void CadastrarTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*execcuta)(void*), void (*destroi)(void*));
+void CadastrarTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void*), void (*destroi)(void*));
 
 /**
  * @brief Executa as tarefas que setão armaazenadas na agenda de tarefas;
