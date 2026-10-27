@@ -3,8 +3,6 @@
 
 #include "agendatarefas.h"
 
-#define QUANTIDADE_INICIAL_TAREFAS 10
-
 typedef void (*ponteiroExecucao)(void*);
 typedef void (*ponteiroLiberacao)(void*);
 
@@ -16,53 +14,6 @@ struct agendatarefas {
     ponteiroLiberacao *liberacao;
 };
 
-
-/**
- * @brief Realiza a realocação (dinamica) de meória de todos os dados da agenda que são ou possuem algum tipo de vetor/lista/'array' de dados;
- * 
- * @param agenda Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma agenda de tarefas;
- */
-static void realocarMemoriaAgendaTarefas(tAgendaTarefas *agenda) {
-    agenda->quantidadeTarefasAlocadas *= 2;
-
-    agenda->tarefas = (void**)realloc((*agenda).tarefas, (*agenda).quantidadeTarefasAlocadas * sizeof(void*));
-
-    if ((*agenda).tarefas == NULL) {
-        printf("Erro! Realocacao de memoria para lista/vetor/'array' de tarefas da agendda mal-sucedida.\n");
-        DestroiAgendaDeTarefas(agenda);
-        exit(1);
-    }
-
-    agenda->prioridades = NULL;
-
-    agenda->prioridades = (int*)realloc((*agenda).prioridades, (*agenda).quantidadeTarefasAlocadas * sizeof(int));
-
-    if ((*agenda).prioridades == NULL) {
-        printf("Erro! Realocacao de memoria de vetor de prioridades de tarefas mal-sucedida.\n");
-        DestroiAgendaDeTarefas(agenda);
-        exit(1);
-    }
-
-    agenda->execucao = NULL;
-
-    agenda->execucao = (ponteiroExecucao*)realloc((*agenda).execucao, (*agenda).quantidadeTarefasAlocadas * sizeof(ponteiroExecucao));
-
-    if ((*agenda).execucao == NULL) {
-        printf("Erro! Realocacao de memoria de ponteiros para funções de execucao de tarefas mal-sucedida.\n");
-        DestroiAgendaDeTarefas(agenda);
-        exit(1);
-    }
-
-    agenda->liberacao = NULL;
-
-    agenda->liberacao = (ponteiroLiberacao*)realloc((*agenda).liberacao, (*agenda).quantidadeTarefasAlocadas * sizeof(ponteiroLiberacao));
-
-    if ((*agenda).liberacao == NULL) {
-        printf("Erro! Realocacao de memoria de ponteiros para funções de liberacao (dinamica de memoria) de tarefas mal-sucedida.\n");
-        DestroiAgendaDeTarefas(agenda);
-        exit(1);
-    }
-}
 
 /**
  * @brief Verifica se a nova prioridade (advinda de uma nova tarefa) é maior que uma prioridade já listada (referente á uma tarefa da lista/vetor/'array' de tarefas);
@@ -117,7 +68,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
 
     agenda->tarefas = NULL;
 
-    agenda->tarefas = (void**)malloc(QUANTIDADE_INICIAL_TAREFAS * sizeof(void*));
+    agenda->tarefas = (void**)malloc(numElem * sizeof(void*));
 
     if ((*agenda).tarefas == NULL) {
         printf("Erro! Alocacao de memoria para lista/vetor/'array' de tarefas da agendda mal-sucedida.\n");
@@ -127,7 +78,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
 
     agenda->prioridades = NULL;
 
-    agenda->prioridades = (int*)calloc(QUANTIDADE_INICIAL_TAREFAS, sizeof(int));
+    agenda->prioridades = (int*)calloc(numElem, sizeof(int));
 
     if ((*agenda).prioridades == NULL) {
         printf("Erro! Alocacao de memoria de vetor de prioridades de tarefas mal-sucedida.\n");
@@ -137,7 +88,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
 
     agenda->execucao = NULL;
 
-    agenda->execucao = (ponteiroExecucao*)malloc(QUANTIDADE_INICIAL_TAREFAS * sizeof(ponteiroExecucao));
+    agenda->execucao = (ponteiroExecucao*)malloc(numElem * sizeof(ponteiroExecucao));
 
     if ((*agenda).execucao == NULL) {
         printf("Erro! Alocacao de memoria de ponteiros para funções de execucao de tarefas mal-sucedida.\n");
@@ -147,7 +98,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
 
     agenda->liberacao = NULL;
 
-    agenda->liberacao = (ponteiroLiberacao*)malloc(QUANTIDADE_INICIAL_TAREFAS * sizeof(ponteiroLiberacao));
+    agenda->liberacao = (ponteiroLiberacao*)malloc(numElem * sizeof(ponteiroLiberacao));
 
     if ((*agenda).liberacao == NULL) {
         printf("Erro! Alocacao de memoria de ponteiros para funções de liberacao (dinamica de memoria) de tarefas mal-sucedida.\n");
@@ -156,15 +107,12 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
     }
 
     agenda->numeroTarefas = 0;
-    agenda->quantidadeTarefasAlocadas = QUANTIDADE_INICIAL_TAREFAS;
+    agenda->quantidadeTarefasAlocadas = numElem;
 
     return agenda;
 }
 
 void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void*), void (*destroi)(void*)) {
-    if ((*tar).numeroTarefas == (*tar).quantidadeTarefasAlocadas)
-        realocarMemoriaAgendaTarefas(tar);
-
     tar->tarefas[(*tar).numeroTarefas] = tarefa;
     tar->prioridades[(*tar).numeroTarefas] = prioridade;
     tar->execucao[(*tar).numeroTarefas] = executa;
@@ -175,8 +123,10 @@ void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, v
     unsigned int t;
 
     for(t = (*tar).numeroTarefas - 1; t > 0 ; t--) {
-            if (VerificaMaiorPrioridade((*tar).prioridades[t], prioridade))
-                trocaPosicoesTarefas(tar, t, (t - 1));
+        if (VerificaMaiorPrioridade((*tar).prioridades[t - 1], (*tar).prioridades[t]))
+            trocaPosicoesTarefas(tar, t, (t - 1));
+        else
+            break;
     }
 }
 
@@ -189,12 +139,12 @@ void ExecutarTarefasDaAgenda(tAgendaTarefas *tar) {
 void DestroiAgendaDeTarefas(tAgendaTarefas *tar) {
     if (tar != NULL) {
         if ((*tar).tarefas != NULL) {
-            unsigned int t;
-            
             if ((*tar).execucao != NULL)
                 free((*tar).execucao);
             
             if ((*tar).liberacao != NULL) {
+                unsigned int t;
+
                 for(t = 0; t < (*tar).numeroTarefas; t++)
                     tar->liberacao[t]((*tar).tarefas[t]);
                 
