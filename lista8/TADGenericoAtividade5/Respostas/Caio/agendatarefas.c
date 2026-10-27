@@ -76,23 +76,33 @@ static unsigned short int VerificaMaiorPrioridade(int prioridadeListada, int nov
 }
 
 /**
- * @brief Trca de posições duas tarefas da lsita/vetor/'array' de tarefas da agenda e, consequentemente suas respsctivas prioridades (que estão nas mesmas posições na lista/vetor/'array' de prioridades de tarefas da agenda);
+ * @brief Troca de posições duas tarefas da lista/vetor/'array' de tarefas da agenda e, consequentemente suas respsctivas prioridades (que estão nas mesmas posições na lista/vetor/'array' de prioridades, funções de execuçõa e liberação de tarefas da agenda);
  * 
  * @param agenda Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma agenda de tarefas;
- * @param indice1 Índice da posição da primeira tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas lsitas/vetores/'arrays');
- * @param indice2 Índice da posição da segunda tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas lsitas/vetores/'arrays');
+ * @param indice1 Índice da posição da primeira tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas listas/vetores/'arrays');
+ * @param indice2 Índice da posição da segunda tarefa e da prioridade dessa tarefa nas listas/vetores/'arrays' de tarefas e prioridades de tarefas da agenda que será trocada com a primeira (em suas respectivas listas/vetores/'arrays');
  */
 static void trocaPosicoesTarefas(tAgendaTarefas *agenda, int indice1, int indice2) {
     void *tarefaAuxiliar;
     int prioridadeAuxiliar;
+    ponteiroExecucao funcaoExecucaoAuxiliar;
+    ponteiroLiberacao funcaoLiberacaoAuxiliar;
 
-    tarefaAuxiliar = agenda->tarefas[indice1];
-    agenda->tarefas[indice1] = agenda->tarefas[indice2];
+    tarefaAuxiliar = (*agenda).tarefas[indice1];
+    agenda->tarefas[indice1] = (*agenda).tarefas[indice2];
     agenda->tarefas[indice2] = tarefaAuxiliar;
 
-    prioridadeAuxiliar = agenda->prioridades[indice1];
-    agenda->prioridades[indice1] = agenda->prioridades[indice2];
+    prioridadeAuxiliar = (*agenda).prioridades[indice1];
+    agenda->prioridades[indice1] = (*agenda).prioridades[indice2];
     agenda->prioridades[indice2] = prioridadeAuxiliar;
+
+    funcaoExecucaoAuxiliar = (*agenda).execucao[indice1];
+    agenda->execucao[indice1] = (*agenda).execucao[indice2];
+    agenda->execucao[indice2] = funcaoExecucaoAuxiliar;
+
+    funcaoLiberacaoAuxiliar = (*agenda).liberacao[indice1];
+    agenda->liberacao[indice1] = (*agenda).liberacao[indice2];
+    agenda->liberacao[indice2] = funcaoLiberacaoAuxiliar;
 }
 
 tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
@@ -157,6 +167,8 @@ void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, v
 
     tar->tarefas[(*tar).numeroTarefas] = tarefa;
     tar->prioridades[(*tar).numeroTarefas] = prioridade;
+    tar->execucao[(*tar).numeroTarefas] = executa;
+    tar->liberacao[(*tar).numeroTarefas] = destroi;
 
     tar->numeroTarefas++;
 
