@@ -28,7 +28,7 @@ void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, v
  * 
  * @param tar Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém os dados (atualzados) de uma agenda de tarefas;
  */
-void ExecutaTarefasDaAgenda(tAgendaTarefas *tar);
+void ExecutarTarefasDaAgenda(tAgendaTarefas *tar);
 
 /**
  * @brief Destrói (libera/desaloca a memória dinamicamente de) uma agenda de tarefas;
