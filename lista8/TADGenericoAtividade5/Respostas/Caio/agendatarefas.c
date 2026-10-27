@@ -151,7 +151,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem) {
     return agenda;
 }
 
-void CadastrarTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void*), void (*destroi)(void*)) {
+void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void*), void (*destroi)(void*)) {
     if ((*tar).numeroTarefas == (*tar).quantidadeTarefasAlocadas)
         realocarMemoriaAgendaTarefas(tar);
 
@@ -168,7 +168,7 @@ void CadastrarTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, 
     }
 }
 
-void ExecutaTarefasDaAgenda(tAgendaTarefas *tar) {
+void ExecutarTarefasDaAgenda(tAgendaTarefas *tar) {
     unsigned int t;
     for(t = 0; t < (*tar).numeroTarefas; t++)
         tar->execucao[t]((*tar).tarefas[t]);

@@ -21,7 +21,7 @@ tAgendaTarefas *CriaAgendaDeTarefas(int numElem);
  * @param executa Ponteiro para função ('callback') de execução de uma determinada tarefa;
  * @param destroi  Ponteiro para função ('callback') de destruição (liberação/desalocação da memória dinamicamdente) de uma determinada tarefa;
  */
-void CadastrarTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void*), void (*destroi)(void*));
+void CadastraTarefaNaAgenda(tAgendaTarefas *tar, int prioridade, void *tarefa, void (*executa)(void*), void (*destroi)(void*));
 
 /**
  * @brief Executa as tarefas que setão armaazenadas na agenda de tarefas;
