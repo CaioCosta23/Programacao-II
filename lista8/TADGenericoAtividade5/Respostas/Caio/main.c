@@ -12,6 +12,12 @@
 
 #define TAMANHO_MAXIMO_MENSAGEM 1000
 
+/**
+ * @brief Programa que simula um gerenciador de agenda de tarefas (soma, multiplicação e impressão),
+ * onde cada função (execução e liberação de memória) é gerenciada através de ponteiros e ponteiros para funções ('callbacks');
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     unsigned int quantidadeTarefas, t;
     tAgendaTarefas *agenda;
