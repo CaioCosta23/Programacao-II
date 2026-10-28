@@ -10,6 +10,8 @@
 #define MULTIPLICACAO 'M'
 #define IMPRESSAO 'I'
 
+#define TAMANHO_MAXIMO_MENSAGEM 1000
+
 int main() {
     unsigned int quantidadeTarefas, t;
     tAgendaTarefas *agenda;
@@ -18,13 +20,12 @@ int main() {
     tSoma *soma;
     tMult *multiplicacao;
     tImpr *impressao;
+    float numero1, numero2;
 
-    printf("Digite o numero de tarefas: ");
+    printf("Digite o numero de tarefas:\n");
     scanf("%d\n", &quantidadeTarefas);
 
     agenda = CriaAgendaDeTarefas(quantidadeTarefas);
-
-    printf("Digite um tipo de tarefa suportado (I/S/M))\n");
 
     for(t = 0; t < quantidadeTarefas; t++) {
         scanf("%d ", &prioridade);
@@ -33,25 +34,21 @@ int main() {
 
         switch(tipoTarefa) {
             case SOMA:
-                float numero1, numero2;
-
-                scanf("%f %f\n", &numero1, numero2);
+                scanf("%f %f\n", &numero1, &numero2);
 
                 soma = CriaTarefaSoma(numero1, numero2);
 
                 CadastraTarefaNaAgenda(agenda, prioridade, soma, ExecutaTarefaSoma, DestroiTarefaSoma);
                 break;
             case MULTIPLICACAO:
-                float numero1, numero2;
-
-                scanf("%f %f\n", &numero1, numero2);
+                scanf("%f %f\n", &numero1, &numero2);
 
                 multiplicacao = CriaTarefaMultiplicar(numero1, numero2);
 
                 CadastraTarefaNaAgenda(agenda, prioridade, multiplicacao, ExecutaTarefaMultiplicar, DestroiTarefaMultiplicar);
                 break;
             case IMPRESSAO:
-                char *mensagem;
+                char mensagem[TAMANHO_MAXIMO_MENSAGEM];
                 
                 scanf("%[^\n]\n", mensagem);
 
@@ -60,10 +57,15 @@ int main() {
                 CadastraTarefaNaAgenda(agenda, prioridade, impressao, ExecutaTarefaImprimir, DestroiTarefaImprimir);
                 break;
             default:
+                printf("Digite um tipo de tarefa suportado (I/S/M))\n");
+                
+                scanf("%*[^\n]");
+                scanf("%*c");
+                
+                t--;
                 break;
         }
     }
-
     ExecutarTarefasDaAgenda(agenda);
     DestroiAgendaDeTarefas(agenda);
 
