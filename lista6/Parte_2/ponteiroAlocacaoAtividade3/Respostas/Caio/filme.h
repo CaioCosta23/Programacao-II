@@ -13,14 +13,15 @@ typedef struct Filme {
  * 
  * @return tFilme* Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados inicializados) de um filme;
  */
-tFilme *CriaFilme();
+tFilme *CriarFilme();
 
 /**
  * @brief Lê as informações (dados) de um filme;
  * 
  * @param filme Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados a serem lidos) de um filme;
+ * @param codigo Código do filme;
  */
-void LeFilme(tFilme *filme);
+void LeFilme(tFilme *filme, int codigo);
 
 /**
  * @brief Obtém o código de um filme;
@@ -44,7 +45,7 @@ int ObterQtdEstoqueFilme(tFilme *filme);
  * @param filme Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) de um filme;
  * @return int Quantidade de unidades alugadas de um filme em específico;
  */
-int ObterQtdAlugada(tFilme *filme);
+int ObterQtdAlugadaFilme(tFilme *filme);
 
 /**
  * @brief Obtém o valor de um filme;
@@ -73,7 +74,7 @@ int EhMesmoCodigoFilme(tFilme *filme, int codigo);
  * @return int 1 caso o nome do primeiro filme seja maior (venha depois em ordem alfabética) que o segundo,
  * -1 caso o nome do segundo filme seja maior (venha depois em ordem alfabética) que o do primeiro ou 0 caso os nomes sejam iguais;
  */
-int ComparaNomesFilmes(tFilme *filme1, tFilme *filme2);
+int CompararNomesFilmes(tFilme *filme1, tFilme *filme2);
 
 /**
  * @brief Aluga uma unidade de um filme;
