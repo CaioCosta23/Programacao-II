@@ -66,9 +66,12 @@ int EhMesmoCodigoFilme(tFilme *filme, int codigo);
 /**
  * @brief Compara o nome de dois filmes;
  * 
- * @param filme1 Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) do primeiro filme que terá seu nome comparado com o nome do segundo filme;
- * @param filme2 Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) do segundo filme que terá seu nome comparado com o nome do primeiro filme;
- * @return int 1 caso o nome do primeiro filme seja maior (venha depois em ordem alfabética) que o segundo, -1 caso o nome do segundo filme seja maior (venha depois em ordem alfabética) que o do primeiro ou 0 caso os nomes sejam iguais;
+ * @param filme1 Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados)
+ * do primeiro filme que terá seu nome comparado com o nome do segundo filme;
+ * @param filme2 Ponteiro para o tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados)
+ * do segundo filme que terá seu nome comparado com o nome do primeiro filme;
+ * @return int 1 caso o nome do primeiro filme seja maior (venha depois em ordem alfabética) que o segundo,
+ * -1 caso o nome do segundo filme seja maior (venha depois em ordem alfabética) que o do primeiro ou 0 caso os nomes sejam iguais;
  */
 int ComparaNomesFilmes(tFilme *filme1, tFilme *filme2);
 
