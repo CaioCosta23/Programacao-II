@@ -45,7 +45,7 @@ static char transformaEmLetraMinuscula(char letra) {
     return (letra + DISTANCIA_ASCII);
 }
 
-tFilme *CriaFilme() {
+tFilme *CriarFilme() {
     tFilme *filme = NULL;
 
     filme = (tFilme*)malloc(sizeof(tFilme));
@@ -63,8 +63,10 @@ tFilme *CriaFilme() {
     return filme;
 }
 
-void LeFilme(tFilme *filme) {
-    scanf("%d,%[^,],%d,%d\n", &filme->codigo, filme->nome, &filme->valor, &filme->qtdEstoque);
+void LeFilme(tFilme *filme, int codigo) {
+    filme->codigo = codigo;
+    
+    scanf("%[^,],%d,%d\n", filme->nome, &filme->valor, &filme->qtdEstoque);
 }
 
 int ObterCodigoFilme(tFilme *filme) {
@@ -75,7 +77,7 @@ int ObterQtdEstoqueFilme(tFilme *filme) {
     return (*filme).qtdEstoque;
 }
 
-int ObterQtdAlugada(tFilme *filme) {
+int ObterQtdAlugadaFilme(tFilme *filme) {
     return (*filme).qtdAlugada;
 }
 
@@ -83,79 +85,70 @@ int ObterValorFilme(tFilme *filme) {
     return (*filme).valor;
 }
 
-int EhMesmoCodigoFilme(tFilme *filme, int codigo) {
+int EhMesmoCodigoFilme(tFilme *filme, int codigo){
     return ((*filme).codigo == codigo);
 }
 
-int ComparaNomesFilmes(tFilme *filme1, tFilme *filme2) {
+int CompararNomesFilmes(tFilme *filme1, tFilme *filme2) {
     unsigned int tamanhoNomeFilme1, tamanhoNomeFilme2;
+    unsigned int contador = 0;
+    unsigned short int caractereVerificadoNome1, caractereVerificadoNome2; // Variável lógica para armazenar o reusltado da verificação se o caractere é uma letra ou não;
 
-    tamanhoNomeFilme1 = ObtemTamanhoListaCaracteres((*filme1).nome);
-    tamanhoNomeFilme2 = ObtemTamanhoListaCaracteres((*filme2).nome);
+    while(((*filme1).nome[contador] != '\0') && ((*filme2).nome[contador] != '\0')) {
+        caractereVerificadoNome1 = 0;
+        caractereVerificadoNome2 = 0;
 
-    if (tamanhoNomeFilme1 > tamanhoNomeFilme2) {
-        return 1;
-    }else if (tamanhoNomeFilme1 < tamanhoNomeFilme2) {
-        return -1;
-    }else {
-        unsigned int contador = -1;
-        unsigned short int caractereVerificadoNome1, caractereVerificadoNome2; // Variável lógica para armazenar o reusltado da verificação se o caractere é uma letra ou não;
+        if (verificaLetra((*filme1).nome[contador]))
+            caractereVerificadoNome1 = 1;
+        if (verificaLetra((*filme2).nome[contador]))
+            caractereVerificadoNome2 = 1;
 
-        do {
-            contador++;
-
-            caractereVerificadoNome1 = 0;
-            caractereVerificadoNome2 = 0;
-
-            if (verificaLetra((*filme1).nome[contador]))
-                caractereVerificadoNome1 = 1;
-            if (verificaLetra((*filme2).nome[contador]))
-                caractereVerificadoNome2 = 1;
-
-            if ((caractereVerificadoNome1) && (!(caractereVerificadoNome2))) {
+        if ((caractereVerificadoNome1) && (!(caractereVerificadoNome2))) {
+            return 1;
+        }else if ((!(caractereVerificadoNome1)) && (caractereVerificadoNome2)) {
+            return -1;
+        }else if ((!(caractereVerificadoNome1)) && (!caractereVerificadoNome2)) {
+            if ((*filme1).nome[contador] > (*filme2).nome[contador])
                 return 1;
-            }else if ((!(caractereVerificadoNome1)) && (caractereVerificadoNome2)) {
+            else if ((*filme1).nome[contador] < (*filme2).nome[contador])
                 return -1;
-            }else if ((!(caractereVerificadoNome1)) && (!caractereVerificadoNome2)) {
-                if ((*filme1).nome[contador] > (*filme2).nome[contador])
-                    return 1;
-                else if ((*filme1).nome[contador] < (*filme2).nome[contador])
-                    return -1;
-                else
-                    continue;
-            }else {
-                char letraNome1, letraNome2;
+        }else {
+            char letraNome1, letraNome2;
 
-                letraNome1 = (*filme1).nome[contador];
-                letraNome2 = (*filme2).nome[contador];
+            letraNome1 = (*filme1).nome[contador];
+            letraNome2 = (*filme2).nome[contador];
 
-                if (verificaLetraMaiuscula(letraNome1))
-                    letraNome1 = transformaEmLetraMinuscula(letraNome1);
-                if (verificaLetraMaiuscula(letraNome2))
-                    letraNome2 = transformaEmLetraMinuscula(letraNome2);
+            if (verificaLetraMaiuscula(letraNome1))
+                letraNome1 = transformaEmLetraMinuscula(letraNome1);
+            if (verificaLetraMaiuscula(letraNome2))
+                letraNome2 = transformaEmLetraMinuscula(letraNome2);
 
-                if (letraNome1 > letraNome2)
-                    return 1;
-                else if (letraNome1 < letraNome2)
-                    return -1;
-                else
-                    continue;
-            }
-        } while(contador != (tamanhoNomeFilme1 - 1));
+            if (letraNome1 > letraNome2)
+                return 1;
+            else if (letraNome1 < letraNome2)
+                return -1;
+        }
+        contador++;
     }
-    return 0;
+
+    if (((*filme1).nome[contador] == '\0') && ((*filme2).nome[contador] == '\0')) {
+        return 0;
+    }else {
+        if ((*filme1).nome[contador] == '\0')
+            return 1;
+        else
+            return -1;
+    }
 }
 
 void AlugarFilme(tFilme *filme) {
-    if (ObterQtdEstoqueFilme(filme > 0)) {
-        filme->qtdAlugada += 1;
-        filme->qtdEstoque -= 1;
-    }
+    filme->qtdAlugada += 1;
+    filme->qtdEstoque -= 1;
 }
 
 void DevolverFilme(tFilme *filme) {
     filme->qtdEstoque += 1;
-    filme->qtdAlugada += 1;
+    filme->qtdAlugada -= 1;
 }
 
 void ImprimirNomeFilme(tFilme *filme) {
@@ -163,10 +156,6 @@ void ImprimirNomeFilme(tFilme *filme) {
 }
 
 void DestruirFilme(tFilme *filme) {
-    if (filme != NULL) {
-        if ((*filme).nome != NULL)
-            free((*filme).nome);
-        
+    if (filme != NULL) 
         free(filme);
-    }
 }
