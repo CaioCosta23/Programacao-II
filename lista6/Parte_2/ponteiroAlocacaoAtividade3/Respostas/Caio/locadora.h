@@ -34,10 +34,10 @@ void CadastrarFilmeLocadora(tLocadora *locadora, tFilme *filme);
  * @brief Verifica se um filme está cadastrado na locadora;
  * 
  * @param locadora Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) de uma locadora;
- * @param coodigo Número do código que será procurado na lista de filmes da locadora;
+ * @param codigo Número do código que será procurado na lista de filmes da locadora;
  * @return int 1 (verdadeiro) se o código existir na lista de filmes da locadora ou 0, caso contrário;
  */
-int VerificarFilmeCadastrato(tLocadora *locadora, int coodigo);
+int VerificarFilmeCadastrato(tLocadora *locadora, int codigo);
 
 /**
  * @brief Lê os dados para o registro de um aluguel de filmes;
