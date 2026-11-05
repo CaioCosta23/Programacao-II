@@ -13,7 +13,7 @@ typedef struct Locadora {
  * 
  * @return tLocadora* Ponteiro para Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados inicializados) de uma locadora;
  */
-tLocadora *CriaLocadora();
+tLocadora *CriarLocadora();
 
 /**
  * @brief Lê os dados de uma locadora para cadastrar um filme;
