@@ -43,7 +43,7 @@ int CalculaMediaAluno(tAluno *aluno);
  * @param aluno Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) do aluno;
  * @return int 1 (verdadeiro) se o aluno foi aprovado ou 0 (falso), caso contrário;
  */
-int VerificaAprovacaoAluno(tAluno *aluno);
+int VerificaAprovacao(tAluno *aluno);
 
 /**
  * @brief Imprime as informações de um aluno;
