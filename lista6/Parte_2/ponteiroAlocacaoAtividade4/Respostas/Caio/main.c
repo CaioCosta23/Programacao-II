@@ -33,6 +33,12 @@ static void ordenaAlunosPorMatricula(tAluno *alunos[], unsigned int quantidadeAl
                 trocaPosicoesAlunos(alunos, a1, a2);
 }
 
+
+/**
+ * @brief Programa que simula o gerenciamento e acompanhamento escolar de alunos;
+ * 
+ * @return int Programa principal;
+ */
 int main() {
     unsigned int quantidadeAlunos, a;
 
