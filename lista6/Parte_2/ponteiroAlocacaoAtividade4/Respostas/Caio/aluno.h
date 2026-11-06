@@ -21,13 +21,13 @@ tAluno *CriaAluno();
 void LeAluno(tAluno *aluno);
 
 /**
- * @brief 
+ * @brief Compara a matrícula de um aluno com outro;
  * 
  * @param aluno1 Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) do primeiro aluno que terá sua matrícula comparada com a matrícula do segundo aluno;
  * @param aluno2 Ponteiro para o Tipo Abstrato de Dados (T.A.D.) que representa a estrutura que contém as informações (dados atualizados) do segundo aluno que terá sua matrícula comparada com a matrícula do primeiro aluno;
  * @return int 1 se a matricula do primeiro aluno for maior que a matrícula do segundo ou -1 se a matrícula do segundo for maior que a do primeiro ou 0 caso matrícula dos alunos sejam iguais;
  */
-int ComparaMatricula(tAluno *aluno1, tAluno *aluno);
+int ComparaMatricula(tAluno *aluno1, tAluno *aluno2);
 
 /**
  * @brief Calcula média das notas de um aluno
