@@ -37,8 +37,6 @@ static void LeNome(char *nome) {
 
     espacoNome = TAMANHO_INICIAL_NOME;
 
-    scanf("%*c"); // Consome os '\n's (quebras de linha) vindo de leituras de dados anteriores;
-
     while(1) {
         scanf("%c", &letra);
 
@@ -87,7 +85,7 @@ tAluno *CriaAluno() {
 void LeAluno(tAluno *aluno) {
     LeNome(aluno->nome);
     scanf("%d\n", &aluno->matricula);
-    scanf("%d %d %d", &aluno->n1, &aluno->n2, &aluno->n3);
+    scanf("%d %d %d\n", &aluno->n1, &aluno->n2, &aluno->n3);
 }
 
 int ComparaMatricula(tAluno *aluno1, tAluno *aluno2) {
@@ -105,7 +103,7 @@ int CalculaMediaAluno(tAluno *aluno) {
     return (((*aluno).n1 + (*aluno).n2 + (*aluno).n3) / QUANTIDADE_NOTAS);
 }
 
-int VerificaAprovacaoAluno(tAluno *aluno) {
+int VerificaAprovacao(tAluno *aluno) {
     const static unsigned short int MEDIA = 7;
 
     return (CalculaMediaAluno(aluno) >= MEDIA);
